@@ -1,6 +1,7 @@
 // sets/plant.js — the seed plant: hall, the ten machines, cyclones, elevators; plus kernels, cobs, the dark "insert" table,
 // lab, warehouse, soil cross-section and the blueprint globe.
 import { measure, E, V, S, mood, layer, blurLayer, backdrop, rr, seg, circle, ring, poly, linGrad, radGrad, glow, alpha, shade, mix, text, FONTS, ease, prog, clamp, lerp, rng, key } from '/engine/core.js';
+import { bagFace, logo } from './brand.js';
 import * as FX from '/engine/fx2d.js';
 
 export const GY = () => E.H * V(0.8, 0.68);
@@ -127,8 +128,8 @@ export const MACHINES = {
     g.fillStyle = shade(St, -0.35); for (const fx of [x0 + 20, x0 + 230]) g.fillRect(fx, y0 + 60, 14, 440); g.strokeStyle = Or; g.lineWidth = 6; g.strokeRect(x0, y0 + 40, 270, 120);
     boxS(g, x0 + 60, y0 + 100, 150, 130, St, M, 4); poly(g, [[x0 + 60, y0 + 230], [x0 + 210, y0 + 230], [x0 + 160, y0 + 290], [x0 + 110, y0 + 290]], shade(St, -0.2));
     rr(g, x0 + 150, y0 + 130, 46, 30, 4); g.fillStyle = '#0c1a12'; g.fill(); text(g, '80k', x0 + 173, y0 + 146, { size: 20, color: '#7dffb0', font: FONTS.ui, weight: 900 });
-    const fill = o.run ? 0.5 + 0.5 * Math.sin(t * 2) : 0.6; rr(g, x0 + 85, y - 150, 100, 150, 12); g.fillStyle = '#ece6d6'; g.fill(); rr(g, x0 + 85, y - 150 * fill, 100, 150 * fill, 12); g.fillStyle = '#f4efe2'; g.fill(); seg(g, [[x0 + 100, y - 110], [x0 + 170, y - 110]], 3, alpha(RED, 0.6));
-    rr(g, x0 + 270, y - 70, 280, 34, 17); g.fillStyle = '#3a414d'; g.fill(); for (let i = 0; i < 2; i++) { rr(g, x0 + 300 + i * 120, y - 190, 90, 120, 10); g.fillStyle = '#ece6d6'; g.fill(); rr(g, x0 + 315 + i * 120, y - 165, 60, 30, 3); g.fillStyle = '#ffffff'; g.fill(); seg(g, [[x0 + 320 + i * 120, y - 155], [x0 + 360 + i * 120, y - 155]], 3, alpha(GREEN, 0.8)); }
+    const fill = o.run ? 0.5 + 0.5 * Math.sin(t * 2) : 0.6; bagFace(g, x0 + 85, y - 150, 100, 150, { r: 12, fill, dim: 0.15 });
+    rr(g, x0 + 270, y - 70, 280, 34, 17); g.fillStyle = '#3a414d'; g.fill(); for (let i = 0; i < 2; i++) bagFace(g, x0 + 300 + i * 120, y - 190, 90, 120, { r: 10, dim: 0.15 });
     rr(g, x0 + 470, y - 300, 60, 120, 6); g.fillStyle = Or; g.fill(); seg(g, [[x0 + 500, y - 180], [x0 + 470, y - 190]], 6, '#5a6270'); legs(g, x0 + 290, y - 36, 240, 36, '#2a2f38');
   } },
 };
@@ -209,7 +210,7 @@ export function lab(g, t, cam, o = {}) {
 }
 
 // ---------- warehouse ----------
-export function bagStack(g, x, y, cols, rows, M, o = {}) { for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const bx = x + c * 92 + (r % 2) * 20, by = y - 22 - r * 58; rr(g, bx, by - 58, 88, 60, 14); g.fillStyle = shade('#ece6d6', -0.15 - r * 0.03); g.fill(); rr(g, bx + 22, by - 44, 44, 22, 3); g.fillStyle = '#fff'; g.fill(); seg(g, [[bx + 26, by - 33], [bx + 60, by - 33]], 3, alpha(o.mark || GREEN, 0.9)); } g.fillStyle = '#6a4a2a'; g.fillRect(x - 6, y - 22, cols * 92 + 30, 22); }
+export function bagStack(g, x, y, cols, rows, M, o = {}) { for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) { const bx = x + c * 92 + (r % 2) * 20, by = y - 22 - r * 58; bagFace(g, bx, by - 58, 88, 60, { r: 14, zoom: 1.0, dim: 0.12 + r * 0.03 + (o.dim ?? 0) }); } g.fillStyle = '#6a4a2a'; g.fillRect(x - 6, y - 22, cols * 92 + 30, 22); }
 export function warehouse(g, t, cam, o = {}) {
   const M = mood('interiorWarm'), Y = GY(), CX = E.W / 2;
   layer(g, cam, 0.4, (g) => { backdrop(g, [shade(M.dark, -0.2), shade(M.wall, -0.2)]); for (let i = -3; i < 6; i++) { const lx = CX + i * 420; seg(g, [[lx, Y - 900], [lx, Y - 720]], 3, '#1a1414'); poly(g, [[lx - 40, Y - 720], [lx + 40, Y - 720], [lx + 20, Y - 700], [lx - 20, Y - 700]], '#2a2020'); FX.lightCone(g, lx, Y - 700, { len: 700, spread: 0.55, color: M.practical, a: 0.12 }); glow(g, lx, Y - 700, 60, M.practical, 0.5); }

@@ -6,11 +6,12 @@ import * as UI from '/engine/ui2d.js';
 import { field, cornPlant } from '../sets/corn.js';
 import { kernel, lab, warehouse, bagStack, hall, globe, RED_SEED, GREEN } from '../sets/plant.js';
 import { FARMER, LAB, BREEDER, COURIER } from '../cast.js';
+import { bagFace, logo } from '../sets/brand.js';
 import { wt, gold, cream, bp, coral, push, label, title, tick, cross } from './_h.js';
 import { buildPlant3D } from './03_protect.js';
 
 const THUMB = { ...POSES.stand, eF: [22, -140], hF: [34, -170] };
-function sampleBag(g, x, y, s = 1) { rr(g, x - 30 * s, y - 70 * s, 60 * s, 70 * s, 10 * s); g.fillStyle = '#ece6d6'; g.fill(); rr(g, x - 18 * s, y - 50 * s, 36 * s, 18 * s, 3); g.fillStyle = '#fff'; g.fill(); seg(g, [[x - 14 * s, y - 41 * s], [x + 14 * s, y - 41 * s]], 3, RED_SEED); }
+function sampleBag(g, x, y, s = 1) { rr(g, x - 30 * s, y - 70 * s, 60 * s, 70 * s, 10 * s); g.fillStyle = '#ece6d6'; g.fill(); rr(g, x - 18 * s, y - 50 * s, 36 * s, 18 * s, 3); g.fillStyle = '#fff'; g.fill(); logo(g, x, y - 41 * s, 22 * s); }
 function tray(g, x, y, w, col, grow) { rr(g, x - w / 2, y - 30, w, 40, 8); g.fillStyle = shade(col, -0.5); g.fill(); for (let i = 0; i < 8; i++) { const px = x - w / 2 + 24 + i * (w - 48) / 7; kernel(g, px, y - 34, 22, { col: RED_SEED }); const h = 120 * grow * (0.7 + ((i * 37) % 10) / 30); if (h > 4) { seg(g, [[px, y - 40], [px + Math.sin(i) * 6, y - 40 - h]], 5, '#7ed36a'); poly(g, [[px, y - 40 - h * 0.7], [px + 30, y - 52 - h * 0.85], [px + 4, y - 40 - h * 0.6]], '#9be37e'); } } }
 
 // s58 — lab: tech receives a sample bag
@@ -72,7 +73,7 @@ registerShot('s62', { draw(g, t, info) {
   layer(g, cam, 1, (g) => { const give = ease.inOut(prog(t, 0.3, 1.2));
     drawFigure(g, { x: E.W / 2 - 300, y: Y, s: 1.3, facing: 1, outfit: FARMER, pose: breathe(posesAt(t, [[0, 'holdFront'], [0.6, 'reach'], [1.3, 'wave']]), t), expr: 'smile', rim: { color: '#ffffff', dir: [-0.8, -0.5] } });
     drawFigure(g, { x: E.W / 2 + 40, y: Y, s: 1.3, facing: -1, outfit: COURIER, pose: breathe(posesAt(t, [[0, 'reach'], [1.2, 'holdFront']]), t, 1, 2), expr: 'smile', rim: { color: '#ffffff', dir: [-0.8, -0.5] } });
-    rr(g, lerp(E.W / 2 - 230, E.W / 2 - 40, give), Y - 260, 90, 70, 8); g.fillStyle = '#c9a46a'; g.fill(); seg(g, [[lerp(E.W / 2 - 230, E.W / 2 - 40, give), Y - 225], [lerp(E.W / 2 - 140, E.W / 2 + 50, give), Y - 225]], 4, '#8a6a3a'); });
+    rr(g, lerp(E.W / 2 - 230, E.W / 2 - 40, give), Y - 260, 90, 70, 8); g.fillStyle = '#c9a46a'; g.fill(); logo(g, lerp(E.W / 2 - 185, E.W / 2 + 5, give), Y - 225, 50, { plate: true }); });
   FX.snow(g, t, { count: 140, color: '#ffffff', speed: 50 });
   const a = ease.outBack(prog(t, tK - 0.5, tK - 0.1)); if (a > 0) { g.save(); g.translate(E.W / 2, 100); g.scale(a, a); title(g, 'ҐРУНТОВИЙ КОНТРОЛЬ', 0, 0, 1, 60); g.restore(); }
 } });
@@ -118,7 +119,7 @@ registerShot('s66', { draw(g, t, info) {
   const u = ease.inOut(t / info.dur), cam = { z: lerp(1.0, 1.08, u), x: lerp(-30, 30, u) }; const { GY, M } = warehouse(g, t, cam);
   const tP = wt('перевірене', info, 1.6);
   layer(g, cam, 1, (g) => { bagStack(g, E.W / 2 - 380, GY + 40, 8, 5, M, { mark: GREEN }); });
-  const k = prog(t, tP - 0.25, tP); if (k > 0) { const s = lerp(2.4, 1, ease.in(k)); g.save(); g.translate(E.W / 2, E.H * 0.42); g.rotate(-0.12); g.scale(s, s); g.globalAlpha *= clamp(k * 2); rr(g, -330, -70, 660, 140, 20); g.strokeStyle = '#3fb950'; g.lineWidth = 12; g.stroke(); text(g, 'ПЕРЕВІРЕНО', 0, 4, { size: 92, color: '#3fb950', font: FONTS.ui, weight: 900 }); g.restore(); }
+  const k = prog(t, tP - 0.25, tP); if (k > 0) { const s = lerp(2.4, 1, ease.in(k)); g.save(); g.translate(E.W / 2, E.H * 0.42); g.rotate(-0.12); g.scale(s, s); g.globalAlpha *= clamp(k * 2); rr(g, -330, -70, 660, 140, 20); g.fillStyle = 'rgba(8,14,10,.82)'; g.fill(); g.strokeStyle = '#ffffff'; g.lineWidth = 12; g.stroke(); text(g, 'ПЕРЕВІРЕНО', 0, 4, { size: 92, color: '#ffffff', font: FONTS.ui, weight: 900 }); g.restore(); }
   label(g, 'ПЕРЕД ПОСІВНОЮ', E.W / 2, E.H * 0.1, ease.out(prog(t, 0.3, 0.7)), 44, cream());
 } });
 
@@ -143,9 +144,9 @@ registerShot('s69', { draw(g, t, info) {
   const cam = { z: lerp(1.0, 1.08, ease.inOut(t / info.dur)) }; const { M } = warehouse(g, t, { z: 1.0 });
   veil(g, '#0a0608', 0.45);
   const tE = wt('етикеткою', info, 0.4), tD = wt('документами', info, 1.4), tY = wt('якості', info, 3.6);
-  layer(g, cam, 1, (g) => { const cx = E.W * 0.3, cy = E.H * 0.55; rr(g, cx - 280, cy - 360, 560, 720, 60); g.fillStyle = '#ece6d6'; g.fill();
-    const a = ease.outBack(prog(t, tE - 0.1, tE + 0.3)); if (a > 0) { g.save(); g.translate(cx, cy - 40); g.scale(a, a); rr(g, -200, -150, 400, 300, 14); g.fillStyle = '#ffffff'; g.fill(); seg(g, [[-160, -100], [160, -100]], 10, GREEN); for (let i = 0; i < 4; i++) seg(g, [[-160, -40 + i * 50], [lerp(40, 160, i % 2), -40 + i * 50]], 6, alpha('#555', 0.6)); g.restore(); }
-    const d = ease.outBack(prog(t, tD - 0.1, tD + 0.3)); if (d > 0) { g.save(); g.translate(E.W * 0.66, E.H * 0.42); g.rotate(0.08); g.scale(d, d); for (let k = 2; k >= 0; k--) { rr(g, -170 + k * 20, -220 + k * 16, 340, 440, 10); g.fillStyle = shade('#f4efe6', -k * 0.08); g.fill(); } for (let i = 0; i < 7; i++) seg(g, [[-130, -150 + i * 45], [lerp(60, 130, i % 2), -150 + i * 45]], 6, alpha('#555', 0.5)); g.restore(); }
+  layer(g, cam, 1, (g) => { const cx = E.W * 0.3, cy = E.H * 0.55; bagFace(g, cx - 280, cy - 380, 560, 760, { r: 60, zoom: 1.0 });
+    const a = ease.outBack(prog(t, tE - 0.1, tE + 0.3)); if (a > 0) { g.save(); g.translate(cx + 130, cy + 250); g.rotate(-0.05); g.scale(a * 0.5, a * 0.5); rr(g, -200, -150, 400, 300, 14); g.fillStyle = '#ffffff'; g.fill(); seg(g, [[-160, -100], [160, -100]], 10, GREEN); for (let i = 0; i < 4; i++) seg(g, [[-160, -40 + i * 50], [lerp(40, 160, i % 2), -40 + i * 50]], 6, alpha('#555', 0.6)); g.restore(); }
+    const d = ease.outBack(prog(t, tD - 0.1, tD + 0.3)); if (d > 0) { g.save(); g.translate(E.W * 0.66, E.H * 0.42); g.rotate(0.08); g.scale(d, d); for (let k = 2; k >= 0; k--) { rr(g, -170 + k * 20, -220 + k * 16, 340, 440, 10); g.fillStyle = shade('#f4efe6', -k * 0.08); g.fill(); } logo(g, 0, -150, 80); for (let i = 0; i < 6; i++) seg(g, [[-130, -60 + i * 45], [lerp(60, 130, i % 2), -60 + i * 45]], 6, alpha('#555', 0.5)); g.restore(); }
     const q = ease.outBack(prog(t, tY - 0.2, tY + 0.2)); if (q > 0) { g.save(); g.translate(E.W * 0.78, E.H * 0.7); g.scale(q, q); for (let i = 0; i < 16; i++) { const an = i * Math.PI / 8; poly(g, [[Math.cos(an) * 120, Math.sin(an) * 120], [Math.cos(an + 0.2) * 150, Math.sin(an + 0.2) * 150], [Math.cos(an + 0.4) * 120, Math.sin(an + 0.4) * 120]], gold()); } circle(g, 0, 0, 125, gold()); circle(g, 0, 0, 100, '#c99a3a'); tick(g, 0, 0, 60, 1, '#fff6d8'); glow(g, 0, 0, 260, gold(), 0.3); g.restore(); } });
   label(g, 'ЕТИКЕТКА', E.W * 0.3, E.H * 0.1, ease.out(prog(t, tE, tE + 0.3)), 40, cream()); label(g, 'ДОКУМЕНТИ', E.W * 0.66, E.H * 0.1, ease.out(prog(t, tD, tD + 0.3)), 40, cream()); label(g, 'ЯКІСТЬ', E.W * 0.78, E.H * 0.92, ease.out(prog(t, tY, tY + 0.3)), 44, gold());
 } });

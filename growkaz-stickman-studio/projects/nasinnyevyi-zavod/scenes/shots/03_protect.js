@@ -5,6 +5,7 @@ import * as FX from '/engine/fx2d.js';
 import * as UI from '/engine/ui2d.js';
 import { kernel, velvet, hall, soil, warehouse, bagStack, RED_SEED, GREEN } from '../sets/plant.js';
 import { FARMER } from '../cast.js';
+import { bagFace, logo } from '../sets/brand.js';
 import { wt, gold, cream, bp, coral, push, label, title, tick, cross, hallShot } from './_h.js';
 
 const KC = '#f2b640';
@@ -184,8 +185,7 @@ registerShot('s56', { draw(g, t, info) {
   const t8 = wt('вісімдесят', info, 1.6), tU = wt('посівну', info, 4.6), f = ease.inOut(prog(t, 0.1, t8 + 1.0)), cx = E.W * 0.32;
   layer(g, cam, 1, (g) => { poly(g, [[cx - 160, E.H * 0.05], [cx + 160, E.H * 0.05], [cx + 50, E.H * 0.25], [cx - 50, E.H * 0.25]], '#5a6270');
     if (f < 1) for (let i = 0; i < 14; i++) { const k = ((t * 1.8 + i / 14) % 1); kernel(g, cx + Math.sin(i * 2) * 26, lerp(E.H * 0.26, E.H * 0.82 - 300 * f, k), 26, { col: RED_SEED, rot: i + t * 4 }); }
-    rr(g, cx - 180, E.H * 0.42, 360, 420, 40); g.fillStyle = '#ece6d6'; g.fill(); g.save(); g.beginPath(); rr(g, cx - 180, E.H * 0.42, 360, 420, 40); g.clip(); g.fillStyle = alpha('#000', 0.08); g.fillRect(cx - 200, E.H * 0.42, 400, 420 * (1 - f)); g.restore();
-    rr(g, cx - 110, E.H * 0.56, 220, 130, 10); g.fillStyle = '#ffffff'; g.fill(); seg(g, [[cx - 80, E.H * 0.6], [cx + 80, E.H * 0.6]], 6, alpha(GREEN, 0.9)); seg(g, [[cx - 80, E.H * 0.63], [cx + 40, E.H * 0.63]], 4, alpha('#555', 0.6)); });
+    bagFace(g, cx - 180, E.H * 0.38, 360, 460, { r: 40, fill: 0.35 + 0.65 * f, zoom: 1.0 }); });
   const n = Math.round(80000 * ease.out(prog(t, 0.1, t8 + 0.8)) / 10) * 10;
   text(g, n.toLocaleString('uk-UA').replace(/ /g, ' '), E.W * 0.7, E.H * 0.4, { size: 150, color: gold(), font: FONTS.ui, weight: 900, glow: 24, glowColor: alpha(gold(), 0.6) });
   label(g, 'НАСІНИН', E.W * 0.7, E.H * 0.52, 1, 44, cream());
