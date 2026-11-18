@@ -1,0 +1,569 @@
+{
+ "title": "Чому фермери перестали сіяти сортову кукурудзу",
+ "duration": 60.9,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0,
+   "end": 3.5,
+   "line": "Сімдесят років урожай кукурудзи не ріс узагалі.",
+   "scene": "Hook: golden corn field, year counter 1865→1935 ticks, gold 70 РОКІВ / 0 ПРИРОСТУ",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "riser",
+     "gain": -14
+    },
+    {
+     "at": 2.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s02",
+   "start": 3.5,
+   "end": 6.6,
+   "line": "Американські фермери сіяли власне насіння сортів",
+   "scene": "Farmer with straw hat walks the furrow sowing seed from a sack, golden key light",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s03",
+   "start": 6.6,
+   "end": 10.1,
+   "line": "і щороку збирали ті самі півтори тонни з гектара.",
+   "scene": "Blueprint chart: flat yield line 1865–1930 draws on, readout 1,5 т/га",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.7,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "zoom",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s04",
+   "start": 10.1,
+   "end": 12.6,
+   "line": "Потім учені зробили з кукурудзою те саме,",
+   "scene": "Scientist in lab coat at a greenhouse window studies a corn ear, monitors glow",
+   "set": "lab",
+   "bars": null,
+   "sfx": [],
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s05",
+   "start": 12.6,
+   "end": 14.5,
+   "line": "що заводчики роблять з конем і ослом:",
+   "scene": "Horse and donkey face each other at a pasture fence, a glowing + between them",
+   "set": "pasture",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s06",
+   "start": 14.5,
+   "end": 16.1,
+   "line": "схрестили далекі лінії.",
+   "scene": "Blueprint: two parent plant lines A and B converge into × symbol",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.9,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   }
+  },
+  {
+   "id": "s07",
+   "start": 16.1,
+   "end": 18.3,
+   "line": "Гібрид виріс сильнішим за обох батьків.",
+   "scene": "Two short parent plants flank a hybrid that shoots up tall with a glow ring",
+   "set": "lab",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "powerup",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s08",
+   "start": 18.3,
+   "end": 21.1,
+   "line": "Справжнім тестом стали страшні посухи",
+   "scene": "Drought: harsh white sun, cracked earth, dust blowing, title ПОСУХА",
+   "set": "drought",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s09",
+   "start": 21.1,
+   "end": 24.7,
+   "line": "тисяча дев'ятсот тридцять четвертого і тридцять шостого років.",
+   "scene": "Huge years 1934 then 1936 slam over a parched field, heat haze",
+   "set": "drought",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "impact",
+     "gain": -8
+    },
+    {
+     "at": 2.5,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s10",
+   "start": 24.7,
+   "end": 26.2,
+   "line": "Поля засихали,",
+   "scene": "Corn plants wilt and turn brown, leaves droop, dust",
+   "set": "drought",
+   "bars": null,
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s11",
+   "start": 26.2,
+   "end": 27.0,
+   "line": "а фермери помітили,",
+   "scene": "Farmer giant face, squinting, worried to surprised",
+   "set": "drought",
+   "bars": null,
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s12",
+   "start": 27.0,
+   "end": 29.1,
+   "line": "що гібриди гинуть останніми.",
+   "scene": "Split screen: left dead brown sort plants, right hybrids still green; label СОРТ / ГІБРИД",
+   "set": "drought",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "freeze",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s13",
+   "start": 29.1,
+   "end": 31.0,
+   "line": "Після цього все змінилося.",
+   "scene": "3D: orbit over a lush green corn field at golden hour, farmer in the middle",
+   "set": "field3d",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s14",
+   "start": 31.0,
+   "end": 33.3,
+   "line": "Урожай виріс до десяти тонн з гектара,",
+   "scene": "Blueprint chart: line rockets up from 1,5 to 10 т/га, counter",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "zoom",
+    "dur": 0.3
+   }
+  },
+  {
+   "id": "s15",
+   "start": 33.3,
+   "end": 35.6,
+   "line": "а площа посівів навіть скоротилась.",
+   "scene": "Field plot from above shrinks, label −22%",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "blip",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 35.6,
+   "end": 37.3,
+   "line": "Але є нюанс: гібрид,",
+   "scene": "Scientist giant face, raised brow, thinking",
+   "set": "lab",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "cut"
+   },
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s17",
+   "start": 37.3,
+   "end": 38.8,
+   "line": "як мул, себе не відтворює.",
+   "scene": "Mule silhouette at sunset, a crossed-out foal outline next to it",
+   "set": "pasture",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "buzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s18",
+   "start": 38.8,
+   "end": 41.9,
+   "line": "Якщо посіяти власне зерно, поле розщепиться.",
+   "scene": "Row of identical plants F1, below it a ragged uneven row F2",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "glitch",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s19",
+   "start": 41.9,
+   "end": 44.0,
+   "line": "Тому насіння купують щороку,",
+   "scene": "Farmer carries a seed bag, calendar year flips 1937→1938→1939",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "footstep",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s20",
+   "start": 44.0,
+   "end": 46.9,
+   "line": "бо недобір урожаю коштує дорожче.",
+   "scene": "Balance scale: seed bag vs pile of lost harvest, scale tips to harvest",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 1.1,
+     "name": "hit",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 46.9,
+   "end": 49.5,
+   "line": "А тепер парадокс. Сорти з полів зникли,",
+   "scene": "Old variety plants fade to ghosts in a dusk field, title ПАРАДОКС",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "riser",
+     "gain": -14
+    }
+   ],
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s22",
+   "start": 49.5,
+   "end": 50.8,
+   "line": "але з генів — ні.",
+   "scene": "Glowing gold DNA helix spins",
+   "set": "void",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "in": {
+    "type": "flash",
+    "dur": 0.2
+   }
+  },
+  {
+   "id": "s23",
+   "start": 50.8,
+   "end": 55.4,
+   "line": "Вісімдесят сім відсотків сучасних гібридів походять лише від п'яти старих сортів.",
+   "scene": "Donut chart 87% fills, five segments named Reid, Minnesota 13, Lancaster, Northwestern, Leaming",
+   "set": "bp",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 1.5,
+     "name": "pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "start": 55.4,
+   "end": 57.3,
+   "line": "Сорт не програв.",
+   "scene": "Insert: an old corn ear in farmer's hands, warm glow",
+   "set": "field",
+   "bars": null,
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s25",
+   "start": 57.3,
+   "end": 60.9,
+   "line": "Він став фундаментом.",
+   "scene": "Final: tall hybrid field grows out of a glowing old ear at the base; text СОРТ — ФУНДАМЕНТ",
+   "set": "field",
+   "bars": null,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 18.3,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 18.3,
+   "end": 29.1,
+   "mood": "tension",
+   "intensity": 0.6
+  },
+  {
+   "start": 29.1,
+   "end": 35.6,
+   "mood": "triumph",
+   "intensity": 0.6
+  },
+  {
+   "start": 35.6,
+   "end": 46.9,
+   "mood": "mystery",
+   "intensity": 0.4
+  },
+  {
+   "start": 46.9,
+   "end": 60.9,
+   "mood": "wonder",
+   "intensity": 0.6
+  }
+ ],
+ "sfx": []
+}
