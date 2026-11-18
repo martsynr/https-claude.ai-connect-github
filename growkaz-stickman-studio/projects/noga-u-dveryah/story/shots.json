@@ -1,0 +1,503 @@
+{
+ "title": "Нога у дверях",
+ "duration": 65.8,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.95,
+   "line": "Тобою керують через маленьке «так».",
+   "scene": "Medium: YOU in the lit doorway at night, glowing puppet strings from above to wrists and head; he nods on «так». Slow push.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 2.6,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s02",
+   "start": 3.95,
+   "end": 7.3,
+   "line": "І ти навіть не помічаєш.",
+   "scene": "Giant face: YOU calm and unaware, strings rise from the head out of frame; blurred house behind.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s03",
+   "start": 7.3,
+   "end": 10.3,
+   "line": "1966 рік.",
+   "scene": "Title card «1966» over a dusk suburban street, slow pull-out.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -26
+   },
+   "captions": false
+  },
+  {
+   "id": "s04",
+   "start": 10.3,
+   "end": 12.55,
+   "line": "Психологи Фрідман і Фрейзер",
+   "scene": "Wide: Freedman and Fraser walk the sidewalk with clipboards; name labels pop on their names.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.85,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.6,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s05",
+   "start": 12.55,
+   "end": 15.85,
+   "line": "просять людей поставити на газоні величезний щит",
+   "scene": "Two-shot at the door: Freedman on the step points at the lawn; dashed outline of a huge sign appears on «величезний».",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.1,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s06",
+   "start": 15.85,
+   "end": 17.9,
+   "line": "«Їдь обережно».",
+   "scene": "Low angle: the ugly 'ЇДЬ ОБЕРЕЖНО' sign slams into the lawn, blocking the window. Shake.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "impact",
+     "gain": -5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s07",
+   "start": 17.9,
+   "end": 20.95,
+   "line": "Погоджуються менше ніж двоє з десяти.",
+   "scene": "Blueprint: 10 line figures, fewer than 2 light up; readout counts to 17%.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 20.95,
+   "end": 24.15,
+   "line": "Але іншим двома тижнями раніше",
+   "scene": "Golden afternoon, the neighbour's house; Fraser at the door with the neighbour; badge '−2 ТИЖНІ'.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 1.5,
+     "name": "swish",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "city",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s09",
+   "start": 24.15,
+   "end": 28.0,
+   "line": "дали крихітну табличку для вікна «Будь обережним водієм».",
+   "scene": "Insert: the neighbour's hand slides a tiny card 'БУДЬ ОБЕРЕЖНИМ ВОДІЄМ' into the window corner.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s10",
+   "start": 28.0,
+   "end": 30.3,
+   "line": "І з них на великий щит",
+   "scene": "Dusk, two weeks later: small card glowing in the window, Freedman back at the door; giant sign outline appears.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s11",
+   "start": 30.3,
+   "end": 33.65,
+   "line": "погодилися майже троє з чотирьох.",
+   "scene": "FLASH. Blueprint: 4 figures, 3 light up; 76% counter; bars 17% vs 76%.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "stinger",
+     "gain": -6
+    },
+    {
+     "at": 0.6,
+     "name": "counter",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 33.65,
+   "end": 38.1,
+   "line": "Маленьке «так» змінює те, ким ти себе вважаєш.",
+   "scene": "Blueprint head: a small 'ТАК' card enters the head, rings spread, identity label 'Я — ТОЙ, ХТО ДОПОМАГАЄ'.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.0,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 38.1,
+   "end": 42.3,
+   "line": "А відмовити потім означає піти проти себе.",
+   "scene": "Void: YOU faces his own glowing reflection which blocks his way; nervous.",
+   "set": "void",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "heartbeat",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s14",
+   "start": 42.3,
+   "end": 45.05,
+   "line": "Це прийом «нога у дверях»:",
+   "scene": "Insert: a door opens a crack and a black shoe jams into the gap; stamp «НОГА У ДВЕРЯХ».",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "hit",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   },
+   "captions": false
+  },
+  {
+   "id": "s15",
+   "start": 45.05,
+   "end": 47.9,
+   "line": "пробний період «просто вкажи картку»,",
+   "scene": "Phone insert: '30 ДНІВ БЕЗКОШТОВНО' trial screen, card field fills, finger taps.",
+   "set": "phone",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "blip",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 47.9,
+   "end": 49.3,
+   "line": "«можна тебе на хвилинку?».",
+   "scene": "Office: the trench-coat man taps YOU's shoulder; paper stack grows behind.",
+   "set": "office",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s17",
+   "start": 49.3,
+   "end": 53.25,
+   "line": "Тож перед великим «так» спитай себе:",
+   "scene": "Giant face: YOU thinking, then looks up at the strings above.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.4,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.4
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s18",
+   "start": 53.25,
+   "end": 57.25,
+   "line": "«Якби мене попросили про це вперше — я б погодився?»",
+   "scene": "TIME STOP: doorway frozen (man with sign), drops hang in the air, cool tint; only YOU moves, thinking.",
+   "set": "suburb",
+   "bars": "scope",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "freeze",
+     "gain": -6
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 57.25,
+   "end": 60.3,
+   "line": "Якщо ні, кажи «ні».",
+   "scene": "YOU raises a palm, the strings snap and the door slams shut on the manipulator.",
+   "set": "suburb",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "impact",
+     "gain": -4
+    },
+    {
+     "at": 2.0,
+     "name": "swish",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s20",
+   "start": 60.3,
+   "end": 65.8,
+   "line": "Підписуйся, щоб бачити маніпуляції раніше, ніж вони спрацюють.",
+   "scene": "End screen: question, comment bubble, subscribe pill, cast lined up.",
+   "set": "end",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 17.9,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 17.9,
+   "end": 33.65,
+   "mood": "tension",
+   "intensity": 0.5
+  },
+  {
+   "start": 33.65,
+   "end": 49.3,
+   "mood": "mystery",
+   "intensity": 0.45
+  },
+  {
+   "start": 49.3,
+   "end": 57.25,
+   "mood": "tension",
+   "intensity": 0.4
+  },
+  {
+   "start": 57.25,
+   "end": 65.8,
+   "mood": "hopeful",
+   "intensity": 0.35
+  }
+ ],
+ "sfx": []
+}

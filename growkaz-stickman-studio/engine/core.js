@@ -46,8 +46,8 @@ export function talkAmount(globalT, from = -1, to = 1e9) {
 
 // time (global seconds) when a word is spoken: wordTime('brain', 40) -> 43.78 (null if not found)
 export function wordTime(match, after = 0) {
-  const m = match.toLowerCase().replace(/[^\w']/g, '');
-  const w = E.words.find(w => w.start >= after - 0.05 && w.word.toLowerCase().replace(/[^\w']/g, '').startsWith(m));
+  const m = match.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '');
+  const w = E.words.find(w => w.start >= after - 0.05 && w.word.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '').startsWith(m));
   return w ? w.start : null;
 }
 

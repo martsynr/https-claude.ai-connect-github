@@ -14,8 +14,14 @@ const mk = (w, h) => { const c = document.createElement('canvas'); c.width = w; 
 async function loadFonts() {
   const F = [['Fredoka', '600', 'fredoka/files/fredoka-latin-600-normal.woff2'], ['Fredoka', '700', 'fredoka/files/fredoka-latin-700-normal.woff2'],
     ['Nunito', '800', 'nunito/files/nunito-latin-800-normal.woff2'], ['Nunito', '900', 'nunito/files/nunito-latin-900-normal.woff2'],
-    ['Playfair Display', '900', 'playfair-display/files/playfair-display-latin-900-italic.woff2', 'italic']];
-  for (const [fam, w, file, style] of F) { try { const ff = new FontFace(fam, `url(/node_modules/@fontsource/${file})`, { weight: w, style: style || 'normal' }); await ff.load(); document.fonts.add(ff); } catch (e) { console.log('font missing', fam, w); } }
+    ['Playfair Display', '900', 'playfair-display/files/playfair-display-latin-900-italic.woff2', 'italic'],
+    // Cyrillic (Ukrainian) glyphs: Fredoka has none, so Cyrillic in titles falls back to Nunito Black via unicode-range.
+    ['Fredoka', '600', 'nunito/files/nunito-cyrillic-900-normal.woff2', 'normal', 'U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F'],
+    ['Fredoka', '700', 'nunito/files/nunito-cyrillic-900-normal.woff2', 'normal', 'U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F'],
+    ['Nunito', '800', 'nunito/files/nunito-cyrillic-800-normal.woff2', 'normal', 'U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F'],
+    ['Nunito', '900', 'nunito/files/nunito-cyrillic-900-normal.woff2', 'normal', 'U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F'],
+    ['Playfair Display', '900', 'playfair-display/files/playfair-display-cyrillic-900-italic.woff2', 'italic', 'U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F']];
+  for (const [fam, w, file, style, range] of F) { try { const ff = new FontFace(fam, `url(/node_modules/@fontsource/${file})`, { weight: w, style: style || 'normal', ...(range ? { unicodeRange: range } : {}) }); await ff.load(); document.fonts.add(ff); } catch (e) { console.log('font missing', fam, w); } }
 }
 async function boot() {
   const cfg = await (await fetch(`${PROJ}/config.json`)).json();
