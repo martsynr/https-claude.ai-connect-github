@@ -1,0 +1,945 @@
+{
+ "title": "Чому кукурудза росте швидше",
+ "duration": 160.0,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 3.5,
+   "line": "Кажуть, тихої липневої ночі посеред кукурудзяного",
+   "scene": "Night corn field under the moon, fireflies, slow push.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s02",
+   "start": 3.5,
+   "end": 7.3,
+   "line": "поля можна почути, як воно росте.",
+   "scene": "FARMER among the stalks, hand to ear; stalks inch upward, sound rings.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s03",
+   "start": 7.3,
+   "end": 9.35,
+   "line": "Це, звісно, приказка.",
+   "scene": "Giant face: FARMER smirks — just a saying.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s04",
+   "start": 9.35,
+   "end": 14.6,
+   "line": "Але в розпал літа кукурудза справді додає кілька сантиметрів за добу.",
+   "scene": "Golden day: a measuring pole beside a growing stalk; '+ кілька см / добу'.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 3.8,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s05",
+   "start": 14.6,
+   "end": 17.85,
+   "line": "А пшениця на сусідньому полі так не вміє.",
+   "scene": "Wheat field in front, tall corn behind; FARMER shrugs.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s06",
+   "start": 17.85,
+   "end": 19.25,
+   "line": "Чому?",
+   "scene": "Big question 'ЧОМУ?' over the blurred field.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "stinger",
+     "gain": -8
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "s07",
+   "start": 19.25,
+   "end": 24.4,
+   "line": "Усі рослини харчуються однаково: беруть із повітря вуглекислий газ,",
+   "scene": "Blueprint: a leaf; CO2 molecules drift in on «вуглекислий».",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 3.7,
+     "name": "blip",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 24.4,
+   "end": 27.0,
+   "line": "а сонячне світло перетворюють на цукор.",
+   "scene": "Sun rays hit the leaf; a sugar cube pops out.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.2,
+     "name": "pop",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 27.0,
+   "end": 29.95,
+   "line": "Але кукурудза робить це по-іншому.",
+   "scene": "Low-angle golden corn plant against the sun, lens flare.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s10",
+   "start": 29.95,
+   "end": 33.6,
+   "line": "У неї є вбудований «турбонаддув»,",
+   "scene": "Blueprint corn plant with a spinning turbine inside; 'ТУРБО'.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.1,
+     "name": "powerup",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 33.6,
+   "end": 36.8,
+   "line": "якого немає в більшості рослин на планеті.",
+   "scene": "Blueprint grid of plants: most grey, a few glow gold.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "blip",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 36.8,
+   "end": 42.55,
+   "line": "Щоб зрозуміти, як він працює, треба зазирнути всередину листка.",
+   "scene": "FARMER holds up a corn leaf and leans in; camera dives toward it.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.9,
+     "name": "whoosh",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s13",
+   "start": 42.55,
+   "end": 46.9,
+   "line": "Головну роботу в листку виконує фермент із назвою рубіско.",
+   "scene": "Inside a leaf cell: RUBISCO introduced; name label on «рубіско».",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.45
+   },
+   "sfx": [
+    {
+     "at": 3.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s14",
+   "start": 46.9,
+   "end": 52.65,
+   "line": "Він хапає молекули вуглекислого газу, з яких потім будується цукор.",
+   "scene": "RUBISCO catches grey CO2 balls and stacks sugar cubes.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "swish",
+     "gain": -12
+    },
+    {
+     "at": 4.4,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s15",
+   "start": 52.65,
+   "end": 56.2,
+   "line": "Але в нього є вада: рубіско плутає.",
+   "scene": "Giant face: RUBISCO looks confused.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s16",
+   "start": 56.2,
+   "end": 61.65,
+   "line": "Час від часу замість вуглекислого газу він хапає кисень.",
+   "scene": "RUBISCO grabs a red O2 ball by mistake; red alarm rings.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.3,
+     "name": "glitch",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s17",
+   "start": 61.65,
+   "end": 65.8,
+   "line": "Тоді рослина витрачає енергію, щоб виправити помилку.",
+   "scene": "Energy battery drains while RUBISCO facepalms.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "tick",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s18",
+   "start": 65.8,
+   "end": 68.95,
+   "line": "Це називають фотодиханням.",
+   "scene": "Blueprint title card «ФОТОДИХАННЯ».",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 68.95,
+   "end": 72.2,
+   "line": "А в спеку рубіско помиляється ще частіше.",
+   "scene": "Hot cell: red tint, heat shimmer, more red balls; RUBISCO sweats.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "buzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s20",
+   "start": 72.2,
+   "end": 74.4,
+   "line": "Кукурудза знайшла вихід.",
+   "scene": "FLASH. Heroic low angle: corn swaying in golden light.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "shimmer",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s21",
+   "start": 74.4,
+   "end": 77.3,
+   "line": "У зовнішніх клітинах її листка працює інший",
+   "scene": "Blueprint leaf cross-section; the outer ring of cells lights up.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "blip",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 77.3,
+   "end": 79.8,
+   "line": "фермент, який кисень не плутає.",
+   "scene": "Outer cell: PEPC catches grey CO2; red O2 bounce off.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "hit",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s23",
+   "start": 79.8,
+   "end": 83.45,
+   "line": "Він ловить вуглекислий газ і пакує його",
+   "scene": "PEPC packs CO2 into a blue 'C4' parcel.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.8,
+     "name": "pop",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s24",
+   "start": 83.45,
+   "end": 87.35,
+   "line": "в спеціальну молекулу з чотирма атомами вуглецю.",
+   "scene": "Blueprint molecule: four carbon atoms light up one by one.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.8,
+     "name": "counter",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "start": 87.35,
+   "end": 91.1,
+   "line": "Звідси назва: це-чотири рослини.",
+   "scene": "Big glowing 'C4' title over the golden field.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.25
+   },
+   "sfx": [
+    {
+     "at": 1.1,
+     "name": "impact",
+     "gain": -6
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s26",
+   "start": 91.1,
+   "end": 95.2,
+   "line": "Ці «пакунки» передаються вглиб, до клітин навколо",
+   "scene": "Cross-section: blue parcels travel from outer ring to inner ring.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "start": 95.2,
+   "end": 98.5,
+   "line": "жилки, і там газ вивільняється.",
+   "scene": "Inner cell: a parcel opens and a cloud of CO2 bursts out.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.75,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s28",
+   "start": 98.5,
+   "end": 103.6,
+   "line": "Виходить, що рубіско сидить у кімнаті, переповненій вуглекислим газом.",
+   "scene": "RUBISCO in a room packed with CO2, catching happily.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s29",
+   "start": 103.6,
+   "end": 110.3,
+   "line": "За оцінками науковців, його там у кілька разів більше, ніж у звичайному повітрі.",
+   "scene": "Compare two boxes: ordinary air (few CO2) vs the inner cell (many).",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.4,
+     "name": "pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "start": 110.3,
+   "end": 113.3,
+   "line": "Помилятися майже ні на чому.",
+   "scene": "Giant face: RUBISCO beaming.",
+   "set": "cell",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s31",
+   "start": 113.3,
+   "end": 116.0,
+   "line": "Цей насос дає ще одну перевагу.",
+   "scene": "Blueprint: the pump cycle spins; '+1' bonus badge.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "blip",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "start": 116.0,
+   "end": 121.45,
+   "line": "Щоб дістати газ, рослина відкриває на листку крихітні пори — продихи.",
+   "scene": "Macro leaf surface: stomata open; label 'ПРОДИХ'.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 4.5,
+     "name": "pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "start": 121.45,
+   "end": 124.3,
+   "line": "А через них випаровується вода.",
+   "scene": "Close stoma: water vapour drifts out.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "swish",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "start": 124.3,
+   "end": 130.7,
+   "line": "Кукурудзі не треба тримати їх широко відкритими, тож на кожен грам урожаю вона витрачає",
+   "scene": "Two stomata: wheat wide open vs corn barely open.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "blip",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "start": 130.7,
+   "end": 134.6,
+   "line": "приблизно вдвічі менше води, ніж пшениця.",
+   "scene": "Water bars: wheat 100% vs corn ~½; drops.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "counter",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s36",
+   "start": 134.6,
+   "end": 136.75,
+   "line": "Але в цього є ціна.",
+   "scene": "Dusk, wind: FARMER looks up uneasily — the price.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -12,
+     "dur": 1.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s37",
+   "start": 136.75,
+   "end": 139.25,
+   "line": "Насос споживає енергію.",
+   "scene": "Blueprint pump eats a battery: energy bar drains.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.3,
+     "name": "glitch",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s38",
+   "start": 139.25,
+   "end": 142.95,
+   "line": "У тепло цю витрату з лишком окупає швидкий ріст.",
+   "scene": "Hot sunny field: corn shoots up fast.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "shimmer",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s39",
+   "start": 142.95,
+   "end": 145.6,
+   "line": "А в холод перевага зникає.",
+   "scene": "Cold blue night, frost and snow over a young field.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "wind",
+     "gain": -14,
+     "dur": 2
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -16
+   }
+  },
+  {
+   "id": "s40",
+   "start": 145.6,
+   "end": 149.75,
+   "line": "Кукурудза мерзне, сидить на місці й чекає.",
+   "scene": "FARMER crouches by tiny frosty sprouts that shiver and wait; clock ticks.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "clock",
+     "gain": -14,
+     "dur": 3
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -18
+   }
+  },
+  {
+   "id": "s41",
+   "start": 149.75,
+   "end": 152.85,
+   "line": "Тому досвідчені фермери не поспішають:",
+   "scene": "Dawn: FARMER sits on a seed sack, arms crossed, patient.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s42",
+   "start": 152.85,
+   "end": 156.76,
+   "line": "сіють тоді, коли ґрунт прогріється приблизно до десяти градусів.",
+   "scene": "Soil thermometer rises to +10°, a sprout pops up.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 3.1,
+     "name": "ding",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s43",
+   "start": 156.76,
+   "end": 160.0,
+   "line": "",
+   "scene": "End screen: «Коли ти сієш кукурудзу?», subscribe, cast.",
+   "set": "end",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 19.25,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 19.25,
+   "end": 72.2,
+   "mood": "wonder",
+   "intensity": 0.4
+  },
+  {
+   "start": 72.2,
+   "end": 134.6,
+   "mood": "wonder",
+   "intensity": 0.55
+  },
+  {
+   "start": 134.6,
+   "end": 149.75,
+   "mood": "tension",
+   "intensity": 0.4
+  },
+  {
+   "start": 149.75,
+   "end": 160.0,
+   "mood": "hopeful",
+   "intensity": 0.35
+  }
+ ],
+ "sfx": []
+}
