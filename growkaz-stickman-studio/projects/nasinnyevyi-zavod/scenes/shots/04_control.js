@@ -30,13 +30,13 @@ registerShot('s58', { draw(g, t, info) {
 // s59 — warm thermostat vs cold chamber, sprouts grow
 registerShot('s59', { draw(g, t, info) {
   const M = mood('interiorCool'), tT = wt('термостаті', info, 1.4), tC = wt('холодній', info, 2.4);
-  g.fillStyle = linGrad(g, 0, 0, E.W, 0, ['#2a140c', '#140a08', '#081420', '#0c1a2c']); g.fillRect(0, 0, E.W, E.H); seg(g, [[E.W / 2, 0], [E.W / 2, E.H]], 6, '#05080c');
+  g.fillStyle = linGrad(g, 0, 0, E.W, 0, ['#fff1e0', '#fbe6cf', '#dcecfb', '#eaf4ff']); g.fillRect(0, 0, E.W, E.H); seg(g, [[E.W / 2, 0], [E.W / 2, E.H]], 6, '#9aa8b8');
   const zw = lerp(1.0, 1.05, t / info.dur); g.save(); g.translate(E.W / 2, E.H / 2); g.scale(zw, zw); g.translate(-E.W / 2, -E.H / 2);
-  for (const [cx, col, t0, nm] of [[E.W * 0.25, '#ffb070', tT, 'ТЕРМОСТАТ'], [E.W * 0.75, '#9fe0ff', tC, 'ХОЛОДНА КАМЕРА']]) {
-    glow(g, cx, E.H * 0.45, 600, col, 0.18); for (let r = 0; r < 2; r++) tray(g, cx, E.H * 0.48 + r * 230, 560, col, ease.out(prog(t, t0 - 0.3 + r * 0.2, info.dur)) * (col === '#9fe0ff' ? 0.75 : 1));
+  for (const [cx, col, t0, nm] of [[E.W * 0.25, '#e07b1a', tT, 'ТЕРМОСТАТ'], [E.W * 0.75, '#2a9ad0', tC, 'ХОЛОДНА КАМЕРА']]) {
+    glow(g, cx, E.H * 0.45, 600, col, 0.18); for (let r = 0; r < 2; r++) tray(g, cx, E.H * 0.48 + r * 230, 560, col, ease.out(prog(t, t0 - 0.3 + r * 0.2, info.dur)) * (col === '#2a9ad0' ? 0.75 : 1));
     label(g, nm, cx, E.H * 0.12, ease.out(prog(t, t0 - 0.2, t0 + 0.2)), 46, col);
   }
-  if (t > 0) FX.snow(g, t, { count: 30, color: '#dfeaff' });
+  if (t > 0) FX.snow(g, t, { count: 30, color: '#3a6ea5' });
   g.restore();
 } });
 
@@ -46,7 +46,7 @@ registerShot('s60', { draw(g, t, info) {
   const tZ = wt('Зовні', info, 0.1), tP = wt('показниками', info, 0.9), tC = wt('чудово', info, 1.8);
   layer(g, cam, 1, (g) => drawFigure(g, { x: E.W / 2 - 200, y: FLOOR, s: 1.6, facing: 1, outfit: FARMER, pose: breathe(posesAt(t, [[0, 'stand'], [tC - 0.3, THUMB]]), t), expr: t > tC ? 'happy' : 'smile', rim: { color: M.rim, dir: [-0.8, -0.5] } }));
   const rows = [['ЗОВНІШНІЙ ВИГЛЯД', tZ], ['СХОЖІСТЬ', tP], ['ВОЛОГІСТЬ', tP + 0.3], ['ЧИСТОТА', tP + 0.6]];
-  rr(g, E.W * 0.55, E.H * 0.16, 700, 560, 30); g.fillStyle = 'rgba(10,16,24,.82)'; g.fill();
+  rr(g, E.W * 0.55, E.H * 0.16, 700, 560, 30); g.fillStyle = S().ui.card; g.fill();
   rows.forEach(([nm, tt], i) => { const y = E.H * 0.26 + i * 120; label(g, nm, E.W * 0.55 + 280, y, 1, 36); tick(g, E.W * 0.55 + 600, y, 34, ease.outBack(prog(t, tt, tt + 0.3))); });
 } });
 
@@ -87,11 +87,11 @@ registerShot('s63', { draw(g, t, info) {
   const arc = (p0, p1, k, col) => { const mx = (p0[0] + p1[0]) / 2, my = Math.min(p0[1], p1[1]) - 220; g.strokeStyle = col; g.lineWidth = 6; g.setLineDash([16, 12]); g.beginPath(); g.moveTo(...p0); for (let i = 1; i <= 30 * k; i++) { const u = i / 30, x = (1 - u) ** 2 * p0[0] + 2 * (1 - u) * u * mx + u * u * p1[0], y = (1 - u) ** 2 * p0[1] + 2 * (1 - u) * u * my + u * u * p1[1]; g.lineTo(x, y); } g.stroke(); g.setLineDash([]); };
   const kc = ease.inOut(prog(t, tC - 0.6, tC + 0.4)), ki = ease.inOut(prog(t, tI - 0.5, tI + 0.5));
   arc(UA, CL, kc, gold()); arc(UA, IN, ki, gold());
-  circle(g, UA[0], UA[1], 16, '#dfeaff'); FX.sparkle(g, UA[0], UA[1], 30, '#dfeaff', ease.out(prog(t, tW - 0.2, tW + 0.2)) * 0.9 + 0.1);
-  for (const [p, k] of [[CL, kc], [IN, ki]]) if (k > 0.95) { circle(g, p[0], p[1], 18, gold()); glow(g, p[0], p[1], 90, '#ffb070', 0.5); }
-  label(g, 'УКРАЇНА', UA[0] + 20, UA[1] - 50, 1, 34, '#dfeaff'); label(g, 'ЗИМА', UA[0] + 220, UA[1] - 50, ease.out(prog(t, tW, tW + 0.3)), 34, '#9fd0ff');
+  circle(g, UA[0], UA[1], 16, '#3a6ea5'); FX.sparkle(g, UA[0], UA[1], 30, '#3a6ea5', ease.out(prog(t, tW - 0.2, tW + 0.2)) * 0.9 + 0.1);
+  for (const [p, k] of [[CL, kc], [IN, ki]]) if (k > 0.95) { circle(g, p[0], p[1], 18, gold()); glow(g, p[0], p[1], 90, '#e07b1a', 0.5); }
+  label(g, 'УКРАЇНА', UA[0] + 20, UA[1] - 50, 1, 34, '#3a6ea5'); label(g, 'ЗИМА', UA[0] + 220, UA[1] - 50, ease.out(prog(t, tW, tW + 0.3)), 34, '#2b7fd0');
   label(g, 'ЧИЛІ', CL[0] - 130, CL[1] + 10, ease.out(prog(t, tC, tC + 0.3)), 40, gold()); label(g, 'ІНДІЯ', IN[0] + 140, IN[1] + 10, ease.out(prog(t, tI, tI + 0.3)), 40, gold());
-  label(g, 'ТЕПЛО', E.W / 2, E.H * 0.07, ease.out(prog(t, wt('тепло', info, 1.6), wt('тепло', info, 1.6) + 0.3)), 46, '#ffb070');
+  label(g, 'ТЕПЛО', E.W / 2, E.H * 0.07, ease.out(prog(t, wt('тепло', info, 1.6), wt('тепло', info, 1.6) + 0.3)), 46, '#e07b1a');
   g.restore();
 } });
 
@@ -142,7 +142,7 @@ registerShot('s68', { draw(g, t, info) {
 // s69 — the bag label: etiquette, documents, quality seal
 registerShot('s69', { draw(g, t, info) {
   const cam = { z: lerp(1.0, 1.08, ease.inOut(t / info.dur)) }; const { M } = warehouse(g, t, { z: 1.0 });
-  veil(g, '#0a0608', 0.45);
+  veil(g, '#ffffff', 0.35);
   const tE = wt('етикеткою', info, 0.4), tD = wt('документами', info, 1.4), tY = wt('якості', info, 3.6);
   layer(g, cam, 1, (g) => { const cx = E.W * 0.3, cy = E.H * 0.55; bagFace(g, cx - 280, cy - 380, 560, 760, { r: 60, zoom: 1.0 });
     const a = ease.outBack(prog(t, tE - 0.1, tE + 0.3)); if (a > 0) { g.save(); g.translate(cx + 130, cy + 250); g.rotate(-0.05); g.scale(a * 0.5, a * 0.5); rr(g, -200, -150, 400, 300, 14); g.fillStyle = '#ffffff'; g.fill(); seg(g, [[-160, -100], [160, -100]], 10, GREEN); for (let i = 0; i < 4; i++) seg(g, [[-160, -40 + i * 50], [lerp(40, 160, i % 2), -40 + i * 50]], 6, alpha('#555', 0.6)); g.restore(); }

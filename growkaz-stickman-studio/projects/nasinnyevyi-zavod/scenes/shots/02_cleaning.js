@@ -83,10 +83,10 @@ registerShot('s32', { draw(g, t, info) { cascade(g, t, info, 1); } });
 
 // s33 — four bins fill; counter 4
 registerShot('s33', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.06, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.06, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const tB = wt('бункер', info, 3.4), cols = ['ВЕЛИКІ ПЛОСКІ', 'ВЕЛИКІ КРУГЛІ', 'ДРІБНІ ПЛОСКІ', 'ДРІБНІ КРУГЛІ'];
   layer(g, cam, 1, (g) => cols.forEach((nm, i) => { const x = E.W / 2 + (i - 1.5) * 380, y = E.H * 0.84, h = 380, f = ease.inOut(prog(t, 0.3 + i * 0.2, tB + 0.3));
-    rr(g, x - 140, y - h, 280, h, 18); g.fillStyle = alpha('#9fd0ff', 0.08); g.fill(); g.strokeStyle = alpha('#9fd0ff', 0.6); g.lineWidth = 4; g.stroke();
+    rr(g, x - 140, y - h, 280, h, 18); g.fillStyle = alpha('#2b7fd0', 0.08); g.fill(); g.strokeStyle = alpha('#2b7fd0', 0.6); g.lineWidth = 4; g.stroke();
     g.save(); g.beginPath(); rr(g, x - 140, y - h * f, 280, h * f, 18); g.clip(); g.fillStyle = mix(KC, '#000', 0.25); g.fillRect(x - 150, y - h, 300, h); for (let j = 0; j < 24; j++) kernel(g, x - 110 + (j % 6) * 44, y - 20 - Math.floor(j / 6) * 40, 34 * (i < 2 ? 1.1 : 0.8), { flat: i % 2 ? 0.1 : 0.9, rot: j }); g.restore();
     for (let j = 0; j < 3; j++) { const k = ((t * 1.2 + j / 3) % 1); kernel(g, x, lerp(y - h - 120, y - h * f, k), 30, { rot: j + t }); }
     label(g, nm, x, y + 40, 1, 26, cream()); }));
@@ -96,13 +96,13 @@ registerShot('s33', { draw(g, t, info) {
 
 // s34 — X-ray reveals bad insides
 registerShot('s34', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const tA = wt('але', info, 3.0), tS = wt('шкідником', info, 4.6), tZ = wt('зародку', info, 6.0), sx = lerp(-100, E.W + 100, ease.inOut(prog(t, tA - 0.2, tA + 2.2)));
   const bad = { 1: 'bug', 4: 'noemb', 5: 'bug' };
   for (let i = 0; i < 7; i++) { const x = E.W / 2 + (i - 3) * 230, y = E.H * 0.55, b = bad[i], rev = x < sx;
     kernel(g, x, y, 190, { embryo: rev && !b ? 0.7 : 0.25, hollow: rev && b === 'bug' ? 1 : 0, col: rev && b === 'noemb' ? '#b89a6a' : KC });
     if (rev && b) { ring(g, x, y, 120, 5, coral()); if (b === 'noemb') cross(g, x, y + 30, 26, 1); } }
-  g.save(); g.globalCompositeOperation = 'lighter'; g.fillStyle = alpha('#9fd0ff', 0.25); g.fillRect(sx - 6, 0, 12, E.H); glow(g, sx, E.H * 0.55, 200, '#9fd0ff', 0.3); g.restore();
+  g.save(); g.globalCompositeOperation = 'lighter'; g.fillStyle = alpha('#2b7fd0', 0.25); g.fillRect(sx - 6, 0, 12, E.H); glow(g, sx, E.H * 0.55, 200, '#2b7fd0', 0.3); g.restore();
   label(g, 'ОДНАКОВІ ЗОВНІ', E.W / 2, E.H * 0.16, ease.out(prog(t, 0.2, 0.6)) * (1 - ease.out(prog(t, tS - 0.2, tS))), 48, cream());
   label(g, 'ПОТОЧЕНІ ШКІДНИКОМ', E.W / 2 - 330, E.H * 0.85, ease.out(prog(t, tS, tS + 0.3)), 36, coral());
   label(g, 'БЕЗ ЗАРОДКА', E.W / 2 + 420, E.H * 0.85, ease.out(prog(t, tZ - 0.1, tZ + 0.2)), 36, coral());
@@ -116,11 +116,11 @@ registerShot('s36', { draw(g, t, info) {
   UI.blueprint(g); g.save(); push(g, t, info, 1.0, 1.05);
   const sk = Math.sin(t * 20) * 5, x0 = E.W * 0.15 + sk, y0 = E.H * 0.16, w = E.W * 0.7, h = E.H * 0.62, tV = wt('важкі', info, 1.3), tL = wt('легкі', info, 4.6);
   g.strokeStyle = bp(); g.lineWidth = 6; g.strokeRect(x0, y0, w, h);
-  const zones = [['#3fb950', 0.0, 0.45], ['#9fd0ff', 0.45, 0.68], ['#ff6f61', 0.68, 1.0]];
+  const zones = [['#3fb950', 0.0, 0.45], ['#2b7fd0', 0.45, 0.68], ['#ff6f61', 0.68, 1.0]];
   zones.forEach(([c, a0, a1], i) => { const on = i === 0 ? ease.out(prog(t, tV, tV + 0.5)) : i === 2 ? ease.out(prog(t, tL, tL + 0.5)) : 0.4; g.fillStyle = alpha(c, 0.08 + 0.12 * on); g.fillRect(x0 + w * a0, y0, w * (a1 - a0), h); });
   const r = rng(4); for (let i = 0; i < 70; i++) { const heavy = r() < 0.7, ph = r(), k = ((t * 0.2 + ph) % 1); const x = heavy ? lerp(x0 + w * 0.5, x0 + w * 0.06, k) : lerp(x0 + w * 0.5, x0 + w * 0.94, k), y = lerp(y0 + 30, y0 + h - 30, (r() + k * 0.4) % 1); kernel(g, x, y, heavy ? 30 : 24, { rot: i, col: heavy ? KC : '#b89a6a', hollow: heavy ? 0 : 0.8 }); }
   for (let i = 0; i < 3; i++) { const yy = y0 + h * (0.2 + i * 0.3); poly(g, [[x0 + w * 0.45, yy], [x0 + w * 0.25, yy - 18], [x0 + w * 0.25, yy + 18]], alpha('#3fb950', 0.6)); poly(g, [[x0 + w * 0.6, yy], [x0 + w * 0.8, yy - 18], [x0 + w * 0.8, yy + 18]], alpha('#ff6f61', 0.6)); }
-  label(g, 'ПОВНОЦІННІ', x0 + w * 0.22, y0 + h + 60, ease.out(prog(t, tV, tV + 0.3)), 40, '#7dffb0');
+  label(g, 'ПОВНОЦІННІ', x0 + w * 0.22, y0 + h + 60, ease.out(prog(t, tV, tV + 0.3)), 40, '#1f9d55');
   label(g, 'У ВІДХОДИ', x0 + w * 0.84, y0 + h + 60, ease.out(prog(t, tL, tL + 0.3)), 40, coral());
   label(g, 'ДЕКА ХИТАЄТЬСЯ', E.W / 2, E.H * 0.1, 1, 42, gold());
   g.restore();
@@ -131,7 +131,7 @@ hallShot('s37', { n: 7, drop: false, haze: 0.55, z0: 0.62, z1: 0.66, x0: -150, x
 
 // s38 — cyclones drop in
 hallShot('s38', { n: 7, drop: false, cyclones: 1, tCyc: 0.4, z0: 0.7, z1: 0.74, x0: 820, x1: 940, y: -220, focus: 3, fx: E.W / 2 - 340, s: 1.3, poses: [[0, 'stand'], [0.7, 'pointUp']], expr: 'smile', extra: (g, t) => {
-  const a = ease.outBack(prog(t, 1.0, 1.4)); if (a > 0) { g.save(); g.translate(E.W / 2, 90); g.scale(a, a); rr(g, -220, -34, 440, 68, 34); g.fillStyle = 'rgba(10,16,24,.85)'; g.fill(); g.strokeStyle = alpha(gold(), 0.8); g.lineWidth = 3; g.stroke(); text(g, 'ВЕНТЦИКЛОНИ', 0, 2, { size: 34, color: cream(), font: FONTS.ui, weight: 900 }); g.restore(); }
+  const a = ease.outBack(prog(t, 1.0, 1.4)); if (a > 0) { g.save(); g.translate(E.W / 2, 90); g.scale(a, a); rr(g, -220, -34, 440, 68, 34); g.fillStyle = S().ui.card; g.fill(); g.strokeStyle = alpha(gold(), 0.8); g.lineWidth = 3; g.stroke(); text(g, 'ВЕНТЦИКЛОНИ', 0, 2, { size: 34, color: cream(), font: FONTS.ui, weight: 900 }); g.restore(); }
 } });
 
 // s39 — cyclone section
@@ -142,9 +142,9 @@ registerShot('s39', { draw(g, t, info) {
   seg(g, [[cx - R - 300, y0 + 60], [cx - R, y0 + 60]], 6, bp()); seg(g, [[cx - 60, y0 - 100], [cx - 60, y0 + 160]], 5, bp()); seg(g, [[cx + 60, y0 - 100], [cx + 60, y0 + 160]], 5, bp());
   for (let i = 0; i < 40; i++) { const k = ((t * 0.35 + i / 40) % 1), y = lerp(y0 + 60, y2 - 30, k), rr2 = lerp(R - 30, 40, Math.max(0, (y - y1) / (y2 - y1))), a = t * 7 + i * 0.9; const x = cx + Math.cos(a) * rr2 * (i % 2 ? 1 : 0.95); circle(g, x, y + Math.sin(a) * 12, 5, alpha('#d8c69a', 0.85)); }
   for (let i = 0; i < 6; i++) { const k = ((t * 0.6 + i / 6) % 1); g.strokeStyle = alpha(gold(), 0.7 * Math.sin(k * Math.PI)); g.lineWidth = 5; g.beginPath(); g.ellipse(cx, lerp(y1 - 40, y0 - 40, k), lerp(50, 40, k), 14, 0, 0, 7); g.stroke(); }
-  for (let i = 0; i < 3; i++) { const k = ((t * 0.5 + i / 3) % 1); poly(g, [[cx - 14, y0 - 40 - k * 120], [cx + 14, y0 - 40 - k * 120], [cx, y0 - 70 - k * 120]], alpha('#9fd0ff', 1 - k)); }
+  for (let i = 0; i < 3; i++) { const k = ((t * 0.5 + i / 3) % 1); poly(g, [[cx - 14, y0 - 40 - k * 120], [cx + 14, y0 - 40 - k * 120], [cx, y0 - 70 - k * 120]], alpha('#2b7fd0', 1 - k)); }
   poly(g, [[cx - 60, y2 + 10], [cx + 60, y2 + 10], [cx + 90, y2 + 70], [cx - 90, y2 + 70]], alpha('#d8c69a', 0.5));
-  label(g, 'ЧИСТЕ ПОВІТРЯ', cx + 330, y0 - 60, ease.out(prog(t, 0.6, 1.0)), 36, '#9fd0ff'); label(g, 'ПИЛ', cx + 230, y2 + 40, ease.out(prog(t, 1.0, 1.4)), 36, cream());
+  label(g, 'ЧИСТЕ ПОВІТРЯ', cx + 330, y0 - 60, ease.out(prog(t, 0.6, 1.0)), 36, '#2b7fd0'); label(g, 'ПИЛ', cx + 230, y2 + 40, ease.out(prog(t, 1.0, 1.4)), 36, cream());
   tick(g, E.W - 240, E.H * 0.5, 50, ease.outBack(prog(t, tC - 0.2, tC + 0.2)));
   g.restore();
 } });

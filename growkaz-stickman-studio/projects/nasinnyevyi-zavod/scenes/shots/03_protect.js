@@ -10,6 +10,19 @@ import { wt, gold, cream, bp, coral, push, label, title, tick, cross, hallShot }
 
 const KC = '#f2b640';
 
+
+// brick-toy figure in 3D (faces +x), ~1.75 m tall
+function toy3D(T, of, o = {}) {
+  const G = new T.THREE.Group(), top = of.top === 'labcoat' ? '#f4f6f8' : of.color || '#5a6a7a', legs = of.legs || '#3b5a8a', SK = '#f6ca1f', up = !!o.cheer;
+  for (const z of [-0.12, 0.12]) { G.add(T.box(0.24, 0.72, 0.22, legs, 0, 0.36, z)); G.add(T.box(0.32, 0.1, 0.22, legs, 0.04, 0.05, z)); }
+  G.add(T.box(0.3, 0.14, 0.5, legs, 0, 0.78, 0)); G.add(T.box(0.3, 0.62, 0.52, top, 0, 1.16, 0)); G.add(T.cyl(0.08, 0.08, 0.1, SK, 0, 1.51, 0, 12));
+  G.add(T.cyl(0.19, 0.19, 0.34, SK, 0, 1.72, 0, 24));
+  for (const z of [-0.09, 0.09]) G.add(T.sphere(0.03, '#1d2430', 0.18, 1.76, z));
+  const capC = of.headColor || '#0b8a3e'; G.add(T.sphere(0.2, capC, 0, 1.88, 0)); G.add(T.box(0.22, 0.04, 0.3, capC, 0.2, 1.9, 0));
+  for (const z of [-0.33, 0.33]) { const a = T.cyl(0.075, 0.075, 0.5, top, 0, up ? 1.55 : 1.12, z, 12); if (up) a.rotation.x = z > 0 ? -0.35 : 0.35; G.add(a); G.add(T.sphere(0.09, SK, 0, up ? 1.83 : 0.86, z * (up ? 1.25 : 1))); }
+  G.add(T.cyl(0.001, 0.001, 0.001, top)); return G;
+}
+
 // ---------- 3D plant (shared with s67) ----------
 export function buildPlant3D(T, o = {}) {
   const M = mood('interiorCool'), st = T.stage({ mood: 'interiorCool', fov: 38, fog: [18, 70], keyPos: [-10, 14, 8], keyIntensity: 2.2, ambient: 1.2 });
@@ -28,7 +41,7 @@ export function buildPlant3D(T, o = {}) {
   for (const x of [-10.5, -4.5, 1.5, 7.5]) { st.add(T.box(0.8, 9, 0.6, '#cbbf9f', x, 4.5, -2.2)); st.add(T.box(1.4, 0.9, 0.9, '#cbbf9f', x + 0.3, 9.2, -2.2)); }
   for (const x of [-3, 0, 3]) { st.add(T.cyl(0.7, 0.7, 2.2, St, x + 0.5, 7, 0.4, 20)); st.add(T.cone(0.7, 1.2, St, x + 0.5, 5.3, 0.4, 20)); }
   st.add(T.box(9, 0.6, 0.6, '#8a94a2', 0.5, 8.4, 0.4));
-  const me = T.figure3D(FARMER, { rim: M.rim, pose: o.pose || POSES.stand }); me.position.set(o.fx ?? 1.5, 0, 2.6); me.rotation.y = -Math.PI / 2; st.add(me);
+  const me = toy3D(T, FARMER, { cheer: o.pose === POSES.cheer }); me.position.set(o.fx ?? 1.5, 0, 2.6); me.rotation.y = -Math.PI / 2; st.add(me);
   return { stage: st, me };
 }
 
@@ -39,16 +52,16 @@ registerShot('s40', { kind: '3d',
 });
 
 // s41 — underground: wireworms & fungus close in on a seed
-function wireworm(g, x, y, t, s, dir = 1) { for (let i = 0; i < 9; i++) { const px = x - dir * i * 16 * s, py = y + Math.sin(t * 5 - i * 0.7) * 6 * s; circle(g, px, py, 11 * s, i === 0 ? '#a8501a' : mix('#e08a3a', '#c86a2a', (i % 2) * 0.5)); } circle(g, x + dir * 6 * s, y - 3 * s, 2.5 * s, '#1a0a04'); }
+function wireworm(g, x, y, t, s, dir = 1) { for (let i = 0; i < 9; i++) { const px = x - dir * i * 16 * s, py = y + Math.sin(t * 5 - i * 0.7) * 6 * s; circle(g, px, py, 11 * s, i === 0 ? '#a8501a' : mix('#c8601a', '#c86a2a', (i % 2) * 0.5)); } circle(g, x + dir * 6 * s, y - 3 * s, 2.5 * s, '#1a0a04'); }
 registerShot('s41', { draw(g, t, info) {
   const cam = { z: lerp(1.0, 1.12, ease.inOut(t / info.dur)), y: 40 }; const { Y } = soil(g, t, cam);
   const tG = wt('грибки', info, 1.8), tD = wt('дротяники', info, 2.3), sx = E.W / 2, sy = E.H * 0.6;
   layer(g, cam, 1, (g) => {
     kernel(g, sx, sy, 140, { rot: 0.4, embryo: 0.5 }); glow(g, sx, sy, 220, '#ffd47e', 0.12);
-    const fk = ease.inOut(prog(t, tG - 0.6, tG + 1.2)); if (fk > 0) for (let i = 0; i < 9; i++) { const a = i * 0.7 + 3.4, r0 = 520, r1 = lerp(r0, 120, fk); g.strokeStyle = alpha('#e8eef0', 0.55); g.lineWidth = 3; g.beginPath(); g.moveTo(sx + Math.cos(a) * r0, sy + Math.sin(a) * r0 * 0.6); g.quadraticCurveTo(sx + Math.cos(a + 0.3) * (r0 + r1) / 2, sy + Math.sin(a + 0.3) * (r0 + r1) * 0.3, sx + Math.cos(a) * r1, sy + Math.sin(a) * r1 * 0.6); g.stroke(); }
+    const fk = ease.inOut(prog(t, tG - 0.6, tG + 1.2)); if (fk > 0) for (let i = 0; i < 9; i++) { const a = i * 0.7 + 3.4, r0 = 520, r1 = lerp(r0, 120, fk); g.strokeStyle = alpha('#5a6a70', 0.55); g.lineWidth = 3; g.beginPath(); g.moveTo(sx + Math.cos(a) * r0, sy + Math.sin(a) * r0 * 0.6); g.quadraticCurveTo(sx + Math.cos(a + 0.3) * (r0 + r1) / 2, sy + Math.sin(a + 0.3) * (r0 + r1) * 0.3, sx + Math.cos(a) * r1, sy + Math.sin(a) * r1 * 0.6); g.stroke(); }
     const wk = ease.inOut(prog(t, tD - 1.0, info.dur)); wireworm(g, lerp(-60, sx - 230, wk), sy + 120, t, 1.6, 1); wireworm(g, lerp(E.W + 60, sx + 240, wk), sy - 80, t + 1, 1.4, -1);
   });
-  label(g, 'ГРИБКИ', E.W / 2 - 420, E.H * 0.9, ease.out(prog(t, tG, tG + 0.3)), 44, '#e8eef0'); label(g, 'ДРОТЯНИКИ', E.W / 2 + 420, E.H * 0.9, ease.out(prog(t, tD, tD + 0.3)), 44, '#e08a3a');
+  label(g, 'ГРИБКИ', E.W / 2 - 420, E.H * 0.9, ease.out(prog(t, tG, tG + 0.3)), 44, '#5a6a70'); label(g, 'ДРОТЯНИКИ', E.W / 2 + 420, E.H * 0.9, ease.out(prog(t, tD, tD + 0.3)), 44, '#c8601a');
 } });
 
 // s42 — treater (#8)
@@ -56,22 +69,22 @@ hallShot('s42', { n: 8, fx: E.W / 2 - 400 });
 
 // s43 — weigh hopper fills to the portion
 registerShot('s43', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.06, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.06, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const cx = E.W / 2 - 200, f = ease.inOut(prog(t, 0.2, 1.6)), shut = t > 1.6;
   layer(g, cam, 1, (g) => {
     poly(g, [[cx - 220, E.H * 0.2], [cx + 220, E.H * 0.2], [cx + 80, E.H * 0.62], [cx - 80, E.H * 0.62]], '#3a4250'); g.save(); g.beginPath(); g.moveTo(cx - 220, E.H * 0.2); g.lineTo(cx + 220, E.H * 0.2); g.lineTo(cx + 80, E.H * 0.62); g.lineTo(cx - 80, E.H * 0.62); g.clip(); g.fillStyle = '#c98a2a'; g.fillRect(cx - 240, lerp(E.H * 0.62, E.H * 0.26, f), 480, E.H); g.restore();
-    seg(g, [[cx - 90, E.H * 0.64], [cx + (shut ? 90 : -10), E.H * 0.64]], 12, shut ? '#7dffb0' : '#5a6270');
+    seg(g, [[cx - 90, E.H * 0.64], [cx + (shut ? 90 : -10), E.H * 0.64]], 12, shut ? '#1f9d55' : '#5a6270');
     if (!shut) for (let i = 0; i < 12; i++) { const k = ((t * 1.6 + i / 12) % 1); kernel(g, cx + Math.sin(i * 2) * 30, lerp(-40, E.H * 0.3, k), 26, { rot: i + t * 4 }); }
-    rr(g, E.W / 2 + 160, E.H * 0.34, 420, 200, 20); g.fillStyle = '#0c1a12'; g.fill(); g.strokeStyle = alpha('#7dffb0', 0.5); g.lineWidth = 4; g.stroke();
-    rr(g, E.W / 2 + 200, E.H * 0.44, 340, 40, 20); g.fillStyle = alpha('#7dffb0', 0.15); g.fill(); rr(g, E.W / 2 + 200, E.H * 0.44, 340 * f, 40, 20); g.fillStyle = '#7dffb0'; g.fill();
-    label(g, 'ПОРЦІЯ', E.W / 2 + 370, E.H * 0.39, 1, 40, '#7dffb0'); tick(g, E.W / 2 + 370, E.H * 0.6, 36, ease.outBack(prog(t, 1.6, 1.9)));
+    rr(g, E.W / 2 + 160, E.H * 0.34, 420, 200, 20); g.fillStyle = '#0c1a12'; g.fill(); g.strokeStyle = alpha('#1f9d55', 0.5); g.lineWidth = 4; g.stroke();
+    rr(g, E.W / 2 + 200, E.H * 0.44, 340, 40, 20); g.fillStyle = alpha('#1f9d55', 0.15); g.fill(); rr(g, E.W / 2 + 200, E.H * 0.44, 340 * f, 40, 20); g.fillStyle = '#1f9d55'; g.fill();
+    label(g, 'ПОРЦІЯ', E.W / 2 + 370, E.H * 0.39, 1, 40, '#1f9d55'); tick(g, E.W / 2 + 370, E.H * 0.6, 36, ease.outBack(prog(t, 1.6, 1.9)));
   });
   label(g, 'ВАГИ', cx, E.H * 0.12, ease.out(prog(t, 0.1, 0.4)), 48, gold());
 } });
 
 // s44 — three dosing tanks
 registerShot('s44', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.05, t / info.dur), x: lerp(-20, 20, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.05, t / info.dur), x: lerp(-20, 20, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const tN = wt('Насос', info, 0.1), names = [['ФУНГІЦИД', '#4aa0ff', 'фунгіцид'], ['ІНСЕКТИЦИД', '#f2c21a', 'інсектицид'], ['БАРВНИК', '#e2483a', 'барвник']];
   layer(g, cam, 1, (g) => {
     const px = E.W / 2 + 560, py = E.H * 0.6; rr(g, px - 90, py - 90, 180, 180, 30); g.fillStyle = '#2c5a9a'; g.fill(); const pulse = 1 + 0.08 * Math.sin(t * 10); circle(g, px, py, 50 * pulse, '#163a6a'); label(g, 'НАСОС', px, py + 140, ease.out(prog(t, tN, tN + 0.3)), 36, cream());
@@ -90,7 +103,7 @@ registerShot('s45', { draw(g, t, info) {
   for (let i = 0; i < 9; i++) { const a = -t * 4 + i * 0.7; seg(g, [[cx, cy], [cx + Math.cos(a) * 150, cy + Math.sin(a) * 150]], 3, alpha('#ffb0a0', 0.3)); circle(g, cx + Math.cos(a) * (60 + ((t * 200 + i * 40) % 140)), cy + Math.sin(a) * (60 + ((t * 200 + i * 40) % 140)), 4, alpha('#ff8a7a', 0.6)); }
   circle(g, cx, cy, 34, gold()); glow(g, cx, cy, 120, '#ff8a7a', 0.3);
   for (let i = 0; i < 30; i++) { const a = t * 1.6 + i * 0.21, r = R - 50 - (i % 3) * 42, x = cx + Math.cos(a) * r, y = cy + Math.sin(a) * r; const me = clamp(red * 1.3 - (i / 30) * 0.3); kernel(g, x, y, 40, { rot: a + i, col: mix(KC, RED_SEED, me) }); }
-  label(g, 'ЗМІШУВАЛЬНИЙ ЦИЛІНДР', cx, E.H * 0.11, 1, 42, gold()); label(g, 'ДРІБНИЙ ТУМАН', cx + R + 230, cy - 120, ease.out(prog(t, wt('туманом', info, 2.4), wt('туманом', info, 2.4) + 0.3)), 36, '#ff9a8a');
+  label(g, 'ЗМІШУВАЛЬНИЙ ЦИЛІНДР', cx, E.H * 0.11, 1, 42, gold()); label(g, 'ДРІБНИЙ ТУМАН', cx + R + 230, cy - 120, ease.out(prog(t, wt('туманом', info, 2.4), wt('туманом', info, 2.4) + 0.3)), 36, '#d9473a');
   g.restore();
 } });
 
@@ -109,8 +122,8 @@ registerShot('s47', { draw(g, t, info) {
   const cam = { z: lerp(1.0, 1.1, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { tint: '#ff8a7a' });
   layer(g, cam, 1, (g) => { const r = rng(3); for (let i = 0; i < 9; i++) kernel(g, 260 + r() * (E.W - 520), E.H * 0.35 + r() * E.H * 0.45, 120, { col: RED_SEED, gloss: 1, rot: r() * 6 });
     const k = ease.inOut(prog(t, 0.8, 2.0)), cx = E.W / 2, cy = E.H * 0.52; kernel(g, cx - lerp(220, 70, k), cy, 230, { col: RED_SEED, gloss: 1, rot: -0.4 }); kernel(g, cx + lerp(220, 70, k), cy + 10, 230, { col: RED_SEED, gloss: 1, rot: 0.5 });
-    if (k > 0.8) { seg(g, [[cx - 10, cy - 40], [cx + 10, cy - 30]], 10, alpha('#ff9a8a', 0.8)); circle(g, cx, cy + 70 + ((t * 80) % 60), 8, alpha('#ff9a8a', 0.8)); } });
-  label(g, 'ВОЛОГЕ Й ЛИПКЕ', E.W / 2, E.H * 0.13, ease.out(prog(t, 0.6, 1.0)), 52, '#ff9a8a');
+    if (k > 0.8) { seg(g, [[cx - 10, cy - 40], [cx + 10, cy - 30]], 10, alpha('#d9473a', 0.8)); circle(g, cx, cy + 70 + ((t * 80) % 60), 8, alpha('#d9473a', 0.8)); } });
+  label(g, 'ВОЛОГЕ Й ЛИПКЕ', E.W / 2, E.H * 0.13, ease.out(prog(t, 0.6, 1.0)), 52, '#d9473a');
 } });
 
 // s48 — planter disc catches a stuck pair
@@ -135,11 +148,11 @@ function fluidBed(g, t, info, mode) {
   const x0 = E.W * 0.08, x1 = E.W * 0.92, y = E.H * 0.62, sh = Math.sin(t * 26) * 4;
   seg(g, [[x0 + sh, y], [x1 + sh, y]], 8, bp()); for (let i = 0; i < 40; i++) seg(g, [[lerp(x0, x1, i / 40) + sh, y - 6], [lerp(x0, x1, i / 40) + sh, y + 6]], 3, alpha(bp(), 0.6));
   for (let s2 = 1; s2 < 4; s2++) seg(g, [[lerp(x0, x1, s2 / 4), y - 10], [lerp(x0, x1, s2 / 4), y + 40]], 4, alpha(bp(), 0.5));
-  for (let i = 0; i < 12; i++) { const x = lerp(x0, x1 * 0.97, (i + 0.5) / 12), k = ((t * 1.2 + i * 0.17) % 1); poly(g, [[x - 14, y + 120 - k * 70], [x + 14, y + 120 - k * 70], [x, y + 90 - k * 70]], alpha('#ffb070', 0.8 * Math.sin(k * Math.PI))); }
+  for (let i = 0; i < 12; i++) { const x = lerp(x0, x1 * 0.97, (i + 0.5) / 12), k = ((t * 1.2 + i * 0.17) % 1); poly(g, [[x - 14, y + 120 - k * 70], [x + 14, y + 120 - k * 70], [x, y + 90 - k * 70]], alpha('#e07b1a', 0.8 * Math.sin(k * Math.PI))); }
   for (let i = 0; i < 26; i++) { const k = ((t * 0.12 + i / 26) % 1), x = lerp(x0 + 40, x1 * 0.75, k), hop = Math.abs(Math.sin(t * 8 + i)) * 40; kernel(g, x, y - 26 - hop, 36, { col: RED_SEED, gloss: 1 - k, rot: i + t * 2 }); }
   for (let i = 0; i < 3; i++) { const k = ((t * 0.2 + i / 3) % 1), x = lerp(x1 * 0.78, x1 + 200, k), yy = y - 30 + Math.max(0, k - 0.6) * 300; kernel(g, x, yy, 40, { col: '#a82a24', rot: 0.4 }); kernel(g, x + 26, yy + 6, 40, { col: '#a82a24', rot: -0.6 }); }
   label(g, mode ? 'ГРУДКИ Й ЗЛИПЛІ ПАРИ' : 'ПЛІВКА ВИСИХАЄ', mode ? x1 - 260 : E.W / 2, mode ? y + 150 : E.H * 0.18, ease.out(prog(t, mode ? 1.4 : 0.6, mode ? 1.8 : 1.0)), 40, mode ? coral() : gold());
-  label(g, 'ПОВІТРЯ', E.W * 0.2, y + 160, ease.out(prog(t, 1.0, 1.4)), 34, '#ffb070');
+  label(g, 'ПОВІТРЯ', E.W * 0.2, y + 160, ease.out(prog(t, 1.0, 1.4)), 34, '#e07b1a');
   g.restore();
 }
 registerShot('s50', { draw(g, t, info) { fluidBed(g, t, info, 0); } });
@@ -147,7 +160,7 @@ registerShot('s51', { draw(g, t, info) { fluidBed(g, t, info, 1); } });
 
 // s52 — dry red seeds pouring; three ticks
 registerShot('s52', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { tint: '#ff9a8a' });
+  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { tint: '#d9473a' });
   layer(g, cam, 1, (g) => { for (let i = 0; i < 30; i++) { const k = ((t * 0.8 + i / 30) % 1); kernel(g, E.W * 0.3 + Math.sin(i * 2.2) * 60, lerp(-60, E.H * 0.82, k), 44, { col: RED_SEED, rot: i + t * 3 }); } poly(g, [[E.W * 0.3 - 360, E.H * 0.88], [E.W * 0.3, E.H * 0.66], [E.W * 0.3 + 360, E.H * 0.88]], '#8a2420'); });
   const w = [['чисте', 'ЧИСТЕ'], ['протруєне', 'ПРОТРУЄНЕ'], ['сухе', 'СУХЕ']];
   w.forEach(([wd, nm], i) => { const tt = wt(wd, info, 0.6 + i * 0.7), a = ease.outBack(prog(t, tt - 0.1, tt + 0.25)), y = E.H * 0.3 + i * 170; tick(g, E.W * 0.55, y, 40, a); if (a > 0) text(g, nm, E.W * 0.55 + 70, y, { size: 52, color: cream(), font: FONTS.ui, weight: 900, spacing: 3, align: 'left', alpha: clamp(a) }); });
@@ -155,7 +168,7 @@ registerShot('s52', { draw(g, t, info) {
 
 // s53 — balance: same count, different weight
 registerShot('s53', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.05, t / info.dur) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const tM = wt('масу', info, 2.4), tilt = 0.16 * ease.outElastic(prog(t, tM - 0.6, tM + 0.4)), cx = E.W / 2, cy = E.H * 0.36;
   seg(g, [[cx, E.H * 0.86], [cx, cy]], 16, '#5a6270'); poly(g, [[cx - 120, E.H * 0.88], [cx + 120, E.H * 0.88], [cx + 60, E.H * 0.84], [cx - 60, E.H * 0.84]], '#3a414d');
   g.save(); g.translate(cx, cy); g.rotate(-tilt); seg(g, [[-460, 0], [460, 0]], 14, '#8a94a2'); circle(g, 0, 0, 18, '#cfd6dc');
@@ -181,7 +194,7 @@ registerShot('s55', { draw(g, t, info) {
 
 // s56 — bag fills to 80 000 = one sowing unit
 registerShot('s56', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.07, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.07, ease.inOut(t / info.dur)) }; velvet(g, t, cam, { mood: 'interiorCool', tint: '#2b7fd0' });
   const t8 = wt('вісімдесят', info, 1.6), tU = wt('посівну', info, 4.6), f = ease.inOut(prog(t, 0.1, t8 + 1.0)), cx = E.W * 0.32;
   layer(g, cam, 1, (g) => { poly(g, [[cx - 160, E.H * 0.05], [cx + 160, E.H * 0.05], [cx + 50, E.H * 0.25], [cx - 50, E.H * 0.25]], '#5a6270');
     if (f < 1) for (let i = 0; i < 14; i++) { const k = ((t * 1.8 + i / 14) % 1); kernel(g, cx + Math.sin(i * 2) * 26, lerp(E.H * 0.26, E.H * 0.82 - 300 * f, k), 26, { col: RED_SEED, rot: i + t * 4 }); }
@@ -189,12 +202,12 @@ registerShot('s56', { draw(g, t, info) {
   const n = Math.round(80000 * ease.out(prog(t, 0.1, t8 + 0.8)) / 10) * 10;
   text(g, n.toLocaleString('uk-UA').replace(/ /g, ' '), E.W * 0.7, E.H * 0.4, { size: 150, color: gold(), font: FONTS.ui, weight: 900, glow: 24, glowColor: alpha(gold(), 0.6) });
   label(g, 'НАСІНИН', E.W * 0.7, E.H * 0.52, 1, 44, cream());
-  const a = ease.outBack(prog(t, tU - 0.2, tU + 0.2)); if (a > 0) { g.save(); g.translate(E.W * 0.7, E.H * 0.72); g.scale(a, a); rr(g, -300, -50, 600, 100, 50); g.fillStyle = 'rgba(10,16,24,.85)'; g.fill(); g.strokeStyle = gold(); g.lineWidth = 4; g.stroke(); text(g, '1 ПОСІВНА ОДИНИЦЯ', 0, 2, { size: 44, color: gold(), font: FONTS.ui, weight: 900 }); g.restore(); }
+  const a = ease.outBack(prog(t, tU - 0.2, tU + 0.2)); if (a > 0) { g.save(); g.translate(E.W * 0.7, E.H * 0.72); g.scale(a, a); rr(g, -300, -50, 600, 100, 50); g.fillStyle = S().ui.card; g.fill(); g.strokeStyle = gold(); g.lineWidth = 4; g.stroke(); text(g, '1 ПОСІВНА ОДИНИЦЯ', 0, 2, { size: 44, color: gold(), font: FONTS.ui, weight: 900 }); g.restore(); }
 } });
 
 // s57 — giant face: but what about germination?
 registerShot('s57', { draw(g, t, info) {
-  const M = mood('interiorWarm'); blurLayer(g, 14, (g) => warehouse(g, t, { z: 1.4, y: -100 })); veil(g, '#0a0608', 0.35);
+  const M = mood('interiorWarm'); blurLayer(g, 14, (g) => warehouse(g, t, { z: 1.4, y: -100 })); veil(g, '#ffffff', 0.3);
   bigFace(g, E.W * 0.42, E.H * 0.6, 320 * (1 + 0.03 * t), { outfit: FARMER, expr: 'thinking', look: [0.5, -0.4], blink: (t % 2.7) > 2.6, rimColor: M.rim, rimSide: -1 });
   const a = ease.outBack(prog(t, 0.4, 0.8)); if (a > 0) { g.save(); g.translate(E.W * 0.76, E.H * 0.34); g.scale(a, a); text(g, '?', 0, 0, { size: 260, color: gold(), font: FONTS.ui, weight: 900, glow: 30, glowColor: alpha(gold(), 0.6) }); g.restore(); label(g, 'СХОЖІСТЬ', E.W * 0.76, E.H * 0.58, clamp(a), 52, cream()); }
 } });

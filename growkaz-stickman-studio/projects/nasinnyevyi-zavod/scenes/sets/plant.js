@@ -2,6 +2,7 @@
 // lab, warehouse, soil cross-section and the blueprint globe.
 import { measure, E, V, S, mood, layer, blurLayer, backdrop, rr, seg, circle, ring, poly, linGrad, radGrad, glow, alpha, shade, mix, text, FONTS, ease, prog, clamp, lerp, rng, key } from '/engine/core.js';
 import { bagFace, logo } from './brand.js';
+import { icon, ICONS } from './icons.js';
 import * as FX from '/engine/fx2d.js';
 
 export const GY = () => E.H * V(0.8, 0.68);
@@ -27,6 +28,13 @@ export function kernel(g, x, y, s = 40, o = {}) {
 // a corn cob seen from the side. o: {rot, husk 0..1, mold, kc (kernel colour), cobc, wet}
 export function cob(g, x, y, len = 220, o = {}) {
   const { rot = 0, husk = 0, mold = 0, kc = '#f2b640', cobc = null, wet = 0, a = 1, rim = null } = o; const w = len * 0.24;
+  if (ICONS.cob_leaves) {                                   // client's corn icons replace the drawn cob
+    const base = cobc ? mix(cobc, kc, 0.3) : kc === '#f2b640' ? '#e8a51e' : shade(kc, -0.15);
+    if (husk > 0.5) icon(g, 'cob_husk', x, y, len * 0.85, { rot: rot - Math.PI / 4, color: mix('#7da040', base, 0.25), a });
+    else { icon(g, 'cob_leaves', x, y, len * 1.1, { rot: rot + Math.PI / 2, color: base, a }); if (mold > 0) icon(g, 'cob_leaves', x, y, len * 1.1, { rot: rot + Math.PI / 2, color: '#6f8a5a', a: a * 0.85 * mold }); }
+    if (wet > 0) for (let i = 0; i < 6; i++) { const px = x - len * 0.35 + i * len * 0.14, py = y + w * 0.2 + ((i * 37) % 11); circle(g, px, py, 4 + (i % 3), alpha('#4a9ad8', 0.85 * wet)); }
+    return;
+  }
   g.save(); g.globalAlpha *= a; g.translate(x, y); g.rotate(rot);
   if (cobc) { g.fillStyle = cobc; rr(g, len / 2 - 6, -w * 0.18, 26, w * 0.36, 8); g.fill(); }
   g.fillStyle = shade(kc, -0.3); g.beginPath(); g.ellipse(0, 0, len / 2, w / 2, 0, 0, 7); g.fill();
@@ -176,7 +184,7 @@ export function hall(g, t, cam, o = {}) {
     layer(g, cam, 0.95, (g) => {
       const k = prog(t, tD, tD + 1.0); if (k > 0 && k < 1) for (let i = 0; i < 18; i++) { const dir = i % 2 ? 1 : -1, sp = 0.4 + (i * 37 % 10) / 10; circle(g, X(o.drop) + dir * (m.w * 0.4 + k * 240 * sp), Y - 10 - k * 60 * sp + (i % 3) * 10, 18 + k * 40, alpha('#b8b0a0', 0.35 * (1 - k))); }
       const la = ease.outBack(prog(t, tD + 0.1, tD + 0.5)); if (la > 0) { const ly = Y - m.h - 110; g.save(); g.translate(X(o.drop), ly); g.scale(la, la);
-        const str = o.label ?? m.name, tw = measure(g, str, 30, FONTS.ui, 900) + str.length * 1, wl = tw + 110; rr(g, -wl / 2, -34, wl, 68, 34); g.fillStyle = 'rgba(10,16,24,.85)'; g.fill(); g.strokeStyle = alpha(S().ui.gold, 0.8); g.lineWidth = 3; g.stroke();
+        const str = o.label ?? m.name, tw = measure(g, str, 30, FONTS.ui, 900) + str.length * 1, wl = tw + 110; rr(g, -wl / 2, -34, wl, 68, 34); g.fillStyle = S().ui.card; g.fill(); g.strokeStyle = alpha(S().ui.gold, 0.8); g.lineWidth = 3; g.stroke();
         circle(g, -wl / 2 + 34, 0, 24, S().ui.gold); text(g, String(o.num ?? o.drop + 1), -wl / 2 + 34, 2, { size: 30, color: '#1a1408', font: FONTS.ui, weight: 900 });
         text(g, str, -wl / 2 + 70 + tw / 2, 2, { size: 30, color: S().ui.cream, font: FONTS.ui, weight: 900, spacing: 1 }); g.restore(); }
     });
@@ -189,8 +197,8 @@ export function hall(g, t, cam, o = {}) {
 // ---------- the dark insert table ----------
 export function velvet(g, t, cam, o = {}) {
   const M = mood(o.mood || 'interiorWarm'), tint = o.tint || M.key;
-  layer(g, cam, 0.5, (g) => { backdrop(g, [shade(M.dark, -0.55), shade(M.dark, -0.2)]); glow(g, E.W / 2 + (o.lx ?? 0), E.H * 0.42, E.W * 0.55, tint, 0.18); });
-  layer(g, cam, 0.8, (g) => { g.fillStyle = linGrad(g, 0, E.H * 0.62, 0, E.H, [shade(M.dark, -0.3), shade(M.dark, -0.6)]); g.fillRect(-E.W, E.H * 0.62, E.W * 3, E.H); FX.pool(g, E.W / 2 + (o.lx ?? 0), E.H * 0.7, 560, 90, tint, 0.22); });
+  layer(g, cam, 0.5, (g) => { backdrop(g, [M.sky[1] || M.wall, M.wall]); glow(g, E.W / 2 + (o.lx ?? 0), E.H * 0.42, E.W * 0.55, tint, 0.18); });
+  layer(g, cam, 0.8, (g) => { g.fillStyle = linGrad(g, 0, E.H * 0.62, 0, E.H, [shade(M.floor, 0.04), shade(M.floor, -0.12)]); g.fillRect(-E.W, E.H * 0.62, E.W * 3, E.H); FX.pool(g, E.W / 2 + (o.lx ?? 0), E.H * 0.7, 560, 90, tint, 0.22); });
   FX.dust(g, t, { count: 40, color: '#ffe2bd', a: 0.25 });
   return { M, tint };
 }
@@ -224,7 +232,7 @@ export function warehouse(g, t, cam, o = {}) {
 export function soil(g, t, cam, o = {}) {
   const M = mood('night'), Y = E.H * 0.26, CX = E.W / 2;
   layer(g, cam, 0.3, (g) => { backdrop(g, M.sky); FX.stars(g, t, { count: 80, area: [-E.W, -E.H, E.W * 3, E.H * 1.2] }); });
-  layer(g, cam, 0.8, (g) => { g.fillStyle = linGrad(g, 0, Y, 0, E.H * 1.4, ['#3a2a22', '#1a120e', '#0d0806']); g.fillRect(-E.W, Y, E.W * 3, E.H * 2); const r = rng(5); for (let i = 0; i < 120; i++) circle(g, -E.W + r() * E.W * 3, Y + 20 + r() * E.H, 3 + r() * 9, alpha(r() < 0.5 ? '#4a3a30' : '#20160f', 0.7)); for (let i = -10; i < 20; i++) seg(g, [[i * 120, Y], [i * 120 + 30, Y - 30 - (i % 3) * 14]], 5, '#2a3a22'); });
+  layer(g, cam, 0.8, (g) => { g.fillStyle = linGrad(g, 0, Y, 0, E.H * 1.4, ['#c9a47c', '#a9805a', '#8c6644']); g.fillRect(-E.W, Y, E.W * 3, E.H * 2); const r = rng(5); for (let i = 0; i < 120; i++) circle(g, -E.W + r() * E.W * 3, Y + 20 + r() * E.H, 3 + r() * 9, alpha(r() < 0.5 ? '#b08a62' : '#7a5a3c', 0.6)); for (let i = -10; i < 20; i++) seg(g, [[i * 120, Y], [i * 120 + 30, Y - 30 - (i % 3) * 14]], 5, '#2a3a22'); });
   FX.snow(g, t, { count: 40, color: '#dfeaff' });
   return { M, Y, CX };
 }

@@ -4,13 +4,14 @@ import { drawFigure, POSES, posesAt, breathe } from '/engine/rig2d.js';
 import * as UI from '/engine/ui2d.js';
 import { hall, MACHINES, LINE } from '../sets/plant.js';
 import { FARMER } from '../cast.js';
+import '../sets/toy.js';
 
 export const wt = (w, info, fb) => { const v = wordTime(w, info.shot.start - 0.05); return (v != null && v < info.shot.end + 0.5 ? v : info.shot.start + fb) - info.shot.start; };
 export const gold = () => S().ui.gold, cream = () => S().ui.cream, bp = () => UI.bpStroke(), coral = () => S().ui.accent;
 export function push(g, t, info, z0 = 1, z1 = 1.06, dx = 0) { const z = lerp(z0, z1, ease.inOut(t / info.dur)); g.translate(E.W / 2, E.H / 2); g.scale(z, z); g.translate(-E.W / 2 + dx * ease.inOut(t / info.dur), -E.H / 2); }
 export function label(g, str, x, y, a = 1, size = 44, color = cream()) { if (a <= 0) return; text(g, str, x, y, { size, color, font: FONTS.ui, weight: 900, spacing: 3, alpha: clamp(a) }); }
 export function title(g, str, x, y, a = 1, size = 70, color = gold()) { if (a <= 0) return; text(g, str, x, y, { size, color, glow: 26, glowColor: alpha(color, 0.6), spacing: 3, alpha: clamp(a) }); }
-export function tick(g, x, y, s, a, color = '#7dffb0') { if (a <= 0) return; g.save(); g.globalAlpha *= clamp(a); circle(g, x, y, s, alpha(color, 0.2)); glow(g, x, y, s * 2, color, 0.3); seg(g, [[x - s * 0.45, y], [x - s * 0.1, y + s * 0.35], [x + s * 0.5, y - s * 0.4]], s * 0.18, color); g.restore(); }
+export function tick(g, x, y, s, a, color = '#1f9d55') { if (a <= 0) return; g.save(); g.globalAlpha *= clamp(a); circle(g, x, y, s, alpha(color, 0.2)); glow(g, x, y, s * 2, color, 0.3); seg(g, [[x - s * 0.45, y], [x - s * 0.1, y + s * 0.35], [x + s * 0.5, y - s * 0.4]], s * 0.18, color); g.restore(); }
 export function cross(g, x, y, s, a, color = '#ff5a4a') { if (a <= 0) return; g.save(); g.globalAlpha *= clamp(a); seg(g, [[x - s, y - s], [x + s, y + s]], s * 0.25, color); seg(g, [[x + s, y - s], [x - s, y + s]], s * 0.25, color); g.restore(); }
 
 // a machine drop-in shot in the hall. o: {n, label, num, farmer: true|false, pose keys, expr, cam, extra(g,t,info,ctx)}

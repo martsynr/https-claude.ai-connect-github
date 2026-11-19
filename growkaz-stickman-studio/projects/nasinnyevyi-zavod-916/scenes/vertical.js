@@ -46,13 +46,13 @@ function wrap(id, def) {
     // blurred backdrop (cover), darkened
     const sg = small.getContext('2d'); sg.drawImage(off, 0, 0, small.width, small.height);
     g.save(); g.imageSmoothingEnabled = true; g.imageSmoothingQuality = 'high'; const bw = E.H * 16 / 9; g.drawImage(small, (E.W - bw) / 2, 0, bw, E.H);
-    g.fillStyle = 'rgba(4,8,6,.55)'; g.fillRect(0, 0, E.W, E.H); g.restore();
+    g.fillStyle = 'rgba(255,255,255,.55)'; g.fillRect(0, 0, E.W, E.H); g.restore();
     // the picture
     const c = CROP[id] || {}, cw = c.cw ?? 1440, cx = c.cx ?? 0, k = E.W / cw, ph = LAND.H * k, y0 = 820 - ph / 2;
     const sx = (LAND.W / 2 + cx - cw / 2) * E.PX;
     g.save(); g.drawImage(off, sx, 0, cw * E.PX, LAND.H * E.PX, 0, y0, E.W, ph);
-    g.fillStyle = linGrad(g, 0, y0, 0, y0 + 60, ['rgba(4,8,6,.6)', 'rgba(4,8,6,0)']); g.fillRect(0, y0, E.W, 60);
-    g.fillStyle = linGrad(g, 0, y0 + ph - 60, 0, y0 + ph, ['rgba(4,8,6,0)', 'rgba(4,8,6,.6)']); g.fillRect(0, y0 + ph - 60, E.W, 60); g.restore();
+    g.fillStyle = linGrad(g, 0, y0, 0, y0 + 60, ['rgba(255,255,255,.6)', 'rgba(255,255,255,0)']); g.fillRect(0, y0, E.W, 60);
+    g.fillStyle = linGrad(g, 0, y0 + ph - 60, 0, y0 + ph, ['rgba(255,255,255,0)', 'rgba(255,255,255,.6)']); g.fillRect(0, y0 + ph - 60, E.W, 60); g.restore();
     header(g, info);
   } });
 }

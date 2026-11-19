@@ -18,6 +18,22 @@ export const BASE_MOODS = {
 const UI = { card: 'rgba(18,28,48,.94)', cardLine: 'rgba(150,180,230,.25)', text: '#9fb6d8', sub: '#6f84a6', accent: '#ff6f61', gold: '#ffd47e', cream: '#fff1dc', blueprint: '#8fb8e8', bpBg: '#0b1324', good: '#5fd39a' };
 
 export const STYLES = {
+  daylight: {
+    name: 'Daylight', desc: 'Bright, clean world: white-and-pale-blue interiors, sunny skies, crisp dark outlines, amber accents, no heavy vignette.',
+    ink: '#1d2430', inkFar: '#3a4656', feature: '#ffffff', rimWidth: 0,
+    ui: { ...UI, card: 'rgba(255,255,255,.95)', cardLine: 'rgba(30,60,90,.2)', text: '#2a3a4a', sub: '#5a6a7a', accent: '#e0402e', gold: '#e8920c', cream: '#1f2a36', blueprint: '#2b74c4', bpBg: '#f2f7fb', good: '#2a9d4a' },
+    grade: { contrast: 1.02, sat: 1.06, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0.1, grain: 0.015, bloom: 0.25 },
+    moods: {
+      day: { sky: ['#8fcaf2', '#c9e7fb', '#f4fbff'], ambient: '#c8d4e0', key: '#fff6e0', rim: '#ffffff', wall: '#dfe6ee', floor: '#c9d2dc', dark: '#9aa8b8', practical: '#ffd27a', grass: '#6cbf5a', road: '#b8bfc8', fog: '#eef4fa' },
+      golden: { sky: ['#8fcaf2', '#ffe3b0', '#fff4dc'], ambient: '#e8d8c0', key: '#ffe0a0', rim: '#fff3d0', wall: '#efe2cf', floor: '#d9c8ae', dark: '#a8977e', practical: '#ffd27a', grass: '#7cc35a', road: '#c8bba8', fog: '#fff0d8' },
+      dusk: { sky: ['#a8c8f0', '#ffd8b0', '#fff0dc'], ambient: '#e0d0c0', key: '#ffd8a0', rim: '#fff0d0', wall: '#eadccc', floor: '#d4c4ae', dark: '#a8977e', practical: '#ffd27a', grass: '#78b85a', road: '#c8bba8', fog: '#ffe8d0' },
+      night: { sky: ['#bcd0ee', '#dfe9f8'], ambient: '#c8d2e4', key: '#ffffff', rim: '#ffffff', wall: '#d6dee8', floor: '#c2ccd8', dark: '#8e9cb0', practical: '#ffd27a', grass: '#6cae6a', road: '#b0b8c4', fog: '#e4ecf8' },
+      storm: { sky: ['#bcc8dc', '#dce4ee'], ambient: '#c8d0dc', key: '#ffffff', rim: '#ffffff', wall: '#d0d8e2', floor: '#bcc6d2', dark: '#8a96a8', practical: '#ffd27a', grass: '#6aa86a', road: '#aab2be', fog: '#e0e6ee' },
+      interiorWarm: { sky: ['#fbf3e6', '#fffaf2'], ambient: '#eadfce', key: '#fff1d6', rim: '#ffffff', wall: '#f3ebe0', floor: '#e2d6c4', dark: '#b9a88f', practical: '#ffd27a', grass: '#7cc35a', road: '#cfc3b2', fog: '#fbf1e2' },
+      interiorCool: { sky: ['#cfe6ff', '#eef7ff'], ambient: '#cfd8e2', key: '#ffffff', rim: '#ffffff', wall: '#e9eef3', floor: '#d3dae2', dark: '#a9b4c0', practical: '#ffd27a', grass: '#6cbf5a', road: '#c0c8d2', fog: '#eef4fa' },
+      void: { sky: ['#eef3f8', '#ffffff'], ambient: '#dfe6ee', key: '#ffffff', rim: '#ffffff', wall: '#e8eef4', floor: '#dfe6ee', dark: '#b9c4d0', practical: '#ffd27a', grass: '#6cbf5a', road: '#c8d0da', fog: '#f4f8fb' },
+    },
+  },
   emerald: {
     name: 'GrowKaz Emerald', desc: 'GrowKaz signature look: deep forest-green shadows, warm gold key light, electric lime rim light, rich bloom.',
     ink: '#06110c', inkFar: '#1c3328', feature: '#f2ffe8', rimWidth: 4.5,

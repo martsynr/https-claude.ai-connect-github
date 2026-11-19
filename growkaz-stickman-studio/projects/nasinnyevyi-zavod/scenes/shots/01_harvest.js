@@ -6,6 +6,7 @@ import * as UI from '/engine/ui2d.js';
 import { field, cornPlant, cornRow, thermometer } from '../sets/corn.js';
 import { kernel, cob, velvet, hall, MACHINES, LINE, GREEN } from '../sets/plant.js';
 import { FARMER, WORKER } from '../cast.js';
+import { icon } from '../sets/icons.js';
 import { wt, gold, cream, bp, coral, push, label, title, tick, cross, hallShot } from './_h.js';
 
 const HOLD = { ...POSES.stand, eF: [24, -170], hF: [44, -214] };            // cob raised high
@@ -81,7 +82,7 @@ registerShot('s05', { draw(g, t, info) {
   const tO = wt('обгортках', info, 0.7), tS = wt('сушіння', info, 2.2);
   layer(g, cam, 1, (g) => { cob(g, E.W / 2, E.H * 0.5, 620, { rot: -0.12, husk: 1 }); for (let i = 0; i < 9; i++) { const x = E.W / 2 - 220 + i * 55, y = E.H * 0.5 + Math.sin(i * 2.1) * 30 + Math.sin(t * 2 + i) * 3; circle(g, x, y, 9, alpha('#bfe3ff', 0.8)); glow(g, x, y, 24, '#bfe3ff', 0.3); } });
   UI.callout(g, t, { at: [E.W / 2 + 120, E.H * 0.43], to: [E.W / 2 + 330, E.H * 0.22], str: 'ОБГОРТКА', start: tO, color: gold() });
-  const a = ease.out(prog(t, tS - 0.1, tS + 0.3)); label(g, 'ВОЛОГА ЗАЛИШАЄТЬСЯ', E.W / 2, E.H * 0.84, a, 42, '#9fd0ff');
+  const a = ease.out(prog(t, tS - 0.1, tS + 0.3)); label(g, 'ВОЛОГА ЗАЛИШАЄТЬСЯ', E.W / 2, E.H * 0.84, a, 42, '#2b7fd0');
 } });
 
 // s06 — hall, #1 husker drops in
@@ -119,7 +120,7 @@ hallShot('s09', { n: 2, fx: E.W / 2 - 420, s: 1.15, extra: (g, t, info, ctx, cam
 // s10 — gloved hand plucks a mouldy cob
 registerShot('s10', { draw(g, t, info) {
   const M = mood('interiorCool'), cam = { z: lerp(1.05, 1.0, t / info.dur) };
-  blurLayer(g, 10, (g) => hall(g, t, { z: 1.6, y: -260 }, { n: 2, focus: 1, drop: null }), null); veil(g, '#060a14', 0.35);
+  blurLayer(g, 10, (g) => hall(g, t, { z: 1.6, y: -260 }, { n: 2, focus: 1, drop: null }), null); veil(g, '#ffffff', 0.3);
   const tP = wt('підозрілий', info, 2.3), by = E.H * 0.66;
   layer(g, cam, 1, (g) => {
     rr(g, -100, by, E.W + 200, 60, 20); g.fillStyle = '#1a1d22'; g.fill(); for (let i = 0; i < 20; i++) seg(g, [[((i * 120 - t * 140) % (E.W + 240)) - 120, by + 4], [((i * 120 - t * 140) % (E.W + 240)) - 120, by + 56]], 3, '#2a2f38');
@@ -147,7 +148,7 @@ registerShot('s12', { draw(g, t, info) {
   const cx = E.W / 2 - 200, cy = E.H * 0.5, k = ease.inOut(prog(t, 0.2, 1.4));
   kernel(g, cx, cy, 520, { col: alpha('#f2b640', 0.25) });
   g.save(); g.beginPath(); g.rect(cx - 300, cy + 260 - 520 * 0.333 * k * 1.5, 600, 600); g.clip(); kernel(g, cx, cy, 520, { col: alpha('#4aa0ff', 0.7) }); g.restore();
-  const a = ease.outBack(prog(t, 0.6, 1.0)); if (a > 0) { title(g, '1/3', E.W / 2 + 330, cy - 60, a, 160); label(g, 'ВАГИ — ВОДА', E.W / 2 + 330, cy + 70, a, 46, '#9fd0ff'); }
+  const a = ease.outBack(prog(t, 0.6, 1.0)); if (a > 0) { title(g, '1/3', E.W / 2 + 330, cy - 60, a, 160); label(g, 'ВАГИ — ВОДА', E.W / 2 + 330, cy + 70, a, 46, '#2b7fd0'); }
   g.restore();
 } });
 
@@ -177,10 +178,10 @@ registerShot('s15', { draw(g, t, info) {
 // s16 — control dial; warm not hot; clock spins; ДОВГО
 hallShot('s16', { n: 3, drop: false, fx: E.W / 2 - 430, z0: 1.15, z1: 1.2, x0: -120, x1: -100, poses: [[0, 'stand'], [0.5, 'reach']], expr: 'determined', extra: (g, t, info, ctx) => {
   const tT = wt('температуру', info, 1.0), tD = wt('довго', info, 3.4);
-  const cx = 300, cy = 220; rr(g, cx - 170, cy - 130, 340, 260, 20); g.fillStyle = 'rgba(10,16,24,.85)'; g.fill();
-  const v = lerp(0.9, 0.45, ease.inOut(prog(t, tT - 0.2, tT + 0.8))); for (let i = 0; i <= 20; i++) { const a = Math.PI * (1 + i / 20); seg(g, [[cx + Math.cos(a) * 110, cy + 40 + Math.sin(a) * 110], [cx + Math.cos(a) * 128, cy + 40 + Math.sin(a) * 128]], 5, i > 14 ? coral() : i > 6 ? '#ffb070' : '#9fd0ff'); }
+  const cx = 300, cy = 220; rr(g, cx - 170, cy - 130, 340, 260, 20); g.fillStyle = S().ui.card; g.fill();
+  const v = lerp(0.9, 0.45, ease.inOut(prog(t, tT - 0.2, tT + 0.8))); for (let i = 0; i <= 20; i++) { const a = Math.PI * (1 + i / 20); seg(g, [[cx + Math.cos(a) * 110, cy + 40 + Math.sin(a) * 110], [cx + Math.cos(a) * 128, cy + 40 + Math.sin(a) * 128]], 5, i > 14 ? coral() : i > 6 ? '#e07b1a' : '#2b7fd0'); }
   const na = Math.PI * (1 + v); seg(g, [[cx, cy + 40], [cx + Math.cos(na) * 100, cy + 40 + Math.sin(na) * 100]], 7, cream()); circle(g, cx, cy + 40, 12, cream());
-  label(g, 'ТЕПЛЕ, НЕ ГАРЯЧЕ', cx, cy - 90, ease.out(prog(t, tT, tT + 0.3)), 30, '#ffb070');
+  label(g, 'ТЕПЛЕ, НЕ ГАРЯЧЕ', cx, cy - 90, ease.out(prog(t, tT, tT + 0.3)), 30, '#e07b1a');
   const a = ease.outBack(prog(t, tD - 0.6, tD - 0.2)); if (a > 0) { FX.clock(g, E.W - 260, 230, 110 * a, t * 2 * (t > tD - 0.6 ? 6 : 1)); title(g, 'ДОВГО', E.W - 260, 400, a, 64); }
 } });
 
@@ -190,7 +191,7 @@ registerShot('s17', { draw(g, t, info) {
   const tR = wt('реверсом', info, 2.3), down = t > tR, cx = E.W / 2, x0 = cx - 360, y0 = E.H * 0.2, w = 720, h = 620;
   g.strokeStyle = bp(); g.lineWidth = 6; g.strokeRect(x0, y0, w, h); for (let k = 1; k < 3; k++) seg(g, [[x0, y0 + k * h / 3], [x0 + w, y0 + k * h / 3]], 3, alpha(bp(), 0.4));
   for (let r = 0; r < 3; r++) for (let c = 0; c < 6; c++) cob(g, x0 + 70 + c * 116, y0 + 110 + r * h / 3, 90, { rot: (c + r) % 2 ? 0.3 : -0.3, kc: alpha('#f2b640', 0.6) });
-  for (let i = 0; i < 7; i++) { const x = x0 + 50 + i * 104, k = ((t * 0.9 + i * 0.13) % 1), y = down ? y0 + k * h : y0 + h - k * h, d = down ? 1 : -1; const col = down ? '#ffb070' : '#ff8a4a'; seg(g, [[x, y], [x, y + 50 * d]], 6, alpha(col, 0.9 * Math.sin(k * Math.PI))); poly(g, [[x - 14, y + 50 * d], [x + 14, y + 50 * d], [x, y + 72 * d]], alpha(col, 0.9 * Math.sin(k * Math.PI))); }
+  for (let i = 0; i < 7; i++) { const x = x0 + 50 + i * 104, k = ((t * 0.9 + i * 0.13) % 1), y = down ? y0 + k * h : y0 + h - k * h, d = down ? 1 : -1; const col = down ? '#e07b1a' : '#ff8a4a'; seg(g, [[x, y], [x, y + 50 * d]], 6, alpha(col, 0.9 * Math.sin(k * Math.PI))); poly(g, [[x - 14, y + 50 * d], [x + 14, y + 50 * d], [x, y + 72 * d]], alpha(col, 0.9 * Math.sin(k * Math.PI))); }
   label(g, down ? 'РЕВЕРС: ЗГОРИ' : 'ЗНИЗУ', cx, E.H * 0.1, 1, 48, gold());
   g.restore();
 } });
@@ -207,19 +208,20 @@ registerShot('s18', { draw(g, t, info) {
 
 // s19 — moisture meter into green zone
 registerShot('s19', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.06, t / info.dur) }; velvet(g, t, cam, { tint: '#9fd0ff' });
+  const cam = { z: lerp(1.0, 1.06, t / info.dur) }; velvet(g, t, cam, { tint: '#2b7fd0' });
   const cx = E.W / 2, cy = E.H * 0.6, v = lerp(0.95, 0.3, ease.inOut(prog(t, 0.1, 1.6)));
   rr(g, cx - 330, cy - 330, 660, 480, 40); g.fillStyle = '#1a2230'; g.fill(); ring(g, cx, cy, 2, 1, '#000');
   for (let i = 0; i <= 30; i++) { const a = Math.PI * (1 + i / 30); seg(g, [[cx + Math.cos(a) * 230, cy + Math.sin(a) * 230], [cx + Math.cos(a) * 270, cy + Math.sin(a) * 270]], 8, i < 11 ? '#3fb950' : i < 20 ? '#f2c21a' : coral()); }
   const na = Math.PI * (1 + v); seg(g, [[cx, cy], [cx + Math.cos(na) * 220, cy + Math.sin(na) * 220]], 10, cream()); circle(g, cx, cy, 20, cream());
   label(g, 'ВОЛОГІСТЬ', cx, cy - 300, 1, 40);
   const ok = t > 1.6; circle(g, cx + 250, cy + 100, 22, ok ? '#3fb950' : '#2a2f38'); if (ok) glow(g, cx + 250, cy + 100, 70, '#3fb950', 0.5);
-  label(g, 'OK', cx + 180, cy + 102, ok ? 1 : 0.3, 36, ok ? '#7dffb0' : cream());
+  label(g, 'OK', cx + 180, cy + 102, ok ? 1 : 0.3, 36, ok ? '#1f9d55' : cream());
+  icon(g, 'cob_section', cx - 560, cy - 80, 300, { color: ok ? '#e8a51e' : '#4a9ad8', rot: t * 0.2 });
 } });
 
 // s20 — FREEZE: impact cracks a kernel on the cob
 registerShot('s20', { draw(g, t, info) {
-  const cam = { z: lerp(1.0, 1.12, ease.inOut(t / info.dur)), r: 0.02 * Math.sin(t * 0.5) }; velvet(g, t, cam, { tint: '#9fd0ff', mood: 'interiorCool' });
+  const cam = { z: lerp(1.0, 1.12, ease.inOut(t / info.dur)), r: 0.02 * Math.sin(t * 0.5) }; velvet(g, t, cam, { tint: '#2b7fd0', mood: 'interiorCool' });
   const tU = wt('удар', info, 2.0), tM = wt('мікротріщину', info, 3.6);
   layer(g, cam, 1, (g) => {
     cob(g, E.W / 2 - 100, E.H * 0.56, 900, { rot: 0.0 });
@@ -241,6 +243,7 @@ registerShot('s22', { draw(g, t, info) {
   const cam = { z: lerp(1.0, 1.06, t / info.dur), y: lerp(-20, 20, t / info.dur) }; velvet(g, t, cam);
   layer(g, cam, 1, (g) => { const cx = E.W / 2, by = E.H * 0.8; poly(g, [[cx - 520, by], [cx, by - 260 - t * 20], [cx + 520, by]], '#c98a2a'); for (let i = 0; i < 70; i++) { const u = ((i * 0.6180339) % 1), x = cx + (u - 0.5) * 900 * (1 - (i % 7) / 9), y = by - 10 - (1 - Math.abs(u - 0.5) * 2) * (220 + t * 18) * ((i % 5) / 5 + 0.2); kernel(g, x, y, 34, { rot: i }); }
     for (let i = 0; i < 26; i++) { const k = ((t * 1.4 + i / 26) % 1); kernel(g, cx + Math.sin(i * 3) * 18, k * (by - 280), 30, { rot: i + t * 4 }); } });
+  const a = ease.outBack(prog(t, 0.3, 0.8)); if (a > 0) { icon(g, 'sack', E.W * 0.82, E.H * 0.6, 360 * a, { color: '#c98a1e' }); icon(g, 'cob_section', E.W * 0.17, E.H * 0.42, 260 * a, { color: '#e8a51e', rot: t * 0.3 }); }
   FX.sparkle(g, E.W / 2 + 120, E.H * 0.45, 26, '#fff6d8', 0.6 + 0.4 * Math.sin(t * 5));
 } });
 

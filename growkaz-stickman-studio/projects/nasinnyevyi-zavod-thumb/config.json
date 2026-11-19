@@ -3,7 +3,7 @@
  "aspect": "16:9",
  "resolution": "1080p",
  "fps": 24,
- "style": "emerald",
+ "style": "daylight",
  "voiceover": null,
  "script": "input/script.txt",
  "duration": 2,

@@ -5,12 +5,13 @@ const SRC = '/projects/nasinnyevyi-zavod/scenes';
 const { hall, kernel, cob } = await import(`${SRC}/sets/plant.js`);
 const { bagFace, logo } = await import(`${SRC}/sets/brand.js`);
 const { FARMER } = await import(`${SRC}/cast.js`);
+await import(`${SRC}/sets/toy.js`);
 
 registerShot('thumb', { draw(g) {
   const t = 2.2;
   blurLayer(g, 5, (g) => hall(g, t, { z: 0.72, x: 260, y: -60 }, { n: 10, focus: 5, drop: null, cyclones: 1, tCyc: -5 }));
-  veil(g, '#04080a', 0.38);
-  g.fillStyle = linGrad(g, 0, 0, E.W, 0, ['rgba(0,0,0,.55)', 'rgba(0,0,0,0)', 'rgba(0,0,0,.35)']); g.fillRect(0, 0, E.W, E.H);
+  veil(g, '#ffffff', 0.25);
+  g.fillStyle = linGrad(g, 0, 0, E.W, 0, ['rgba(255,255,255,.4)', 'rgba(255,255,255,0)', 'rgba(255,255,255,.3)']); g.fillRect(0, 0, E.W, E.H);
   // the face
   const M = { rim: '#ffd47e' };
   glow(g, 340, 800, 560, '#ffb070', 0.25);
