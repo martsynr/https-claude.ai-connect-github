@@ -25,6 +25,13 @@ export const STYLES = {
     grade: { contrast: 1, sat: 1, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0, grain: 0, bloom: 0 },
     moods: {
       day: { sky: ['#fbfcfd', '#fbfcfd'], ambient: '#ffffff', key: '#ffffff', rim: '#ffffff', wall: '#f4f6f8', floor: '#fbfcfd', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      golden: { sky: ['#fbfcfd', '#fbfcfd'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f4f6f8', floor: '#eef1f4', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      dusk: { sky: ['#fbfcfd', '#fbfcfd'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f4f6f8', floor: '#eef1f4', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      night: { sky: ['#eef3f8', '#fbfcfd'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f2f5f8', floor: '#e9edf1', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      storm: { sky: ['#eef3f8', '#fbfcfd'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f2f5f8', floor: '#e9edf1', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      interiorCool: { sky: ['#e8f2fb', '#f7fbff'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f2f5f8', floor: '#e9edf1', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      interiorWarm: { sky: ['#faf6f0', '#fffdf9'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f7f3ee', floor: '#efe9e1', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+      void: { sky: ['#fbfcfd', '#fbfcfd'], ambient: '#ffffff', key: '#fff6e0', rim: '#ffffff', wall: '#f4f6f8', floor: '#eef1f4', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
     },
   },
   daylight: {

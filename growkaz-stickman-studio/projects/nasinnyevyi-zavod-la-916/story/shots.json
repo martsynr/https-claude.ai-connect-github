@@ -1,0 +1,1743 @@
+{
+ "title": "Насіннєвий завод",
+ "duration": 248.42,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.03,
+   "line": "Ти виростив насіння кукурудзи.",
+   "scene": "Golden harvest field at sunset; FARMER (red tee+cap) lifts a corn cob, proud; slow push",
+   "set": "field",
+   "bars": "none",
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s02",
+   "start": 2.03,
+   "end": 4.55,
+   "line": "Не зерно, а саме насіння.",
+   "scene": "Insert: two kernels side by side - ЗЕРНО (plain) vs НАСІННЯ (embryo glows gold)",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   },
+   "vignette": false
+  },
+  {
+   "id": "s03",
+   "start": 4.55,
+   "end": 8.49,
+   "line": "Але збирання звичайним комбайном нещадно травмує зародки,",
+   "scene": "Ordinary combine in the field, threshing; kernels spray out with red cracks; shake",
+   "set": "field",
+   "bars": "none",
+   "in": {
+    "type": "whip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 1.2,
+     "name": "impact",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s04",
+   "start": 8.49,
+   "end": 12.75,
+   "line": "тому ти купуєш спеціальний комбайн для збирання кукурудзи в качанах.",
+   "scene": "Special ear harvester; whole cobs drop into its hopper; FARMER points, smile; badge ЗБИРАННЯ В КАЧАНАХ",
+   "set": "field",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s05",
+   "start": 12.75,
+   "end": 15.99,
+   "line": "Але качани в обгортках, яка затримує сушіння.",
+   "scene": "Macro: a cob in its husk, droplets trapped under the leaves; callout ОБГОРТКА",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s06",
+   "start": 15.99,
+   "end": 18.73,
+   "line": "Тож ти ставиш качаноочисну машину:",
+   "scene": "Dark empty plant hall; machine #1 (husker) drops in with a dust puff; label; FARMER beside",
+   "set": "hall",
+   "bars": "none",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.8,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s07",
+   "start": 18.73,
+   "end": 23.35,
+   "line": "гумові вальці крутяться назустріч одне одному й зривають обгортку.",
+   "scene": "Blueprint: two counter-rotating rubber rollers, a cob on top, husk leaves torn away",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "swish",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -30
+   },
+   "vignette": false
+  },
+  {
+   "id": "s08",
+   "start": 23.35,
+   "end": 29.13,
+   "line": "Але серед качанів можуть траплятися хворі або нетипові — з іншим кольором зерна, або стрижня.",
+   "scene": "Row of cobs on a dark cloth; one mouldy, one with odd kernel colour, one with a red cob; rings on the words",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.5,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 3.6,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 4.8,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s09",
+   "start": 29.13,
+   "end": 32.35,
+   "line": "Тому ти облаштовуєш інспекційний конвеєр,",
+   "scene": "Inspection conveyor pops in; cobs ride the belt; two workers flank it, FARMER supervises",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s10",
+   "start": 32.35,
+   "end": 36.09,
+   "line": "де люди вручну відбирають кожен підозрілий качан.",
+   "scene": "Close-up: a big gloved hand plucks a mouldy cob off the moving belt",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "swish",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s11",
+   "start": 36.09,
+   "end": 39.73,
+   "line": "Щоб зменшити травмування зерна ти збираєш його вологим,",
+   "scene": "FARMER holds a wet cob, drips falling; dusk light",
+   "set": "field",
+   "bars": "none",
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s12",
+   "start": 39.73,
+   "end": 42.05,
+   "line": "третина його ваги — вода.",
+   "scene": "Blueprint kernel fills one third with water; readout 1/3 ВОДА",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -30
+   },
+   "vignette": false
+  },
+  {
+   "id": "s13",
+   "start": 42.05,
+   "end": 44.81,
+   "line": "Але у купі воно загрівається й пліснявіє.",
+   "scene": "Pile of wet cobs heats up: shimmer, a thermometer climbs into red, mould spots spread",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s14",
+   "start": 44.81,
+   "end": 47.43,
+   "line": "Тому ти ставиш камерну сушарку.",
+   "scene": "Chamber dryer (tall bins) drops into the hall as machine #3",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s15",
+   "start": 47.43,
+   "end": 50.09,
+   "line": "Але від гарячого повітря зародок гине,",
+   "scene": "Kernel cross-section: hot red air hits it, the gold embryo dims to grey",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "glitch",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s16",
+   "start": 50.09,
+   "end": 54.17,
+   "line": "тому ти контролюєш температуру повітря і сушіння триває довго.",
+   "scene": "FARMER at the dryer control panel turns the dial down; gauge in the warm zone; a clock spins fast; readout ДОВГО",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "clock",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s17",
+   "start": 54.17,
+   "end": 58.05,
+   "line": "Тепле повітря дме знизу, потім реверсом — згори,",
+   "scene": "Dryer cross-section: warm air rises through the layers of cobs, then reverses and blows down",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "wind",
+     "gain": -18
+    },
+    {
+     "at": 2.8,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s18",
+   "start": 58.05,
+   "end": 61.11,
+   "line": "щоб всі шари висохли рівномірно.",
+   "scene": "Three moisture bars (top/middle/bottom layers) fall together to the same level",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "counter",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -30
+   },
+   "vignette": false
+  },
+  {
+   "id": "s19",
+   "start": 61.11,
+   "end": 63.67,
+   "line": "Зерно висохло до прийнятної вологості,",
+   "scene": "Moisture meter needle drops into the green zone; OK lamp lights",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s20",
+   "start": 63.67,
+   "end": 68.41,
+   "line": "але воно досі на стрижні і кожен удар лишає в ньому мікротріщину.",
+   "scene": "Freeze-frame macro: a beater strikes a kernel on the cob; a hairline crack spreads; cool tint; badge МІКРОТРІЩИНА",
+   "set": "insert",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "freeze",
+     "gain": -8
+    },
+    {
+     "at": 2.8,
+     "name": "hit",
+     "gain": -10
+    }
+   ],
+   "vignette": false
+  },
+  {
+   "id": "s21",
+   "start": 68.41,
+   "end": 72.85,
+   "line": "Тому ти ставиш молотарку і повільно обмолочуєш зерно.",
+   "scene": "Sheller drops in; its drum turns slowly, kernels pour out one side, bare cobs the other; readout ПОВІЛЬНО",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s22",
+   "start": 72.85,
+   "end": 75.11,
+   "line": "Насіння сухе й обмолочене.",
+   "scene": "A warm golden stream of shelled kernels into a heap",
+   "set": "insert",
+   "bars": "none",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s23",
+   "start": 75.11,
+   "end": 81.49,
+   "line": "Але поки це не насіння, а ворох: пил, луска, шматки стрижнів, биті зерна.",
+   "scene": "The heap up close: dust, husk flakes, cob pieces, broken kernels - each labelled on its word",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.2,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.9,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 4.9,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s24",
+   "start": 81.49,
+   "end": 84.45,
+   "line": "Тому ти ставиш машину тонкої очистки.",
+   "scene": "The fine cleaner (green frame, white panels, plywood sieve box) drops in; dust puff; label",
+   "set": "hall",
+   "bars": "none",
+   "in": {
+    "type": "whip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s25",
+   "start": 84.45,
+   "end": 87.57,
+   "line": "Тут потік повітря забирає пил і легку луску.",
+   "scene": "Aspiration channel: kernels fall through a curtain of air; dust and husk get sucked upward",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "wind",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s26",
+   "start": 87.57,
+   "end": 91.93,
+   "line": "Далі йдуть решета: верхні затримують шматки стрижнів,",
+   "scene": "Sieve deck: upper screen carries cob pieces off the end",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s27",
+   "start": 91.93,
+   "end": 94.85,
+   "line": "нижні просівають биті й дрібні зерна.",
+   "scene": "Same deck, lower screen: broken and small kernels drop through; good seed continues",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s28",
+   "start": 94.85,
+   "end": 96.71,
+   "line": "Насіння очищене.",
+   "scene": "Clean kernels flowing, a sparkle passes over them",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s29",
+   "start": 96.71,
+   "end": 98.33,
+   "line": "Але зернини різного розміру.",
+   "scene": "Kernels lined up by size: big/small, flat/round, with dimension marks",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s30",
+   "start": 98.33,
+   "end": 101.35,
+   "line": "Тож ти ставиш калібрувальну машину.",
+   "scene": "The grader (green frame, stacked sieves, 4 outlets) drops in",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s31",
+   "start": 101.35,
+   "end": 105.29,
+   "line": "Верхній ярус решіт ділить насіння на велике й дрібне,",
+   "scene": "Grader cascade: the top screen splits the stream into BIG and SMALL",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s32",
+   "start": 105.29,
+   "end": 109.95,
+   "line": "а два нижні — ще розділяє потік насіння на плоскі і круглі.",
+   "scene": "The two lower screens split each stream into FLAT and ROUND - four streams",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "swish",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s33",
+   "start": 109.95,
+   "end": 114.29,
+   "line": "Чотири фракції за один прохід, і кожна — у свій бункер.",
+   "scene": "Four bins fill with the four fractions; counter 4",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -16
+    },
+    {
+     "at": 2.4,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s34",
+   "start": 114.29,
+   "end": 121.09,
+   "line": "Тепер зерна однакового розміру зовні, але деякі всередині поточені шкідником і без зародку.",
+   "scene": "Identical kernels; an X-ray beam sweeps across and reveals insect tunnels and missing embryos",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "hum",
+     "gain": -20
+    },
+    {
+     "at": 3.6,
+     "name": "glitch",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s35",
+   "start": 121.09,
+   "end": 124.05,
+   "line": "Тож ти ставиш гравітаційний сепаратор.",
+   "scene": "Gravity separator (tilted perforated deck, three hoppers, control panel) drops in",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s36",
+   "start": 124.05,
+   "end": 130.23,
+   "line": "Дека хитається, важкі, повноцінні зерна рухаються в один бік, а легкі — у відходи.",
+   "scene": "Deck from above, shaking: heavy kernels drift one way, light ones slide to the waste outlet",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "buzz",
+     "gain": -20
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s37",
+   "start": 130.23,
+   "end": 132.21,
+   "line": "Але усі ці машини пилять.",
+   "scene": "Wide hall with all machines running; thick dust haze; FARMER coughs and waves it away",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "wind",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -20
+   },
+   "vignette": false
+  },
+  {
+   "id": "s38",
+   "start": 132.21,
+   "end": 135.31,
+   "line": "Тож над лінією ти ставиш вентциклони.",
+   "scene": "Cyclones and ducts drop in above the line",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.8,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s39",
+   "start": 135.31,
+   "end": 138.97,
+   "line": "Вони закручують повітря, і пил не летить у цех.",
+   "scene": "Cyclone section: spiralling air flings dust to the wall, it falls to the bin; clean air exits",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "wind",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s40",
+   "start": 138.97,
+   "end": 141.87,
+   "line": "Тепер насіння чисте й відкаліброване.",
+   "scene": "3D: slow orbit over the plant hall line - machines, elevators, the FARMER",
+   "set": "3d",
+   "bars": "none",
+   "in": {
+    "type": "fade",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s41",
+   "start": 141.87,
+   "end": 144.99,
+   "line": "Але в ґрунті на нього вже чекають грибки й дротяники.",
+   "scene": "Underground cross-section at night: a seed in cold soil; wireworms crawl in; fungus threads creep",
+   "set": "soil",
+   "bars": "none",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "heartbeat",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s42",
+   "start": 144.99,
+   "end": 148.29,
+   "line": "Тож ти ставиш порційний протруювач.",
+   "scene": "The batch treater (red frame, steel hopper, mixing drum) drops in",
+   "set": "hall",
+   "bars": "none",
+   "in": {
+    "type": "whip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.5,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s43",
+   "start": 148.29,
+   "end": 150.67,
+   "line": "Ваги відміряють порцію насіння.",
+   "scene": "Weigh hopper: a digital readout counts up, gate snaps shut at the set portion",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "counter",
+     "gain": -16
+    },
+    {
+     "at": 1.8,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s44",
+   "start": 150.67,
+   "end": 155.99,
+   "line": "Насос за вагою дозує препарат: фунгіцид, інсектицид і барвник.",
+   "scene": "Three dosing tanks light up on each word: fungicide, insecticide, dye; pump pulses",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.9,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 2.8,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 4.0,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s45",
+   "start": 155.99,
+   "end": 162.19,
+   "line": "У змішувальному циліндрі все розпилюється дрібним туманом і рівномірно лягає на кожну насінину.",
+   "scene": "Mixing cylinder: fine mist sprays, seeds tumble and turn red one by one",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "wind",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s46",
+   "start": 162.19,
+   "end": 165.33,
+   "line": "Двадцять секунд — і наступна порція.",
+   "scene": "Big 20 s countdown ring; batch drops, next batch counter ticks",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "tick",
+     "gain": -14
+    },
+    {
+     "at": 2.2,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s47",
+   "start": 165.33,
+   "end": 168.51,
+   "line": "Але після протруєння насіння вологе й липке.",
+   "scene": "Macro of glossy wet red seeds, drips, two seeds sticking together",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "glitch",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s48",
+   "start": 168.51,
+   "end": 172.99,
+   "line": "Злипнеться — і сівалка покладе дві насінини замість однієї.",
+   "scene": "Planter seed disc from above: one cell catches a stuck pair; furrow shows a double; red X",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 2.2,
+     "name": "buzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s49",
+   "start": 172.99,
+   "end": 176.17,
+   "line": "Тож ти ставиш спеціальну сушарку.",
+   "scene": "Fluid-bed dryer (long green bed, inspection windows) drops in",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s50",
+   "start": 176.17,
+   "end": 182.17,
+   "line": "Сито вібрує, знизу дме повітря, і насіння повільно рухається, поки плівка висихає.",
+   "scene": "Fluid bed section: vibrating screen, air from below, seeds float and move, gloss fades",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "buzz",
+     "gain": -20
+    },
+    {
+     "at": 1.2,
+     "name": "wind",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s51",
+   "start": 182.17,
+   "end": 186.45,
+   "line": "Останнє сито відсіює грудки й злиплі пари.",
+   "scene": "Last screen segment: clumps and stuck pairs ride off into the reject chute",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s52",
+   "start": 186.45,
+   "end": 189.43,
+   "line": "Насіння чисте, протруєне і сухе.",
+   "scene": "Dry red seeds pouring; three ticks pop: ЧИСТЕ, ПРОТРУЄНЕ, СУХЕ",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "ding",
+     "gain": -14
+    },
+    {
+     "at": 1.4,
+     "name": "ding",
+     "gain": -14
+    },
+    {
+     "at": 2.1,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s53",
+   "start": 189.43,
+   "end": 192.69,
+   "line": "Але насіння різних фракцій має різну масу.",
+   "scene": "Balance: two equal-count piles of different fractions; the scale tips",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "hit",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s54",
+   "start": 192.69,
+   "end": 194.99,
+   "line": "Тому ти ставиш ваговий дозатор.",
+   "scene": "Weigh doser + bag sewing line drops in at the end of the line",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "whoosh",
+     "gain": -10
+    },
+    {
+     "at": 0.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s55",
+   "start": 194.99,
+   "end": 197.79,
+   "line": "Він знає масу тисячі зерен кожної фракції",
+   "scene": "Grid of 1000 kernels on a scale; four fraction cards each with its own weight",
+   "set": "blueprint",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s56",
+   "start": 197.79,
+   "end": 203.73,
+   "line": "і відважує рівно вісімдесят тисяч насінин у мішок — одну посівну одиницю.",
+   "scene": "Bag filling under the doser; counter climbs to 80 000; tag 1 ПОСІВНА ОДИНИЦЯ",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "counter",
+     "gain": -14
+    },
+    {
+     "at": 3.4,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s57",
+   "start": 203.73,
+   "end": 205.87,
+   "line": "Але яка в нього схожість?",
+   "scene": "Giant face: FARMER thinking, bag in the blurred background; a question mark",
+   "set": "face",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s58",
+   "start": 205.87,
+   "end": 209.95,
+   "line": "Тож ти створюєш лабораторію і відбираєш проби на дослідження.",
+   "scene": "Lab establishing: benches, glowing cabinets; LAB tech (lab coat) takes a sample bag from FARMER",
+   "set": "lab",
+   "bars": "none",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s59",
+   "start": 209.95,
+   "end": 213.51,
+   "line": "Насіння пророщують у термостаті і в холодній камері.",
+   "scene": "Split: warm thermostat tray vs blue cold chamber tray; sprouts grow",
+   "set": "lab",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s60",
+   "start": 213.51,
+   "end": 216.33,
+   "line": "Зовні і за показниками все чудово.",
+   "scene": "FARMER thumbs-up; readouts with green ticks",
+   "set": "lab",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s61",
+   "start": 216.33,
+   "end": 219.33,
+   "line": "Але раптом при вегетації сталося засмічення?",
+   "scene": "Seed field diagram: foreign pollen drifts in from a neighbour field; red question mark",
+   "set": "blueprint",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "riser",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s62",
+   "start": 219.33,
+   "end": 222.8,
+   "line": "Тож ти відправляєш проби насіння на ґрунтовий контроль —",
+   "scene": "Snowy Ukraine: FARMER hands a sample box to a courier; a plane climbs off",
+   "set": "globe",
+   "bars": "none",
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -22
+   },
+   "vignette": false
+  },
+  {
+   "id": "s63",
+   "start": 222.8,
+   "end": 226.39,
+   "line": "у Чилі та Індію, де тепло, коли в Україні зима.",
+   "scene": "Blueprint globe: arcs fly from Ukraine (snowflake) to Chile and India (suns), labels on the words",
+   "set": "globe",
+   "bars": "none",
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.6,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 2.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   },
+   "vignette": false
+  },
+  {
+   "id": "s64",
+   "start": 226.39,
+   "end": 230.39,
+   "line": "У лютому селекціонери перевіряють гібриди з насіння кожної партії",
+   "scene": "Sunny Chilean field in February; BREEDER (green cap, lab coat) walks the rows with a clipboard; badge ЛЮТИЙ",
+   "set": "field",
+   "bars": "none",
+   "in": {
+    "type": "whip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s65",
+   "start": 230.39,
+   "end": 233.07,
+   "line": "— чи не трапляються нетипові гібриди.",
+   "scene": "Row of corn: one short off-type plant gets a red ring; BREEDER marks it",
+   "set": "field",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s66",
+   "start": 233.07,
+   "end": 236.83,
+   "line": "Тож перед посівною насіння перевірене повністю.",
+   "scene": "Warehouse: pallets of seed bags; a green ПЕРЕВІРЕНО stamp lands",
+   "set": "warehouse",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   },
+   "vignette": false
+  },
+  {
+   "id": "s67",
+   "start": 236.83,
+   "end": 239.99,
+   "line": "Вітаю — ти збудував насіннєвий завод!",
+   "scene": "3D fly-through of the finished plant line, then title НАСІННЄВИЙ ЗАВОД",
+   "set": "3d",
+   "bars": "none",
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "stinger",
+     "gain": -6
+    },
+    {
+     "at": 0.4,
+     "name": "cheer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "captions": false,
+   "vignette": false
+  },
+  {
+   "id": "s68",
+   "start": 239.99,
+   "end": 242.47,
+   "line": "Тепер ти виробляєш справжнє насіння.",
+   "scene": "FARMER cheers in front of the whole lit line",
+   "set": "hall",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   },
+   "vignette": false
+  },
+  {
+   "id": "s69",
+   "start": 242.47,
+   "end": 248.42,
+   "line": "З етикеткою, документами і впевненістю у його якості.",
+   "scene": "Seed bag label close-up: label, documents, quality seal pop in; fade out",
+   "set": "insert",
+   "bars": "none",
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.6,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -28
+   },
+   "vignette": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 15.99,
+   "mood": "hopeful",
+   "intensity": 0.35
+  },
+  {
+   "start": 15.99,
+   "end": 72.85,
+   "mood": "wonder",
+   "intensity": 0.4
+  },
+  {
+   "start": 72.85,
+   "end": 138.97,
+   "mood": "playful",
+   "intensity": 0.45
+  },
+  {
+   "start": 138.97,
+   "end": 141.87,
+   "mood": "calm",
+   "intensity": 0.3
+  },
+  {
+   "start": 141.87,
+   "end": 203.73,
+   "mood": "tension",
+   "intensity": 0.4
+  },
+  {
+   "start": 203.73,
+   "end": 236.83,
+   "mood": "mystery",
+   "intensity": 0.4
+  },
+  {
+   "start": 236.83,
+   "end": 248.42,
+   "mood": "triumph",
+   "intensity": 0.55
+  }
+ ],
+ "sfx": []
+}
