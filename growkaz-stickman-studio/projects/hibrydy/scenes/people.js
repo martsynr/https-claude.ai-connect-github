@@ -2,6 +2,7 @@
 // person(g, {x, y, s, who:'farmer'|'breeder', expr, blink, talk, armL, armR, propL, propR, look})
 //   armL/armR = [upper, fore] angles in radians from hanging straight down (+ = outward/up).
 import { rr, circle, poly, alpha, mix, shade } from '/engine/core.js';
+import { icon } from './icons.js';
 
 export const INK = '#3a3f47', SKIN = '#f6d2ad', LW = 3.4;
 export const C = { shirt: '#b9d7f2', plaid: '#7fa8d6', denim: '#4f7fae', boot: '#f4f6f8', cap: '#c9c24a', coat: '#eef0f2', blue: '#b9d7f2', trou: '#8a9098', shoe: '#5a6068', hair: '#a4a9ae', brown: '#8a6a4a', olive: '#c9c24a', sky: '#b7d8f2', skyD: '#8fbfe3' };
@@ -94,6 +95,19 @@ export function cornLine(g, x, y, h, o = {}) {
   g.beginPath(); g.moveTo(x, y); g.quadraticCurveTo(x + sw * 0.4, y - h * 0.5, top[0], top[1]); g.strokeStyle = INK; g.lineWidth = 8; g.stroke(); g.strokeStyle = col; g.lineWidth = 3.5; g.stroke();
   for (let i = 0; i < 5; i++) { const k = 0.18 + i * 0.15, px = x + sw * k * k, py = y - h * k, side = i % 2 ? 1 : -1, L = h * (0.34 - k * 0.15); g.beginPath(); g.moveTo(px, py); g.quadraticCurveTo(px + side * L * 0.55, py - L * 0.55, px + side * L, py - L * 0.05 + 8); g.quadraticCurveTo(px + side * L * 0.5, py - L * 0.3, px, py + 10); g.closePath(); g.fillStyle = col; g.fill(); ln(g, 2.6); }
   if (o.tassel !== false) for (let s = -2; s <= 2; s++) line(g, [top, [top[0] + s * 10, top[1] - 24 + Math.abs(s) * 6]], 2.6);
-  if (o.cob) { const px = x + sw * 0.3, py = y - h * 0.5, c = o.cob; g.save(); g.translate(px + 12, py); g.rotate(0.35); oval(g, 0, 0, 10 * c + 4, 30 * c + 8, '#f2c94c'); g.restore(); }
+  if (o.cob) { const px = x + sw * 0.3, py = y - h * 0.5; corn(g, 'cob_husk', px + 30, py - 10, h * 0.32 * o.cob); }
 }
 export function tubes(g, x, y) { box(g, x - 70, y - 10, 140, 10, 2, '#ffffff'); line(g, [[x - 60, y - 70], [x + 60, y - 70]], 3); for (let i = 0; i < 3; i++) { const tx = x - 40 + i * 40; rr(g, tx - 10, y - 110, 20, 100, 10); g.fillStyle = '#ffffff'; g.fill(); ln(g); rr(g, tx - 7, y - 60, 14, 46, 7); g.fillStyle = C.sky; g.fill(); } }
+
+// corn icons in line-art: pastel fill blob behind, the icon itself in the outline colour.
+// name: cob_leaves | cob_husk | cob_husk_line | cob_section | sack. Icons are drawn axis-true (cob_leaves upright, husks diagonal).
+export function corn(g, name, x, y, h, o = {}) {
+  const { rot = 0, a = 1, fill = true } = o; g.save(); g.globalAlpha *= a; g.translate(x, y); g.rotate(rot);
+  if (fill) {
+    if (name === 'cob_leaves') { g.fillStyle = '#f6dc7a'; g.beginPath(); g.ellipse(0, -h * 0.12, h * 0.13, h * 0.3, 0, 0, 7); g.fill(); g.fillStyle = '#b9d88a'; g.beginPath(); g.ellipse(-h * 0.2, h * 0.12, h * 0.1, h * 0.26, 0.5, 0, 7); g.fill(); g.beginPath(); g.ellipse(h * 0.2, h * 0.12, h * 0.1, h * 0.26, -0.5, 0, 7); g.fill(); }
+    else if (name === 'cob_husk' || name === 'cob_husk_line') { g.rotate(Math.PI / 4); g.fillStyle = '#f6dc7a'; g.beginPath(); g.ellipse(h * 0.05, 0, h * 0.34, h * 0.12, 0, 0, 7); g.fill(); g.fillStyle = '#b9d88a'; g.beginPath(); g.ellipse(-h * 0.12, h * 0.05, h * 0.3, h * 0.1, 0.15, 0, 7); g.fill(); g.rotate(-Math.PI / 4); }
+    else if (name === 'cob_section') { g.fillStyle = '#f6dc7a'; g.beginPath(); g.arc(0, 0, h * 0.38, 0, 7); g.fill(); }
+    else if (name === 'sack') { g.fillStyle = '#e8d6b0'; rr(g, -h * 0.4, -h * 0.25, h * 0.8, h * 0.62, h * 0.12); g.fill(); g.fillStyle = '#f6dc7a'; g.beginPath(); g.ellipse(0, -h * 0.25, h * 0.32, h * 0.1, 0, 0, 7); g.fill(); }
+  }
+  icon(g, name, 0, 0, h, { color: INK }); g.restore();
+}
