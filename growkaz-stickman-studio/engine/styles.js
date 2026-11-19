@@ -18,6 +18,15 @@ export const BASE_MOODS = {
 const UI = { card: 'rgba(18,28,48,.94)', cardLine: 'rgba(150,180,230,.25)', text: '#9fb6d8', sub: '#6f84a6', accent: '#ff6f61', gold: '#ffd47e', cream: '#fff1dc', blueprint: '#8fb8e8', bpBg: '#0b1324', good: '#5fd39a' };
 
 export const STYLES = {
+  lineart: {
+    name: 'Line Art', desc: 'Flat editorial line illustration: white paper, thin grey outlines, pastel blue/olive fills, light blue clouds, no grade.',
+    ink: '#3a3f47', inkFar: '#6a707a', feature: '#3a3f47', rimWidth: 0,
+    ui: { ...UI, card: 'rgba(255,255,255,.96)', cardLine: 'rgba(58,63,71,.25)', text: '#3a3f47', sub: '#6a707a', accent: '#d9534a', gold: '#c99a1e', cream: '#3a3f47', blueprint: '#4f7fae', bpBg: '#fbfcfd', good: '#6aa84f' },
+    grade: { contrast: 1, sat: 1, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0, grain: 0, bloom: 0 },
+    moods: {
+      day: { sky: ['#fbfcfd', '#fbfcfd'], ambient: '#ffffff', key: '#ffffff', rim: '#ffffff', wall: '#f4f6f8', floor: '#fbfcfd', dark: '#c8ced6', practical: '#f2d36a', grass: '#9cc46a', road: '#e4e8ec', fog: '#ffffff' },
+    },
+  },
   daylight: {
     name: 'Daylight', desc: 'Bright, clean world: white-and-pale-blue interiors, sunny skies, crisp dark outlines, amber accents, no heavy vignette.',
     ink: '#1d2430', inkFar: '#3a4656', feature: '#ffffff', rimWidth: 0,

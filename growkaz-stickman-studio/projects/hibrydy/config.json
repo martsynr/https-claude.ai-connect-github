@@ -1,0 +1,20 @@
+{
+ "title": "Гібриди — тест стилю",
+ "aspect": "16:9",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "lineart",
+ "voiceover": null,
+ "duration": 3,
+ "captions": false,
+ "bars": "none",
+ "fadeIn": 0,
+ "fadeOut": 0,
+ "music": {
+  "enabled": false
+ },
+ "sfx": {
+  "enabled": false
+ },
+ "loudness": -14
+}
