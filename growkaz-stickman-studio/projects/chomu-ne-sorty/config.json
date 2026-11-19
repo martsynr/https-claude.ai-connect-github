@@ -1,0 +1,26 @@
+{
+ "title": "Чому фермери не сіють сорти",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "lineart",
+ "voiceover": "input/voiceover.mp3",
+ "script": "input/script.txt",
+ "duration": 130.351,
+ "captions": true,
+ "bars": "none",
+ "fadeIn": 0.5,
+ "fadeOut": 0.8,
+ "music": {
+  "enabled": true,
+  "gainDb": -19
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
+ "loudness": -14,
+ "captionStyle": {
+  "max": 3
+ }
+}

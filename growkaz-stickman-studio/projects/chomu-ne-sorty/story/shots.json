@@ -1,0 +1,819 @@
+{
+ "title": "Чому фермери не сіють сорти",
+ "duration": 131.94,
+ "shots": [
+  {
+   "id": "c01",
+   "start": 0.0,
+   "end": 3.73,
+   "line": "Сто років тому фермер сам був собі насіннєвим заводом.",
+   "scene": "Farmer ~100 years ago by his barn and cob crib, badge 100 РОКІВ ТОМУ",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c02",
+   "start": 3.73,
+   "end": 7.11,
+   "line": "Восени він відбирав найкращі качани зі свого поля,",
+   "scene": "Farmer picks the best cob from a basket; a star marks it",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c03",
+   "start": 7.11,
+   "end": 9.29,
+   "line": "а навесні сіяв їхнє зерно.",
+   "scene": "Spring: farmer sows kernels into a furrow",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "swish",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c04",
+   "start": 9.29,
+   "end": 10.99,
+   "line": "Це були сорти.",
+   "scene": "Title card: СОРТ over a row of plants",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "in": {
+    "type": "fade",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c05",
+   "start": 10.99,
+   "end": 12.95,
+   "line": "Але сорт — це натовп.",
+   "scene": "Crowd of corn plants of different heights",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c06",
+   "start": 12.95,
+   "end": 16.25,
+   "line": "Навіть в одному сорті кожна рослина трохи інша.",
+   "scene": "Row closeup: height marks show every plant differs",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "blip",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c07",
+   "start": 16.25,
+   "end": 20.87,
+   "line": "Одна вища, друга нижча, одна цвіте раніше, інша пізніше.",
+   "scene": "Labels on words: вища, нижча, цвіте раніше, пізніше",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 1.6,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 2.6,
+     "name": "blip",
+     "gain": -16
+    },
+    {
+     "at": 3.6,
+     "name": "blip",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c08",
+   "start": 20.87,
+   "end": 24.07,
+   "line": "І врожай строкатий і посередній.",
+   "scene": "Cobs of different size and colour; yield bar stops at average",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "counter",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c09",
+   "start": 24.07,
+   "end": 26.47,
+   "line": "Тож селекціонери спробували навести лад.",
+   "scene": "Breeder walks in with a clipboard, determined",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "in": {
+    "type": "whip",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c10",
+   "start": 26.47,
+   "end": 30.77,
+   "line": "Рік за роком вони запилювали кукурудзу її власним пилком.",
+   "scene": "Diagram: pollen loops from a plant own tassel to its own ear; year counter",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "tick",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c11",
+   "start": 30.77,
+   "end": 33.11,
+   "line": "Так з'явилися чисті лінії.",
+   "scene": "Pure line: identical plants in a row, label ЛІНІЯ",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c12",
+   "start": 33.11,
+   "end": 36.17,
+   "line": "Усі рослини однакові, як близнюки.",
+   "scene": "Identical plants with = signs between them",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "ding",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c13",
+   "start": 36.17,
+   "end": 39.95,
+   "line": "Але слабкі, низенькі і з мізерним урожаєм.",
+   "scene": "The identical plants shrink; tiny cobs; breeder disappointed",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "glitch",
+     "gain": -20
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c14",
+   "start": 39.95,
+   "end": 42.23,
+   "line": "А потім сталося диво.",
+   "scene": "Sparkle; breeder surprised",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "in": {
+    "type": "flash",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "shimmer",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c15",
+   "start": 42.23,
+   "end": 48.79,
+   "line": "Коли схрестили дві такі слабкі лінії, їхні діти виросли вищими і міцнішими за обох батьків.",
+   "scene": "Line A x Line B -> a tall vigorous hybrid grows above both parents",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.8,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.4,
+     "name": "riser",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c16",
+   "start": 48.79,
+   "end": 51.51,
+   "line": "Це явище називається гетерозисом.",
+   "scene": "Big word ГЕТЕРОЗИС between the plants",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "stinger",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c17",
+   "start": 51.51,
+   "end": 55.13,
+   "line": "А насіння — гібридом першого покоління, F1.",
+   "scene": "F1 badge on a hybrid cob",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 2.5,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c18",
+   "start": 55.13,
+   "end": 58.25,
+   "line": "Гібрид дав фермерам усе одразу.",
+   "scene": "Farmer delighted, holding a big hybrid cob",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c19",
+   "start": 58.25,
+   "end": 60.63,
+   "line": "Урожай — вищий, ніж у сортів.",
+   "scene": "Bars: СОРТ vs ГІБРИД",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "counter",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c20",
+   "start": 60.63,
+   "end": 66.67,
+   "line": "Рослини однакові, цвітуть одночасно, дозрівають разом і рівно стоять перед комбайном.",
+   "scene": "Even uniform rows; labels on words; a combine passes",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 3.0,
+     "name": "whoosh",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c21",
+   "start": 66.67,
+   "end": 73.35,
+   "line": "А селекціонер може зібрати в гібриді потрібні якості — стійкість до посухи, до хвороб, раннє дозрівання.",
+   "scene": "Breeder assembles trait cards: drought, disease, early",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 2.8,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 4.4,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 5.4,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c22",
+   "start": 73.35,
+   "end": 80.25,
+   "line": "Найкраще це видно на графіку врожайності кукурудзи в США, який склав селекціонер Форрест Троєр.",
+   "scene": "Troyer chart: axes and title appear",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "in": {
+    "type": "zoom",
+    "dur": 0.35
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "whoosh",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c23",
+   "start": 80.25,
+   "end": 85.47,
+   "line": "Сімдесят років, поки сіяли сорти, лінія врожайності майже не рухалася.",
+   "scene": "Flat open-pollinated line draws 1866-1935",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "counter",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c24",
+   "start": 85.47,
+   "end": 87.73,
+   "line": "Близько півтори тонни з гектара.",
+   "scene": "Callout 1.5 т/га",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c25",
+   "start": 87.73,
+   "end": 92.43,
+   "line": "У тридцятих фермери перейшли на перші гібриди. І крива пішла вгору.",
+   "scene": "Double-cross era line rises",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 2.6,
+     "name": "riser",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c26",
+   "start": 92.43,
+   "end": 98.35,
+   "line": "А з кінця п'ятдесятих, коли з'явилися прості гібриди з двох ліній, вона стала ще крутішою.",
+   "scene": "Single-cross era: steeper line",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "whoosh",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c27",
+   "start": 98.35,
+   "end": 101.19,
+   "line": "Сьогодні — понад одинадцять тонн.",
+   "scene": "End point 11+ т/га; x7",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c28",
+   "start": 101.19,
+   "end": 108.25,
+   "line": "Звісно, допомогли й добрива, і техніка, але приблизно половина цього приросту — заслуга селекції.",
+   "scene": "Gain split: half agronomy, half breeding",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 5.0,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c29",
+   "start": 108.25,
+   "end": 109.39,
+   "line": "Але є підступ.",
+   "scene": "Farmer with a hybrid cob, a question mark",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c30",
+   "start": 109.39,
+   "end": 114.17,
+   "line": "Якщо посіяти зерно, зібране з гібрида, диво зникає.",
+   "scene": "Farmer sows saved hybrid grain; the sparkle fades",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 3.6,
+     "name": "glitch",
+     "gain": -18
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c31",
+   "start": 114.17,
+   "end": 116.89,
+   "line": "У другому поколінні ознаки батьків розходяться.",
+   "scene": "Diagram F1 -> F2: offspring scatter into different shapes",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -32
+   }
+  },
+  {
+   "id": "c32",
+   "start": 116.89,
+   "end": 120.69,
+   "line": "Поле знову стає натовпом, а врожай падає.",
+   "scene": "Field becomes a crowd again; yield bar drops",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 1.8,
+     "name": "hit",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c33",
+   "start": 120.69,
+   "end": 124.11,
+   "line": "Тож гібридне насіння щороку створюють заново.",
+   "scene": "Seed field: mother rows and father rows, pollen flies; ЩОРОКУ",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "whoosh",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c34",
+   "start": 124.11,
+   "end": 126.23,
+   "line": "Тому фермери й не сіють сорти.",
+   "scene": "Farmer and breeder together; MAIS bag appears",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "c35",
+   "start": 126.23,
+   "end": 131.94,
+   "line": "Купувати насіння щороку вигідніше, ніж втрачати врожай.",
+   "scene": "Farmer receives the MAIS bag; logo end card",
+   "set": "lineart",
+   "bars": "none",
+   "vignette": false,
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 24.07,
+   "mood": "calm",
+   "intensity": 0.3
+  },
+  {
+   "start": 24.07,
+   "end": 39.95,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 39.95,
+   "end": 73.35,
+   "mood": "hopeful",
+   "intensity": 0.45
+  },
+  {
+   "start": 73.35,
+   "end": 108.25,
+   "mood": "wonder",
+   "intensity": 0.45
+  },
+  {
+   "start": 108.25,
+   "end": 120.69,
+   "mood": "tension",
+   "intensity": 0.35
+  },
+  {
+   "start": 120.69,
+   "end": 131.94,
+   "mood": "hopeful",
+   "intensity": 0.45
+  }
+ ],
+ "sfx": []
+}
