@@ -15,9 +15,9 @@ registerShot('thumb', { draw(g) {
   // the face
   const M = { rim: '#ffd47e' };
   glow(g, 340, 800, 560, '#ffb070', 0.25);
-  bigFace(g, 330, 840, 310, { outfit: FARMER, expr: 'awe', look: [0.6, -0.2], rimColor: M.rim, rimSide: 1 });
+  bigFace(g, 330, 760, 210, { outfit: FARMER, expr: 'awe', look: [0.6, -0.2], rimColor: M.rim, rimSide: 1 });
   // seed → bag
-  glow(g, 1030, 560, 320, '#ffd47e', 0.45); cob(g, 1030, 560, 380, { rot: -0.35, rim: '#fff3c4' });
+  glow(g, 900, 640, 320, '#ffd47e', 0.45); cob(g, 900, 640, 380, { rot: -0.35, rim: '#fff3c4' });
   for (let i = 0; i < 3; i++) poly(g, [[1180 + i * 34, 820], [1206 + i * 34, 852], [1180 + i * 34, 884]], alpha(S().ui.gold, 0.5 + i * 0.25));
   g.save(); g.translate(1520, 690); g.rotate(0.06); glow(g, 0, 0, 520, '#7dffb0', 0.22); g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 40; rr(g, -230, -320, 460, 640, 50); g.fillStyle = '#000'; g.fill(); g.shadowBlur = 0; bagFace(g, -230, -320, 460, 640, { r: 50 }); g.restore();
   // title
