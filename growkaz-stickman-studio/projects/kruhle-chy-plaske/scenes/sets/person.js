@@ -4,7 +4,7 @@ import { lerp, clamp, ease, prog } from '/engine/core.js';
 export const OL = '#3d434a';
 export const PAL = {
   skin: '#f7dcbc', ivanShirt: '#b4d3ee', ivanCheck: '#7aa6d2', overall: '#4f7fae', cap: '#c8c24e', capDark: '#aea73a', boot: '#ffffff',
-  coat: '#eef0f2', agroShirt: '#bcd7ee', trousers: '#8d949b', shoe: '#6a7078', hair: '#a7adb3', mouth: '#b85a52',
+  coat: '#eef0f2', agroShirt: '#bcd7ee', trousers: '#8d949b', shoe: '#6a7078', hair: '#a7adb3', vest: '#8a9d62', vestDk: '#738650', jeans: '#6f93bf', jeansLt: '#9db8d8', gcap: '#7f9a52', gcapDk: '#6a8442', brown: '#8a6a4a', mouth: '#b85a52',
 };
 let LW = 4;
 const P = (g) => { g.beginPath(); };
@@ -41,9 +41,11 @@ function head(g, o) {
   rect(g, -17, -535, 34, 42, 6, PAL.skin);                                                           // neck
   ell(g, -50, -582, 9, 14, PAL.skin); ell(g, 50, -582, 9, 14, PAL.skin);                               // ears
   ell(g, 0, -584, 50, 58, PAL.skin);
-  if (agro) {                                                                                          // grey hair, side parting
-    g.beginPath(); g.moveTo(-52, -580); g.bezierCurveTo(-60, -660, 40, -672, 54, -596); g.lineTo(50, -575); g.bezierCurveTo(44, -616, 10, -620, -14, -616); g.bezierCurveTo(-30, -612, -44, -600, -46, -575); g.closePath(); fillStroke(g, PAL.hair);
-    line(g, [[-14, -616], [6, -640]], LW * 0.7);
+  if (agro) {                                                                                          // green baseball cap, sideburns
+    for (const sd of [-1, 1]) { g.beginPath(); g.moveTo(sd * 50, -612); g.lineTo(sd * 50, -580); g.lineTo(sd * 43, -586); g.lineTo(sd * 42, -612); g.closePath(); fillStroke(g, PAL.brown); }
+    g.beginPath(); g.moveTo(-54, -612); g.bezierCurveTo(-56, -688, 56, -688, 54, -612); g.quadraticCurveTo(0, -620, -54, -612); g.closePath(); fillStroke(g, PAL.gcap);
+    line(g, [[0, -672], [0, -618]], LW * 0.7); line(g, [[-30, -662], [-34, -616]], LW * 0.6); line(g, [[30, -662], [34, -616]], LW * 0.6); ell(g, 0, -673, 7, 4, PAL.gcapDk);
+    g.beginPath(); g.moveTo(-58, -613); g.quadraticCurveTo(0, -622, 58, -613); g.quadraticCurveTo(0, -592, -58, -613); g.closePath(); fillStroke(g, PAL.gcapDk);
   } else {                                                                                             // flat cap
     line(g, [[-46, -596], [-50, -575]], LW * 0.8); line(g, [[46, -596], [50, -575]], LW * 0.8);
     g.beginPath(); g.moveTo(-56, -598); g.bezierCurveTo(-62, -660, 40, -676, 60, -616); g.lineTo(58, -600); g.closePath(); fillStroke(g, PAL.cap);
@@ -100,7 +102,13 @@ export function person(g, x, y, s, o = {}) {
   // ground shadow
   g.fillStyle = 'rgba(61,67,74,.10)'; g.beginPath(); g.ellipse(0, 0, 110, 12, 0, 0, 7); g.fill();
   if (agro) {
-    for (const sd of [-1, 1]) { rect(g, sd > 0 ? 4 : -56, -330, 52, 300, 6, PAL.trousers); rect(g, sd > 0 ? 0 : -66, -34, 66, 34, 14, PAL.shoe); }
+    for (const sd of [-1, 1]) {
+      rect(g, sd > 0 ? 0 : -66, -34, 66, 34, 14, PAL.shoe);
+      rect(g, sd > 0 ? 3 : -61, -345, 58, 305, 6, PAL.jeans); rect(g, sd > 0 ? 1 : -63, -72, 62, 34, 4, PAL.jeansLt);
+      g.setLineDash([7, 7]); line(g, [[sd * 32, -330], [sd * 32, -80]], LW * 0.5, '#4a6a92'); g.setLineDash([]);
+      line(g, [[sd * 40, -195], [sd * 22, -190]], LW * 0.5); g.beginPath(); g.moveTo(sd * 54, -340); g.quadraticCurveTo(sd * 44, -308, sd * 22, -300); g.strokeStyle = OL; g.lineWidth = LW * 0.6; g.stroke();
+    }
+    line(g, [[0, -340], [0, -240]], LW * 0.7);
   } else {
     for (const sd of [-1, 1]) { rect(g, sd > 0 ? 2 : -64, -340, 62, 250, 6, PAL.overall); rect(g, sd > 0 ? 4 : -68, -110, 64, 92, 6, PAL.boot); rect(g, sd > 0 ? -2 : -78, -32, 80, 32, 14, PAL.boot); }
   }
@@ -111,16 +119,18 @@ export function person(g, x, y, s, o = {}) {
   // collar
   for (const sd of [-1, 1]) { g.beginPath(); g.moveTo(0, -470); g.lineTo(sd * 34, -506); g.lineTo(sd * 20, -462); g.closePath(); fillStroke(g, agro ? PAL.agroShirt : PAL.ivanShirt); }
   if (agro) {
-    line(g, [[0, -470], [0, -330]], LW * 0.8);
-    for (const sd of [-1, 1]) { g.beginPath(); g.moveTo(sd * 80, -500); g.lineTo(sd * 36, -500); g.lineTo(sd * 22, -330); g.lineTo(sd * 26, -150); g.lineTo(sd * 92, -150); g.lineTo(sd * 84, -330); g.closePath(); fillStroke(g, PAL.coat); line(g, [[sd * 36, -500], [sd * 52, -420], [sd * 26, -360]], LW * 0.8); rect(g, sd > 0 ? 40 : -80, -270, 40, 50, 4, null); }
-    rect(g, 44, -430, 26, 4, 1, null);
+    // V-neck sweater vest over the shirt
+    g.beginPath(); g.moveTo(-28, -502); g.lineTo(0, -430); g.lineTo(28, -502); g.lineTo(66, -496); g.quadraticCurveTo(58, -440, 76, -400); g.lineTo(76, -332); g.lineTo(-76, -332); g.lineTo(-76, -400); g.quadraticCurveTo(-58, -440, -66, -496); g.closePath(); fillStroke(g, PAL.vest);
+    rect(g, -78, -342, 156, 24, 4, PAL.vestDk);
+    line(g, [[-20, -500], [0, -446], [20, -500]], LW * 0.6, PAL.vestDk);
+    for (const sd of [-1, 1]) { g.beginPath(); g.moveTo(0, -468); g.lineTo(sd * 30, -508); g.lineTo(sd * 18, -462); g.closePath(); fillStroke(g, PAL.agroShirt); }
   } else {
     rect(g, -70, -345, 140, 40, 4, PAL.overall);
     rect(g, -50, -440, 100, 110, 6, PAL.overall); rect(g, -24, -420, 48, 40, 6, null);
     for (const sd of [-1, 1]) { capsule(g, [[sd * 44, -434], [sd * 58, -500]], 12, PAL.overall); ell(g, sd * 42, -430, 5, 5, PAL.cap); }
   }
   // arms
-  const L = arm(g, -1, aL, o, agro ? PAL.coat : PAL.ivanShirt, !agro, 0), R = arm(g, 1, aR, o, agro ? PAL.coat : PAL.ivanShirt, !agro, 0);
+  const L = arm(g, -1, aL, o, agro ? PAL.agroShirt : PAL.ivanShirt, !agro, 0), R = arm(g, 1, aR, o, agro ? PAL.agroShirt : PAL.ivanShirt, !agro, 0);
   g.save(); g.translate(0, -515); g.scale(1.14, 1.14); g.translate(0, 515); head(g, o); g.restore();
   if (o.propL) prop(g, o.propL, L.H[0], L.H[1], L.fa, -1);
   if (o.propR) prop(g, o.propR, R.H[0], R.H[1], R.fa, 1);
