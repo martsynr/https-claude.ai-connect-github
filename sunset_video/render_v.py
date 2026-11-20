@@ -9,7 +9,7 @@ from shapely.geometry import shape
 from sun import sunset_utc_min
 from multiprocessing import Pool
 
-Y,M,D=2026,11,20; TZ=120
+Y,M,D=2026,12,1; TZ=120
 FPS=30
 # ---- data
 geom=shape(json.load(open(S+"/data/ua.json")))
@@ -61,7 +61,7 @@ def frame(k):
     fig=plt.figure(figsize=(10.8,19.2),dpi=100,facecolor=BG)
     T=fig.text
     T(0.5,0.955,"Як ніч приходить в Україну",fontsize=36,color=FG,fontweight="bold",ha="center",va="top")
-    T(0.5,0.915,f"{D} листопада {Y} · київський час",fontsize=18,color=DIM,ha="center",va="top")
+    T(0.5,0.915,f"{D} грудня {Y} · київський час",fontsize=18,color=DIM,ha="center",va="top")
     T(0.5,0.885,fmt(t),fontsize=84,color=ACC,fontweight="bold",ha="center",va="top",family="DejaVu Sans Mono")
     ax=fig.add_axes([0.01,0.39,0.98,0.42]); ax.set_facecolor(BG)
     ax.set_xlim(X0,X1); ax.set_ylim(Y0,Y1); ax.set_aspect(1/math.cos(math.radians(48.5))); ax.axis("off")
