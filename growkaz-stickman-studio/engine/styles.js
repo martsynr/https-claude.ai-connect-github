@@ -18,6 +18,13 @@ export const BASE_MOODS = {
 const UI = { card: 'rgba(18,28,48,.94)', cardLine: 'rgba(150,180,230,.25)', text: '#9fb6d8', sub: '#6f84a6', accent: '#ff6f61', gold: '#ffd47e', cream: '#fff1dc', blueprint: '#8fb8e8', bpBg: '#0b1324', good: '#5fd39a' };
 
 export const STYLES = {
+  liniya: {
+    name: 'Liniya Light', desc: 'Clean flat line-art illustration: near-white paper, thin graphite outlines, pastel blue / olive / grey fills, no grain or vignette.',
+    ink: '#3d434a', inkFar: '#6a7078', feature: '#ffffff', rimWidth: 0,
+    ui: { ...UI, card: 'rgba(255,255,255,.96)', cardLine: 'rgba(61,67,74,.3)', text: '#3d434a', sub: '#7a828a', accent: '#e0573a', gold: '#e3a21a', cream: '#3d434a', blueprint: '#4f7fae', bpBg: '#f8f9fa', good: '#6aa84f' },
+    grade: { contrast: 1.0, sat: 1.0, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0, grain: 0, bloom: 0 },
+    moods: {},
+  },
   emerald: {
     name: 'GrowKaz Emerald', desc: 'GrowKaz signature look: deep forest-green shadows, warm gold key light, electric lime rim light, rich bloom.',
     ink: '#06110c', inkFar: '#1c3328', feature: '#f2ffe8', rimWidth: 4.5,

@@ -1,0 +1,685 @@
+{
+ "title": "Кругле чи пласке",
+ "duration": 64.6,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.4,
+   "line": "Торік Іван Петрович",
+   "scene": "Spring field at golden hour: Ivan by his planter, sowing; badge ТОРІК; slow push",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0.1,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s02",
+   "start": 2.4,
+   "end": 5.3,
+   "line": "посіяв гібрид кукурудзи і цього року знову його замовив.",
+   "scene": "Ivan on the phone in front of tall ripe corn; order card ТОЙ САМИЙ ГІБРИД pops on 'замовив'",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "phonering",
+     "gain": -18
+    },
+    {
+     "at": 2.1,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s03",
+   "start": 5.3,
+   "end": 8.45,
+   "line": "Але цього разу в мішку зовсім інше зерно.",
+   "scene": "Barn: Ivan crouches over a fresh seed bag in a light shaft, opens it, recoils on 'інше'",
+   "set": "barn",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "swish",
+     "gain": -14
+    },
+    {
+     "at": 2.2,
+     "name": "stinger",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s04",
+   "start": 8.45,
+   "end": 11.3,
+   "line": "Торік було пласке, а тепер — кругле.",
+   "scene": "Insert: flat kernel (ТОРІК) pops left, round kernel (ЦЬОГОРІЧ) pops right over blurred barn",
+   "set": "barn",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 1.9,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s05",
+   "start": 11.3,
+   "end": 12.7,
+   "line": "Фермера надурили?",
+   "scene": "Giant face: Ivan shocked; НАДУРИЛИ? slams in",
+   "set": "barn",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": null,
+   "captions": false
+  },
+  {
+   "id": "s06",
+   "start": 12.7,
+   "end": 14.75,
+   "line": "Не поспішайте з висновками!",
+   "scene": "Agronomist steps into the barn door light, palm up 'stop'; Ivan turns",
+   "set": "barn",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "roomtone",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s07",
+   "start": 14.75,
+   "end": 19.45,
+   "line": "Насіння одного й того самого гібрида буває і круглим, і пласким.",
+   "scene": "Blueprint: one ear, ОДИН ГІБРИД; round kernel pops left on 'круглим', flat right on 'пласким'",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 1.8,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.2,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 3.9,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s08",
+   "start": 19.45,
+   "end": 22.75,
+   "line": "Це залежить від того, з якої частини качана взяте зерно.",
+   "scene": "Macro: a golden ear with husk peeled back, camera tilts tip to base",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -16
+    },
+    {
+     "at": 1.5,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s09",
+   "start": 22.75,
+   "end": 25.9,
+   "line": "На верхівці й біля основи зерно кругліше,",
+   "scene": "Blueprint ear: tip zone lights on 'верхівці', base on 'основи', round kernels + КРУГЛЕ",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.45,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.4,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 2.3,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s10",
+   "start": 25.9,
+   "end": 28.35,
+   "line": "а посередині, де йому тісно, — пласке.",
+   "scene": "Same ear: middle zone lights, squeeze arrows on 'тісно', flat kernel + ПЛАСКЕ",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.3,
+     "name": "hit",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s11",
+   "start": 28.35,
+   "end": 31.1,
+   "line": "На форму зерна впливає і погода,",
+   "scene": "Field in heat: big sun, heat shimmer, badge 2025",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.15,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s12",
+   "start": 31.1,
+   "end": 33.45,
+   "line": "а вона майже щороку інша.",
+   "scene": "Same field in a storm: rain, lightning, badge 2026",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.7,
+     "name": "thunder",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -20
+   }
+  },
+  {
+   "id": "s13",
+   "start": 33.45,
+   "end": 35.75,
+   "line": "На заводі все насіння калібрують —",
+   "scene": "Seed plant: hoppers, conveyor carrying kernels, cool light; КАЛІБРУВАННЯ",
+   "set": "factory",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -24
+   }
+  },
+  {
+   "id": "s14",
+   "start": 35.75,
+   "end": 39.05,
+   "line": "тобто сортують на фракції за формою та розміром.",
+   "scene": "Blueprint sieves: kernels fall and sort into bins by ФОРМА and РОЗМІР",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.0,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 2.6,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "hum",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s15",
+   "start": 39.05,
+   "end": 43.4,
+   "line": "Але це все насіння одного гібрида — з тим самим набором генів",
+   "scene": "Round and flat kernels joined by a glowing DNA helix; ОДИН ГІБРИД, ТІ САМІ ГЕНИ",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "flash",
+     "gain": -14
+    },
+    {
+     "at": 1.8,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.9,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s16",
+   "start": 43.4,
+   "end": 46.05,
+   "line": "і тими самими посівними якостями.",
+   "scene": "Seed-quality card: two columns (round/flat) with matching ticks",
+   "set": "bp",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "tick",
+     "gain": -16
+    },
+    {
+     "at": 0.8,
+     "name": "tick",
+     "gain": -16
+    },
+    {
+     "at": 1.05,
+     "name": "tick",
+     "gain": -16
+    },
+    {
+     "at": 1.3,
+     "name": "pop",
+     "gain": -14
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s17",
+   "start": 46.05,
+   "end": 47.4,
+   "line": "Лише пам'ятайте:",
+   "scene": "Giant face: agronomist, determined, finger up",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "blip",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -30
+   }
+  },
+  {
+   "id": "s18",
+   "start": 47.4,
+   "end": 50.85,
+   "line": "нова фракція — це нове налаштування сівалки.",
+   "scene": "Field: tractor + planter, Ivan with a wrench at a row unit; НАЛАШТУВАННЯ",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.9,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s19",
+   "start": 50.85,
+   "end": 53.45,
+   "line": "Підберіть висівний диск під розмір зерна.",
+   "scene": "Macro: seed disc turning, kernels seat in cells; ВИСІВНИЙ ДИСК",
+   "set": "planter",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0.0,
+     "name": "whoosh",
+     "gain": -14
+    },
+    {
+     "at": 0.4,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.5,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s20",
+   "start": 53.45,
+   "end": 54.85,
+   "line": "Відрегулюйте вакуум",
+   "scene": "Vacuum gauge needle swings into the green zone; ВАКУУМ",
+   "set": "planter",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "blip",
+     "gain": -14
+    },
+    {
+     "at": 1.2,
+     "name": "ding",
+     "gain": -14
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s21",
+   "start": 54.85,
+   "end": 55.95,
+   "line": "і скидач двійників.",
+   "scene": "Disc cell with two kernels; the singulator flicks one off; СКИДАЧ ДВІЙНИКІВ",
+   "set": "planter",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.05,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 0.5,
+     "name": "tick",
+     "gain": -14
+    }
+   ],
+   "amb": null
+  },
+  {
+   "id": "s22",
+   "start": 55.95,
+   "end": 58.75,
+   "line": "І обов'язково зробіть пробний висів.",
+   "scene": "Ivan kneels at a furrow; seeds spaced evenly, equal dimension marks, ✓",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 2.3,
+     "name": "ding",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -28
+   }
+  },
+  {
+   "id": "s23",
+   "start": 58.75,
+   "end": 64.6,
+   "line": "А вам яке насіння більше подобається — кругленьке чи пласке?",
+   "scene": "End: question on top, round vs flat kernels pop on words, Ivan and agronomist below",
+   "set": "end",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 2.5,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.4,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 4.2,
+     "name": "blip",
+     "gain": -14
+    }
+   ],
+   "amb": null,
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 11.3,
+   "mood": "playful",
+   "intensity": 0.35
+  },
+  {
+   "start": 11.3,
+   "end": 14.75,
+   "mood": "tension",
+   "intensity": 0.3
+  },
+  {
+   "start": 14.75,
+   "end": 46.05,
+   "mood": "wonder",
+   "intensity": 0.35
+  },
+  {
+   "start": 46.05,
+   "end": 58.75,
+   "mood": "hopeful",
+   "intensity": 0.45
+  },
+  {
+   "start": 58.75,
+   "end": 64.6,
+   "mood": "playful",
+   "intensity": 0.4
+  }
+ ],
+ "sfx": []
+}
