@@ -9,6 +9,8 @@ import matplotlib.patheffects as pe
 from shapely.geometry import shape
 from sun import sunset_utc_min, sunrise_utc_min
 from multiprocessing import Pool
+import explain as EX
+EX.init(S)
 
 Y,M,D=2026,12,1; TZ=120; FPS=30
 MONTH="грудня"
@@ -50,7 +52,16 @@ A=part("rise"); B=part("set")
 REG={"rise":("Луганщина","Волинь"),"set":("Луганщина","Закарпаття")}
 iShort=int(np.argmin(DL)); iLong=int(np.argmax(DL))
 FINAL=8
-DUR=A["dur"]+B["dur"]+FINAL
+DUR=A["dur"]+B["dur"]+EX.XDUR+FINAL
+ik=cidx[cities.index("Київ")]; KSR,KSS=SR[ik],SS[ik]
+def _row(G,la,val):
+    j=int(np.argmin(abs(gy[:,0]-la))); return gx[0,int(np.argmin(abs(G[j]-val)))]
+def _ang(G):
+    j=int(np.argmin(abs(gy[:,0]-lat[ik]))); i=int(np.argmin(abs(gx[0]-lon[ik])))
+    dx=(gx[0,1]-gx[0,0])*111.32*math.cos(math.radians(lat[ik])); dy=(gy[1,0]-gy[0,0])*110.57
+    gxk=(G[j,i+1]-G[j,i-1])/(2*dx); gyk=(G[j+1,i]-G[j-1,i])/(2*dy); return math.degrees(math.atan(abs(gyk)/abs(gxk)))
+CTX=dict(sr_utc=KSR-TZ,ss_utc=KSS-TZ,fmt=fmt,ext=(X0,X1,Y0,Y1),upath=upath,gx=gx,gy=gy,GSR=GSR,GSS=GSS,kyiv_sr=KSR,kyiv_ss=KSS,
+         kyiv=(lon[ik],lat[ik]),sr_lbl=(_row(GSR,52.3,KSR)+1.6,52.55),ss_lbl=(_row(GSS,51.6,KSS)-1.6,51.85),angle=_ang(GSR)+_ang(GSS))
 def sim(P,v):
     for (a,sa),(b,sb) in zip(P["keys"],P["keys"][1:]):
         if v<=b:
@@ -133,8 +144,10 @@ def frame(k):
         # cross-fade to black at part edges
         edge=min(vv,P["dur"]-vv)
         if edge<0.5: fig.patches.append(plt.Rectangle((0,0),1,1,transform=fig.transFigure,figure=fig,color=BG,alpha=1-edge/0.5,zorder=100))
+    elif v<A["dur"]+B["dur"]+EX.XDUR:
+        EX.explain_frame(fig,v-A["dur"]-B["dur"],CTX)
     else:
-        vv=v-A["dur"]-B["dur"]
+        vv=v-A["dur"]-B["dur"]-EX.XDUR
         def a_(s): return float(np.clip((vv-s)/0.6,0,1))
         T(0.5,0.94,"Один день України",fontsize=40,color=FG,fontweight="bold",ha="center",va="top",alpha=a_(0))
         T(0.5,0.895,f"{D} {MONTH} {Y}",fontsize=20,color=DIM,ha="center",va="top",alpha=a_(0))
@@ -151,6 +164,6 @@ def frame(k):
 if __name__=="__main__":
     os.makedirs(S+"/frames2",exist_ok=True)
     for P in (A,B): print(P["kind"],names[P["iF"]],fmt(P["tF"]),names[P["iL"]],fmt(P["tL"]),hms(P["tL"]-P["tF"]))
-    print("short",names[iShort],hms(DL[iShort]),"long",names[iLong],hms(DL[iLong]))
+    print("angle",CTX["angle"],CTX["sr_lbl"],CTX["ss_lbl"]); print("short",names[iShort],hms(DL[iShort]),"long",names[iLong],hms(DL[iLong]))
     ks=[int(a) for a in sys.argv[2:]] or range(int(DUR*FPS))
     with Pool(os.cpu_count()) as p: p.map(frame,ks,chunksize=4)
