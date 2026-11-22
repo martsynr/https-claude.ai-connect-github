@@ -1,0 +1,18 @@
+{
+ "title": "Чому важливо обирати нові гібриди кукурудзи",
+ "aspect": "9:16",
+ "resolution": "1080p",
+ "fps": 24,
+ "style": "emerald",
+ "voiceover": null,
+ "script": "input/script.txt",
+ "duration": 18.0,
+ "captions": true,
+ "bars": null,
+ "fadeIn": 0.5,
+ "fadeOut": 0.8,
+ "music": { "enabled": true, "gainDb": -17 },
+ "sfx": { "enabled": true, "gainDb": -6 },
+ "loudness": -14,
+ "captionStyle": { "max": 3 }
+}

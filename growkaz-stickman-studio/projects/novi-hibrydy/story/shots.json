@@ -1,0 +1,14 @@
+{
+ "title": "Чому важливо обирати нові гібриди кукурудзи",
+ "duration": 18.0,
+ "shots": [
+  { "id": "s01", "start": 0.0, "end": 7.0, "line": "Подивіться на цей графік. Це середня врожайність кукурудзи в Сполучених Штатах за останні півтора століття.",
+    "scene": "Blueprint: Troyer's US corn yield chart draws on — flat open-pollinated era, then the hybrid bend and steep climb to 11 t/ha.", "set": "blueprint", "in": { "type": "fade", "dur": 0.5 }, "sfx": [], "params": {} },
+  { "id": "s02", "start": 7.0, "end": 14.0, "line": "Науковці висіяли поруч, в одному полі, гібриди різних десятиліть.",
+    "scene": "Golden field, Duvick-style era plot: sparse, barren old hybrid on the left, dense eared modern hybrid on the right; SCIENTIST points, FARMER watches.", "set": "field", "in": { "type": "cut" }, "sfx": [], "params": {} },
+  { "id": "s03", "start": 14.0, "end": 18.0, "line": "Різниця — лише в мішку з насінням.",
+    "scene": "Giant face: FARMER in awe, field blurred behind; gold line ПОЛОВИНА ПРИРОСТУ — ГЕНЕТИКА.", "set": "field", "in": { "type": "cut" }, "sfx": [], "params": {} }
+ ],
+ "music": [ { "start": 0, "end": 18, "mood": "wonder", "intensity": 0.4 } ],
+ "sfx": []
+}
