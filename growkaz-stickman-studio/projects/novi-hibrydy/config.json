@@ -11,8 +11,18 @@
  "bars": null,
  "fadeIn": 0.5,
  "fadeOut": 0.8,
- "music": { "enabled": true, "gainDb": -17 },
- "sfx": { "enabled": true, "gainDb": -6 },
+ "music": {
+  "enabled": true,
+  "gainDb": -17
+ },
+ "sfx": {
+  "enabled": true,
+  "gainDb": -6
+ },
  "loudness": -14,
- "captionStyle": { "max": 3 }
+ "captionStyle": {
+  "max": 3
+ },
+ "skin": "paper",
+ "look": "paper"
 }

@@ -68,7 +68,7 @@ function paperShadow(g, on) { if (on) { g.shadowColor = 'rgba(0,0,0,.38)'; g.sha
 function jaggedCircle(g, x, y, r, n, seed) { g.beginPath(); for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2, rr2 = r * (0.97 + 0.05 * hashf(seed + i)); g.lineTo(x + Math.cos(a) * rr2, y + Math.sin(a) * rr2); } g.closePath(); }
 function paperPiece(g, a, b, w, fill = PAPER) { paperShadow(g, true); limb(g, a, b, w, w * 0.9, fill); paperShadow(g, false); g.strokeStyle = PAPER_EDGE; g.lineWidth = 0.8; g.stroke(); }
 function pin(g, p) { circle(g, p[0], p[1], 2.6, '#b8955a'); circle(g, p[0] - 0.6, p[1] - 0.6, 1, '#f3dca0'); }
-function paperCap(g, x, y, r, col) { paperShadow(g, true); g.fillStyle = col; g.beginPath(); g.ellipse(x, y - r * 0.3, r * 1.02, r * 0.8, 0, Math.PI, Math.PI * 2); g.fill(); rr(g, x + r * 0.1, y - r * 0.42, r * 1.5, r * 0.24, r * 0.08); g.fillStyle = shade(col, -0.2); g.fill(); paperShadow(g, false); }
+function paperCap(g, x, y, r, col, front = false) { paperShadow(g, true); g.fillStyle = col; g.beginPath(); g.ellipse(x, y - r * 0.3, r * 1.02, r * 0.8, 0, Math.PI, Math.PI * 2); g.fill(); g.fillStyle = shade(col, -0.2); if (front) { g.beginPath(); g.ellipse(x, y - r * 0.3, r * 1.2, r * 0.2, 0, 0, Math.PI); g.fill(); } else { rr(g, x + r * 0.1, y - r * 0.42, r * 1.5, r * 0.24, r * 0.08); g.fill(); } paperShadow(g, false); }
 const paper = {
   name: 'Білий папір', desc: 'вирізаний з білого паперу герой-маріонетка з кнопками в суглобах',
   figure(g, o, p, of) {
@@ -92,7 +92,7 @@ const paper = {
     jaggedCircle(g, 0, 0, r, 40, 9); g.fillStyle = PAPER; g.fill(); paperShadow(g, false); g.strokeStyle = PAPER_EDGE; g.lineWidth = r * 0.012; g.stroke();
     // subtle paper fibres
     g.save(); g.clip(); for (let i = 0; i < 70; i++) { const x = (hashf(i) - 0.5) * 2 * r, y = (hashf(i + 99) - 0.5) * 2 * r; g.strokeStyle = 'rgba(160,150,130,.12)'; g.lineWidth = 1; g.beginPath(); g.moveTo(x, y); g.lineTo(x + r * 0.08, y + r * 0.02 * (hashf(i + 7) - 0.5)); g.stroke(); } g.restore();
-    if (of.head === 'cap' || of.head === 'capBack') paperCap(g, 0, 0, r, of.headColor || '#d64a33');
+    if (of.head === 'cap' || of.head === 'capBack') paperCap(g, 0, 0, r, of.headColor || '#d64a33', true);
     // cut-out features: a dark layer under the hole, offset = depth
     g.save(); g.translate(r * 0.012, r * 0.02); features(g, 0, 0, r, ex, { ink: '#3a332c', eye: 'dot', front: true, scale: 1 }); g.restore();
     features(g, 0, 0, r, ex, { ink: '#1e1a16', eye: 'dot', front: true, scale: 0.96 });
