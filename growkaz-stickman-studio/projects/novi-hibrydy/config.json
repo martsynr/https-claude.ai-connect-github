@@ -3,7 +3,7 @@
  "aspect": "9:16",
  "resolution": "1080p",
  "fps": 24,
- "style": "emerald",
+ "style": "sheet",
  "voiceover": null,
  "script": "input/script.txt",
  "duration": 18.0,
@@ -21,8 +21,10 @@
  },
  "loudness": -14,
  "captionStyle": {
-  "max": 3
+  "max": 3,
+  "color": "#1d1a17",
+  "hi": "#3d8a3a"
  },
- "skin": "paper",
- "look": "paper"
+ "skin": "cartoon",
+ "look": "clean"
 }

@@ -335,4 +335,131 @@ const flat = {
   },
 };
 
-export const SKINS = { paper, lego, human, clay, flat };
+// ======================================================================================
+// 6. CARTOON — flat character-sheet style: bold black outlines, cream-paper palette, simple round heads.
+//    Outfit extras: top 'overalls' (color = denim, color2 = shirt), beard: colour, hair: 'bowl', hairColor, boots: colour, shoes: colour.
+// ======================================================================================
+const C_INK = '#1d1a17', C_SKIN = '#fadcc0', C_LW = 3.2;
+function oLimb(g, a, b, w, fill, w2 = w) { limb(g, a, b, w + C_LW * 2, w2 + C_LW * 2, C_INK); limb(g, a, b, w, w2, fill); }
+function oFill(g, fill, lw = C_LW) { g.fillStyle = fill; g.fill(); g.strokeStyle = C_INK; g.lineWidth = lw; g.lineJoin = 'round'; g.lineCap = 'round'; g.stroke(); }
+function oCircle(g, x, y, r, fill, lw = C_LW) { g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); oFill(g, fill, lw); }
+function cartoonEyes(g, cx, cy, r, ex, front) {
+  const sp = r * (front ? 0.3 : 0.26), ey = cy - r * 0.02, look = ex.look, xs = front ? [cx - sp, cx + sp] : [cx - sp + r * 0.22, cx + sp + r * 0.22];
+  xs.forEach((x, i) => {
+    const k = front ? 1 : i === 0 ? 0.85 : 1;
+    if (ex.eyes === 'closed') { g.strokeStyle = C_INK; g.lineWidth = r * 0.06; g.beginPath(); g.moveTo(x - r * 0.08, ey); g.lineTo(x + r * 0.08, ey); g.stroke(); return; }
+    if (ex.eyes === 'happy') { g.strokeStyle = C_INK; g.lineWidth = r * 0.06; g.beginPath(); g.arc(x, ey + r * 0.04, r * 0.08, Math.PI * 1.1, Math.PI * 1.9); g.stroke(); return; }
+    const big = ex.eyes === 'wide' || ex.eyes === 'ring' ? 1.18 : 1;
+    g.fillStyle = C_INK; g.beginPath(); g.ellipse(x + look[0] * r * 0.04, ey + look[1] * r * 0.04, r * 0.075 * k * big, r * 0.115 * big, 0, 0, 7); g.fill();
+  });
+  return xs;
+}
+function cartoonBrows(g, xs, cy, r, ex) {
+  const by = cy - r * 0.24, bw = r * 0.11; g.strokeStyle = C_INK; g.lineWidth = r * 0.055; g.lineCap = 'round';
+  const line = (x, a) => { g.beginPath(); g.moveTo(x - bw, by + a); g.lineTo(x + bw, by - a); g.stroke(); };
+  if (ex.brows === 'angry') { line(xs[0], r * 0.07); line(xs[1], -r * 0.07); }
+  else if (ex.brows === 'worried') { line(xs[0], -r * 0.05); line(xs[1], r * 0.05); }
+  else xs.forEach(x => { g.beginPath(); g.arc(x, by + r * (ex.brows === 'raised' || ex.eyes === 'wide' ? 0.12 : 0.16), r * 0.12, Math.PI * 1.25, Math.PI * 1.75); g.stroke(); });
+}
+function cartoonMouth(g, x, y, r, ex, onBeard) {
+  const k = r * 0.13; g.strokeStyle = C_INK; g.fillStyle = C_INK; g.lineWidth = r * 0.05; g.lineCap = 'round';
+  if (onBeard) { g.fillStyle = C_SKIN; g.beginPath(); g.ellipse(x, y, k * 1.35, k * (ex.mouth === 'talk' || ex.mouth === 'o' || ex.mouth === 'oBig' ? 1.2 : 0.75), 0, 0, 7); g.fill(); g.fillStyle = C_INK; }
+  switch (ex.mouth) {
+    case 'talk': g.beginPath(); g.ellipse(x, y, k * 0.8, k * (0.2 + 0.8 * ex.talk), 0, 0, 7); g.fill(); break;
+    case 'o': case 'oBig': g.beginPath(); g.ellipse(x, y, k * 0.45, k * 0.65, 0, 0, 7); g.fillStyle = onBeard ? C_INK : C_INK; g.fill(); break;
+    case 'grin': g.beginPath(); g.moveTo(x - k, y - k * 0.2); g.quadraticCurveTo(x, y + k * 1.3, x + k, y - k * 0.2); g.closePath(); g.fillStyle = '#ffffff'; g.fill(); g.stroke(); break;
+    case 'frown': g.beginPath(); g.arc(x, y + k * 0.7, k * 0.8, Math.PI + 0.5, Math.PI * 2 - 0.5); g.stroke(); break;
+    case 'flat': case 'smallFlat': g.beginPath(); g.moveTo(x - k * 0.7, y); g.lineTo(x + k * 0.7, y); g.stroke(); break;
+    case 'smirk': g.beginPath(); g.moveTo(x - k * 0.7, y); g.quadraticCurveTo(x + k * 0.2, y + k * 0.3, x + k * 0.9, y - k * 0.4); g.stroke(); break;
+    default: g.beginPath(); g.arc(x, y - k * 0.6, k * 0.85, 0.45, Math.PI - 0.45); g.stroke();
+  }
+}
+function cartoonBeard(g, cx, cy, r, col, front) {
+  g.save(); g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.clip();
+  g.fillStyle = col; g.beginPath(); const sx = front ? 0 : r * 0.2;
+  g.moveTo(cx - r * 1.1, cy + r * 0.02); g.lineTo(cx - r * 0.8 + sx, cy + r * 0.12); g.quadraticCurveTo(cx - r * 0.55 + sx, cy + r * 0.5, cx - r * 0.25 + sx, cy + r * 0.24);
+  g.quadraticCurveTo(cx + sx, cy + r * 0.14, cx + r * 0.25 + sx, cy + r * 0.24); g.quadraticCurveTo(cx + r * 0.55 + sx, cy + r * 0.5, cx + r * 0.8 + sx, cy + r * 0.12); g.lineTo(cx + r * 1.1, cy + r * 0.02); g.lineTo(cx + r * 1.1, cy + r * 1.2); g.lineTo(cx - r * 1.1, cy + r * 1.2); g.closePath(); g.fill(); g.restore();
+}
+function cartoonCap(g, cx, cy, r, col, front) {
+  g.beginPath(); g.moveTo(cx - r * 0.98, cy - r * 0.22); g.bezierCurveTo(cx - r * 1.0, cy - r * 1.25, cx + r * 1.0, cy - r * 1.25, cx + r * 0.98, cy - r * 0.22); g.closePath(); oFill(g, col);
+  g.beginPath(); g.moveTo(cx, cy - r * 1.0); g.quadraticCurveTo(cx + r * 0.25, cy - r * 0.6, cx + r * 0.2, cy - r * 0.24); g.strokeStyle = C_INK; g.lineWidth = C_LW * 0.7; g.stroke();
+  oCircle(g, cx, cy - r * 1.0, r * 0.08, col, C_LW * 0.8);
+  if (front) { g.beginPath(); g.moveTo(cx - r * 0.95, cy - r * 0.22); g.quadraticCurveTo(cx, cy - r * 0.02, cx + r * 0.95, cy - r * 0.22); g.quadraticCurveTo(cx, cy - r * 0.36, cx - r * 0.95, cy - r * 0.22); oFill(g, shade(col, -0.12)); }
+  else { g.beginPath(); g.moveTo(cx + r * 0.6, cy - r * 0.3); g.quadraticCurveTo(cx + r * 1.4, cy - r * 0.42, cx + r * 1.55, cy - r * 0.24); g.quadraticCurveTo(cx + r * 1.1, cy - r * 0.12, cx + r * 0.6, cy - r * 0.18); g.closePath(); oFill(g, shade(col, -0.1)); }
+}
+function cartoonBowl(g, cx, cy, r, col, front) {
+  g.beginPath(); g.moveTo(cx - r * 1.03, cy + (front ? -r * 0.05 : r * 0.25)); g.bezierCurveTo(cx - r * 1.15, cy - r * 1.3, cx + r * 1.15, cy - r * 1.3, cx + r * 1.03, cy - r * 0.2);
+  g.quadraticCurveTo(cx + r * 0.6, cy - r * 0.55, cx + r * 0.1, cy - r * 0.55); g.quadraticCurveTo(cx - r * 0.3, cy - r * 0.3, cx - r * 0.6, cy - r * 0.45); g.quadraticCurveTo(cx - r * 0.85, cy - r * 0.2, cx - r * 1.03, cy + (front ? -r * 0.05 : r * 0.25)); g.closePath(); oFill(g, col);
+}
+function cartoonGlasses(g, xs, cy, r) { g.strokeStyle = C_INK; g.lineWidth = r * 0.055; xs.forEach(x => { g.beginPath(); g.arc(x, cy - r * 0.02, r * 0.19, 0, 7); g.stroke(); }); g.beginPath(); g.moveTo(xs[0] + r * 0.19, cy - r * 0.04); g.lineTo(xs[1] - r * 0.19, cy - r * 0.04); g.stroke(); }
+function cartoonHead(g, cx, cy, r, of, ex, front) {
+  const ears = front ? [-1, 1] : [-1]; ears.forEach(s => oCircle(g, cx + s * r * (front ? 0.97 : 0.62), cy + r * 0.05, r * 0.17, C_SKIN));
+  oCircle(g, cx, cy, r, C_SKIN);
+  if (of.beard) cartoonBeard(g, cx, cy, r, of.beard, front);
+  if (of.beard) { g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.strokeStyle = C_INK; g.lineWidth = C_LW; g.stroke(); }
+  const xs = cartoonEyes(g, cx, cy, r, ex, front); cartoonBrows(g, xs, cy, r, ex);
+  cartoonMouth(g, (xs[0] + xs[1]) / 2, cy + r * (of.beard ? 0.42 : 0.4), r, ex, !!of.beard);
+  if (of.hair === 'bowl') cartoonBowl(g, cx, cy, r, of.hairColor || '#3e2b22', front);
+  if (of.head === 'cap' || of.head === 'capBack') cartoonCap(g, cx, cy, r, of.headColor || '#5a9e4f', front);
+  if (of.face === 'glasses') cartoonGlasses(g, xs, cy, r);
+}
+function cartoonTablet(g, h) { g.save(); g.translate(h[0] + 4, h[1] - 14); g.rotate(-0.15); rr(g, -14, -20, 34, 26, 4); oFill(g, '#3a3f46'); rr(g, -10, -16, 26, 18, 2); g.fillStyle = '#5b636d'; g.fill(); g.strokeStyle = '#9aa3ad'; g.lineWidth = 1.6; g.beginPath(); g.moveTo(-8, -1); g.lineTo(-1, -9); g.lineTo(5, -4); g.lineTo(13, -13); g.stroke(); g.restore(); }
+const cartoon = {
+  name: 'Мультяшний контур', desc: 'плаский мультяшний стиль з товстим чорним контуром, як на листах персонажів',
+  figure(g, o, p, of) {
+    const ex = expr(o), over = of.top === 'overalls', coat = of.top === 'labcoat';
+    const denim = of.color || '#4f7fbf', shirt = over ? (of.color2 || '#f6cf5c') : (of.color || '#d64a33'), coatC = coat ? (of.color || '#6aa874') : null;
+    const pants = over ? denim : (of.legs || '#3d5c45'), foot = of.boots || of.shoes || '#2c3a30';
+    const shoe = (fp, back) => { g.save(); g.translate(fp[0], fp[1]); if (of.boots) { g.beginPath(); g.moveTo(-7, -14); g.lineTo(7, -14); g.lineTo(8, -6); g.lineTo(18, -4); g.lineTo(18, 0); g.lineTo(-8, 0); g.closePath(); oFill(g, back ? shade(foot, -0.15) : foot); } else { rr(g, -7, -7, 23, 8, 4); oFill(g, back ? shade(foot, -0.15) : foot); } g.restore(); };
+    // back leg + back arm
+    const ank = (q) => [q[0], q[1] - 9];
+    oLimb(g, p.hip, p.kB, 14, shade(pants, -0.12)); oLimb(g, p.kB, ank(p.fB), 13, shade(pants, -0.12)); shoe(p.fB, true);
+    if (coat) { oLimb(g, p.hip, p.kF, 14, pants); oLimb(g, p.kF, ank(p.fF), 13, pants); shoe(p.fF, false); }
+    if (coat) { oLimb(g, p.sh, p.eB, 12, shade(coatC, -0.12)); oLimb(g, p.eB, p.hB, 11, shade(coatC, -0.12)); }
+    else { oLimb(g, p.sh, p.eB, 4.5, shade(C_SKIN, -0.08)); oLimb(g, p.eB, p.hB, 4.5, shade(C_SKIN, -0.08)); }
+    oCircle(g, p.hB[0], p.hB[1], 6, shade(C_SKIN, -0.08));
+    if (o.prop === 'tablet' || o.prop?.type === 'tablet') cartoonTablet(g, p.hB);
+    // torso
+    const sx = p.sh[0], sy = p.sh[1], hx = p.hip[0], hy = p.hip[1];
+    if (coat) { g.beginPath(); g.moveTo(sx - 15, sy - 4); g.lineTo(sx + 15, sy - 4); g.lineTo(hx + 22, hy + 42); g.lineTo(hx - 20, hy + 42); g.closePath(); oFill(g, coatC);
+      g.beginPath(); g.moveTo(sx - 4, sy - 4); g.lineTo(sx + 2, sy + 16); g.lineTo(sx + 8, sy - 4); g.closePath(); oFill(g, '#9fc9b0', C_LW * 0.7);
+      g.strokeStyle = C_INK; g.lineWidth = C_LW * 0.8; g.beginPath(); g.moveTo(sx + 2, sy + 16); g.lineTo(hx + 3, hy + 40); g.stroke(); g.beginPath(); g.moveTo(sx - 8, sy - 3); g.lineTo(sx - 1, sy + 12); g.lineTo(sx - 6, sy + 16); g.stroke(); }
+    else { g.beginPath(); g.moveTo(sx - 14, sy - 4); g.quadraticCurveTo(sx, sy - 8, sx + 14, sy - 4); g.lineTo(hx + 14, hy + 4); g.lineTo(hx - 14, hy + 4); g.closePath(); oFill(g, shirt); }
+    if (over) { g.beginPath(); g.moveTo(sx - 11, sy + 14); g.lineTo(sx + 12, sy + 14); g.lineTo(hx + 17, hy + 2); g.quadraticCurveTo(hx + 18, hy + 14, hx + 10, hy + 16); g.lineTo(hx - 10, hy + 16); g.quadraticCurveTo(hx - 18, hy + 14, hx - 17, hy + 2); g.closePath(); oFill(g, denim);
+      g.strokeStyle = C_INK; g.lineWidth = C_LW; for (const d of [-8, 9]) { g.beginPath(); g.moveTo(sx + d, sy + 15); g.lineTo(sx + d * 0.8, sy - 4); g.stroke(); }
+      rr(g, sx - 5, sy + 22, 14, 11, [1, 1, 5, 5]); g.strokeStyle = C_INK; g.lineWidth = C_LW * 0.8; g.stroke(); }
+    // front leg
+    if (!coat) { oLimb(g, p.hip, p.kF, 14, pants); oLimb(g, p.kF, ank(p.fF), 13, pants); shoe(p.fF, false); }
+    // front arm
+    if (coat) { oLimb(g, p.sh, p.eF, 12, coatC); oLimb(g, p.eF, p.hF, 11, coatC); }
+    else { oLimb(g, p.sh, p.eF, 4.5, C_SKIN); oLimb(g, p.eF, p.hF, 4.5, C_SKIN);
+      oLimb(g, p.sh, [lerp(p.sh[0], p.eF[0], 0.55), lerp(p.sh[1], p.eF[1], 0.55)], 14, shirt, 12); }
+    oCircle(g, p.hF[0], p.hF[1], 6.5, C_SKIN);
+    // neck + head
+    oLimb(g, [p.head[0] - 2, p.head[1] + 20], [sx, sy - 2], 8, C_SKIN);
+    cartoonHead(g, p.head[0], p.head[1] - 2, 27, of, ex, false);
+  },
+  portrait(g, r, o) {
+    const of = o.outfit || {}, ex = expr(o), over = of.top === 'overalls', coat = of.top === 'labcoat';
+    const shirt = over ? (of.color2 || '#f6cf5c') : coat ? '#9fc9b0' : (of.color || '#d64a33');
+    // shoulders
+    g.beginPath(); g.moveTo(-r * 1.35, r * 2.3); g.quadraticCurveTo(-r * 1.4, r * 1.05, -r * 0.4, r * 0.98); g.lineTo(r * 0.4, r * 0.98); g.quadraticCurveTo(r * 1.4, r * 1.05, r * 1.35, r * 2.3); g.closePath(); oFill(g, coat ? (of.color || '#6aa874') : shirt, r * 0.035);
+    if (coat) { g.beginPath(); g.moveTo(-r * 0.4, r * 0.98); g.lineTo(0, r * 1.5); g.lineTo(r * 0.4, r * 0.98); g.closePath(); oFill(g, shirt, r * 0.03); for (const s of [-1, 1]) { g.beginPath(); g.moveTo(s * r * 0.4, r * 0.98); g.lineTo(s * r * 0.15, r * 1.6); g.lineTo(s * r * 0.5, r * 1.3); g.lineTo(s * r * 0.62, r * 1.02); g.closePath(); oFill(g, shade(of.color || '#6aa874', -0.08), r * 0.03); } }
+    if (over) { g.beginPath(); g.moveTo(-r * 0.75, r * 1.75); g.lineTo(r * 0.75, r * 1.75); g.lineTo(r * 0.8, r * 2.4); g.lineTo(-r * 0.8, r * 2.4); g.closePath(); oFill(g, of.color || '#4f7fbf', r * 0.035);
+      g.strokeStyle = C_INK; g.lineWidth = r * 0.035; for (const s of [-1, 1]) { rr(g, s * r * 0.62 - r * 0.1, r * 1.05, r * 0.2, r * 0.72, r * 0.04); g.fillStyle = of.color || '#4f7fbf'; g.fill(); g.stroke(); } }
+    // neck
+    rr(g, -r * 0.26, r * 0.7, r * 0.52, r * 0.42, r * 0.1); oFill(g, C_SKIN, r * 0.035);
+    // head (front)
+    const lw = r * 0.035; const saveLW = C_LW;
+    [-1, 1].forEach(s => { g.beginPath(); g.arc(s * r * 0.97, r * 0.05, r * 0.17, 0, 7); oFill(g, C_SKIN, lw); });
+    g.beginPath(); g.arc(0, 0, r, 0, 7); oFill(g, C_SKIN, lw);
+    if (of.beard) { cartoonBeard(g, 0, 0, r, of.beard, true); g.beginPath(); g.arc(0, 0, r, 0, 7); g.strokeStyle = C_INK; g.lineWidth = lw; g.stroke(); }
+    const xs = cartoonEyes(g, 0, 0, r, ex, true); cartoonBrows(g, xs, 0, r, ex);
+    cartoonMouth(g, 0, r * (of.beard ? 0.42 : 0.4), r, ex, !!of.beard);
+    if (of.hair === 'bowl') { g.save(); g.lineWidth = lw; cartoonBowl(g, 0, 0, r, of.hairColor || '#3e2b22', true); g.restore(); }
+    if (of.head === 'cap' || of.head === 'capBack') cartoonCap(g, 0, 0, r, of.headColor || '#5a9e4f', true);
+    if (of.face === 'glasses') cartoonGlasses(g, xs, 0, r);
+  },
+};
+
+export const SKINS = { paper, lego, human, clay, flat, cartoon };

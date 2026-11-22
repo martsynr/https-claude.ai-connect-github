@@ -31,6 +31,17 @@ export const STYLES = {
       void: { sky: ['#03100c', '#08201a'], rim: '#7dffb0' },
     },
   },
+  sheet: {
+    name: 'Character Sheet', desc: 'flat cartoon with bold black outlines on warm cream paper (matches the farmer/scientist character sheets); no grade, grain or vignette.',
+    ink: '#1d1a17', inkFar: '#3a3530', feature: '#1d1a17', rimWidth: 0,
+    ui: { ...UI, card: 'rgba(255,250,240,.96)', cardLine: '#1d1a17', text: '#1d1a17', sub: '#5a5048', accent: '#e0553a', gold: '#f6c945', cream: '#1d1a17', blueprint: '#1d1a17', bpBg: '#fbf3e4', good: '#5a9e4f' },
+    grade: { contrast: 1, sat: 1, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0, grain: 0, bloom: 0 },
+    moods: {
+      day: { sky: ['#fbf3e4', '#fbf3e4'], key: '#f6c945', rim: '#1d1a17', wall: '#f3e6cf', floor: '#c99a62', dark: '#8a6440', grass: '#6fae5c', fog: '#fbf3e4' },
+      golden: { sky: ['#fbf3e4', '#fbf3e4'], key: '#f6c945', rim: '#1d1a17', wall: '#f3e6cf', floor: '#c99a62', dark: '#8a6440', grass: '#6fae5c', fog: '#fbf3e4' },
+      void: { sky: ['#fbf3e4', '#fbf3e4'], rim: '#1d1a17', floor: '#efe2c8', dark: '#d9c7a6' },
+    },
+  },
   ember: {
     name: 'Ember Forge', desc: 'Charcoal-black world lit by fire: crimson shadows, molten copper rim light, hot orange glows, heavy contrast.',
     ink: '#0c0606', inkFar: '#2e1614', feature: '#fff0e0', rimWidth: 4,

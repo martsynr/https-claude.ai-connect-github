@@ -29,6 +29,7 @@ function blurred(g, W, H, px) { const c = tmp(W, H), cg = c.getContext('2d', { w
 const clamp255 = v => v < 0 ? 0 : v > 255 ? 255 : v;
 
 export const LOOKS = {
+  clean: { name: 'Чистий', desc: 'без зерна й віньєтки (для плаского мультяшного стилю)', keepGrain: false, keepVignette: false, apply() {} },
   cinematic: { name: 'Кіно-стікмен', desc: 'базова графіка GrowKaz без змін', keepGrain: true, keepVignette: true, apply() {} },
 
   // 1. Chalkboard: only the drawing's contours survive, as wobbly chalk on a slate board, with hatched shading.
