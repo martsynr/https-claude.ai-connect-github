@@ -4,7 +4,7 @@
 //   node render.mjs --project P --sheet                               one still per shot -> build/sheets/*.png
 //   node render.mjs --project P --stills 3.5,12,40                    stills at times -> build/stills
 //   node render.mjs --project P --styles emerald,ember,arctic,sakura,retro --at 3.5,12,40   style comparison grid
-// Options: --workers N  --scale K  --style ID  --look chalk|comic|pixel|paper|watercolor|cinematic (engine/looks.js)  --debug  --format png|jpeg  --crf 18  --gl auto|gpu|swiftshader  --out FILE
+// Options: --workers N  --scale K  --style ID  --look chalk|comic|pixel|paper|watercolor|cinematic (engine/looks.js)  --skin paper|lego|human|clay|flat (engine/skins.js)  --debug  --format png|jpeg  --crf 18  --gl auto|gpu|swiftshader  --out FILE
 import http from 'node:http';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -36,7 +36,7 @@ const CFG = JSON.parse(fs.readFileSync(path.join(PROJECT, 'config.json'), 'utf8'
 const FPS = CFG.fps || 24;
 
 async function openPlayer(browser, style) {
-  const qs = new URLSearchParams(); if (args.scale) qs.set('scale', args.scale); if (style || args.style) qs.set('style', style || args.style); if (args.debug) qs.set('debug', '1'); if (args.look) qs.set('look', args.look);
+  const qs = new URLSearchParams(); if (args.scale) qs.set('scale', args.scale); if (style || args.style) qs.set('style', style || args.style); if (args.debug) qs.set('debug', '1'); if (args.look) qs.set('look', args.look); if (args.skin) qs.set('skin', args.skin);
   const page = await browser.newPage({ viewport: { width: 640, height: 360 } });
   page.on('pageerror', e => console.log('[pageerror]', e.message));
   page.on('console', m => { const t = m.text(); if (/ERROR|missing/i.test(t)) console.log('[page]', t); });

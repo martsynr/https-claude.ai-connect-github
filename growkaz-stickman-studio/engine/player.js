@@ -4,6 +4,8 @@ import { E, V, setStyle, getShot, clamp, ease, prog, alpha, text, FONTS } from '
 import { STYLES } from './styles.js';
 import { captions } from './ui2d.js';
 import { applyLook, lookOf } from './looks.js';
+import { SKINS } from './skins.js';
+import { setSkin } from './rig2d.js';
 
 const q = new URLSearchParams(location.search);
 const PROJ = '/project';
@@ -94,6 +96,7 @@ const barVal = (s) => (typeof (s?.bars ?? E.cfg.bars) === 'number' ? (s.bars ?? 
 
 window.renderFrame = function (f) {
   const t = f / E.fps, i = shotIndexAt(t), shot = E.shots[i], lt = t - shot.start;
+  setSkin(SKINS[q.get('skin') || E.cfg.skin] || null);
   drawShot(bufA, shot, lt);
   const tr = shot.in || { type: 'cut' }, tdur = tr.dur ?? (tr.type === 'whip' ? 0.35 : 0.5);
   const W = main.width, H = main.height; mg.setTransform(1, 0, 0, 1, 0, 0); mg.globalAlpha = 1; mg.globalCompositeOperation = 'source-over';

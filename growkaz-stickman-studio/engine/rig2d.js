@@ -188,6 +188,9 @@ function torsoWear(g, o, p, pass) {
 function sleeve(o) { if (['hoodie', 'tracksuit', 'labcoat', 'trench', 'suit'].includes(o.top)) return 'long'; if (['jersey', 'tshirt'].includes(o.top)) return 'short'; return null; }
 function sleeveColor(o, far) { const c = o.top === 'labcoat' ? '#f3f0f6' : o.top === 'trench' ? o.color || '#2c2833' : o.top === 'suit' ? o.color || '#2a2833' : o.color || '#d64a33'; return far ? shade(c, -0.3) : c; }
 
+// ---------- skins (engine/skins.js): an alternative renderer for the whole character ----------
+let SKIN = null; export function setSkin(sk) { SKIN = sk || null; }
+
 // ---------- main draw ----------
 // drawFigure(g, { x, y, s, facing, pose, rot, outfit, expr, talk, blink, look, rim:{dir:[x,y], color, w}, dim, alpha, prop, shadow })
 export function drawFigure(g, o) {
@@ -197,6 +200,7 @@ export function drawFigure(g, o) {
   const rim = o.rim === false ? null : { dir: [-0.8, -0.5], w: st.rimWidth, color: '#ffc68a', ...(o.rim || {}) };
   g.save(); if (o.alpha != null) g.globalAlpha *= o.alpha;
   if (o.shadow !== false && !o.rot) { g.fillStyle = 'rgba(0,0,0,.28)'; g.beginPath(); g.ellipse(o.x, o.y + 2, 34 * s, 6 * s, 0, 0, Math.PI * 2); g.fill(); }
+  if (SKIN) { g.translate(o.x, o.y); g.scale(f * s, s); if (o.rot) { g.translate(p.hip[0], p.hip[1]); g.rotate(o.rot); g.translate(-p.hip[0], -p.hip[1]); } SKIN.figure(g, o, p, of); g.restore(); return; }
   if (o.trail) { const { count = 4, dx = -40, dy = 0, a = 0.22 } = o.trail; for (let i = count; i >= 1; i--) { g.save(); g.globalAlpha *= a * (1 - i / (count + 1)); body(g, { ...o, x: o.x + dx * i, y: o.y + dy * i, trail: null }, p, s, f, of, ink, far, null, alpha(rim?.color || '#fff', 1)); g.restore(); } }
   body(g, o, p, s, f, of, ink, far, rim);
   g.restore();
@@ -266,6 +270,7 @@ export function headPos(o) { const p = o.pose || POSES.stand, s = (o.s ?? 1) * (
 export function bigFace(g, cx, cy, r, o = {}) {
   const st = S(), ink = st.ink, of = o.outfit || {}, rc = o.rimColor || '#ffc68a', side = o.rimSide ?? -1;
   g.save(); g.translate(cx, cy); if (o.tilt) g.rotate(o.tilt);
+  if (SKIN) { SKIN.portrait(g, r, o); g.restore(); return; }
   // shoulders / clothing at the bottom
   const top = of.top || 'none', cc = top === 'labcoat' ? '#ebe7f0' : of.color || ink;
   g.fillStyle = top === 'none' ? ink : cc; g.beginPath(); g.ellipse(0, r * 1.65, r * 1.25, r * 0.85, 0, Math.PI, Math.PI * 2); g.fill();
