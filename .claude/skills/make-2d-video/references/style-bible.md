@@ -1,5 +1,7 @@
 # Style bible: the GrowKaz Stickman look
 
+> This file describes the default cinematic look. For the light flat-cartoon look (style `sheet`), follow `sheet-style.md` instead where the two differ (no rim light, no glow, light backgrounds, outlined cartoon characters).
+
 Follow this closely. It is the only description of the target look; no reference images are available.
 
 ## The look in one paragraph

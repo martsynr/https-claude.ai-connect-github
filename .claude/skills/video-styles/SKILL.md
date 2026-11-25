@@ -3,8 +3,8 @@ name: video-styles
 description: >
   This skill should be used when the user runs /video-styles or asks to "show me style options", "compare the looks",
   "pick a visual style", "make it warmer / darker / more neon", "create a custom style", or "change the colour grade"
-  for an GrowKaz Stickman Studio video. It renders the same shots of the user's story in five preset styles
-  (emerald, ember, arctic, sakura, retro) as a comparison grid, records the choice, and builds custom styles.
+  for an GrowKaz Stickman Studio video. It renders the same shots of the user's story in six preset styles
+  (emerald, ember, arctic, sakura, retro, sheet) as a comparison grid, records the choice, and builds custom styles.
 metadata:
   version: "0.1.0"
   author: GrowKaz
@@ -23,7 +23,7 @@ Pick one time inside each shot (about 45% through it) for the grid columns.
 
 ## 2. Render the grid
 ```bash
-node render.mjs --project projects/<slug> --styles emerald,ember,arctic,sakura,retro --at <t1>,<t2>,<t3> --scale 0.5
+node render.mjs --project projects/<slug> --styles emerald,ember,arctic,sakura,retro,sheet --at <t1>,<t2>,<t3> --scale 0.5
 ```
 Open `build/styles/style_grid.png` (one row per style) and check it, then send it to the user with one line each:
 - **emerald — GrowKaz Emerald:** the GrowKaz signature look. Forest-green shadows, gold key light, electric lime rims. This is the default.
@@ -31,6 +31,7 @@ Open `build/styles/style_grid.png` (one row per style) and check it, then send i
 - **arctic — Arctic Glass:** icy steel-teal, crisp white key, cyan rims, nearly no grain; science, tech, clean explainers.
 - **sakura — Sakura Bloom:** plum shadows, rose-pink sky, peach key, soft haze; emotional, relationships, lifestyle.
 - **retro — Retro Print:** faded teal and mustard, low saturation, heavy print grain; nostalgic stories, history, "back then".
+- **sheet — Character Sheet:** light flat cartoon on cream paper, thin ink outlines, no glow or grain; friendly explainers, agriculture, kids. Characters must come from `/engine/sheet2d.js` (bearded farmer in a green cap and overalls, breeder in a green lab coat and glasses). Read `../make-2d-video/references/sheet-style.md` before building shots in this look.
 
 Ask which they want (AskUserQuestion when available).
 

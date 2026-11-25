@@ -46,8 +46,8 @@ export function talkAmount(globalT, from = -1, to = 1e9) {
 
 // time (global seconds) when a word is spoken: wordTime('brain', 40) -> 43.78 (null if not found)
 export function wordTime(match, after = 0) {
-  const m = match.toLowerCase().replace(/[^\w']/g, '');
-  const w = E.words.find(w => w.start >= after - 0.05 && w.word.toLowerCase().replace(/[^\w']/g, '').startsWith(m));
+  const m = match.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '');
+  const w = E.words.find(w => w.start >= after - 0.05 && w.word.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '').startsWith(m));
   return w ? w.start : null;
 }
 
@@ -77,9 +77,9 @@ export function circle(g, x, y, r, fill) { g.fillStyle = fill; g.beginPath(); g.
 export function ring(g, x, y, r, w, col) { g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.arc(x, y, Math.max(0, r), 0, Math.PI * 2); g.stroke(); }
 export function linGrad(g, x0, y0, x1, y1, stops) { const gr = g.createLinearGradient(x0, y0, x1, y1); stops.forEach((c, i) => Array.isArray(c) ? gr.addColorStop(c[0], c[1]) : gr.addColorStop(i / Math.max(1, stops.length - 1), c)); return gr; }
 export function radGrad(g, x, y, r0, r1, stops) { const gr = g.createRadialGradient(x, y, r0, x, y, r1); stops.forEach((c, i) => Array.isArray(c) ? gr.addColorStop(c[0], c[1]) : gr.addColorStop(i / Math.max(1, stops.length - 1), c)); return gr; }
-export function glow(g, x, y, r, col, a = 1) { g.save(); g.globalCompositeOperation = 'lighter'; g.fillStyle = radGrad(g, x, y, 0, r, [alpha(col, a), alpha(col, a * 0.35), alpha(col, 0)]); g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); g.restore(); }
+export function glow(g, x, y, r, col, a = 1) { if (E.style?.flat) return; g.save(); g.globalCompositeOperation = 'lighter'; g.fillStyle = radGrad(g, x, y, 0, r, [alpha(col, a), alpha(col, a * 0.35), alpha(col, 0)]); g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); g.restore(); }
 // darken / tint the whole stage (e.g. after a blurred background so the subject pops)
-export function veil(g, color = '#000', a = 0.3, op = 'source-over') { g.save(); g.globalCompositeOperation = op; g.fillStyle = alpha(color, a); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); g.restore(); }
+export function veil(g, color = '#000', a = 0.3, op = 'source-over') { if (E.style?.flat) { color = E.style.paper; a *= 1.1; op = 'source-over'; } g.save(); g.globalCompositeOperation = op; g.fillStyle = alpha(color, a); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3); g.restore(); }
 export function fillRect(g, x, y, w, h, fill) { g.fillStyle = fill; g.fillRect(x, y, w, h); }
 // sky / backdrop gradient over the whole stage (works under any camera)
 export function backdrop(g, colors, area = [-E.W, -E.H, E.W * 3, E.H * 3]) { g.fillStyle = linGrad(g, 0, 0, 0, E.H, colors); g.fillRect(...area); }
@@ -91,7 +91,7 @@ export function text(g, str, x, y, o = {}) {
   g.save(); g.globalAlpha *= a; g.font = `${italic ? 'italic ' : ''}${weight} ${size}px "${font}"`; g.textAlign = align; g.textBaseline = base;
   if ('letterSpacing' in g) g.letterSpacing = `${spacing}px`;
   if (stroke) { g.lineJoin = 'round'; g.lineWidth = stroke; g.strokeStyle = strokeColor; g.strokeText(str, x, y); }
-  if (gl) { g.shadowColor = glowColor; g.shadowBlur = gl; }
+  if (gl && !E.style?.flat) { g.shadowColor = glowColor; g.shadowBlur = gl; }
   g.fillStyle = color; g.fillText(str, x, y); g.restore();
 }
 export function measure(g, str, size, font = FONTS.title, weight = 700) { g.save(); g.font = `${weight} ${size}px "${font}"`; const w = g.measureText(str).width; g.restore(); return w; }
