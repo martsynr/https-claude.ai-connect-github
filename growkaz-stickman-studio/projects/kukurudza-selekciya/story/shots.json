@@ -1,0 +1,904 @@
+{
+ "title": "Сто років селекції кукурудзи",
+ "duration": 131.5,
+ "shots": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 2.0,
+   "line": "Чи відомо вам, що за останні",
+   "scene": "Golden field establishing, FARMER at the edge looking out, slow push.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s02",
+   "start": 2.0,
+   "end": 5.2,
+   "line": "сто років врожайність кукурудзи збільшилася в рази?",
+   "scene": "Data card: yield curve over 100 years, counter to ×7.",
+   "set": "data",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 0.6,
+     "name": "counter",
+     "gain": -16,
+     "dur": 2
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 5.2,
+   "end": 9.7,
+   "line": "Сто років тому з гектара збирали близько півтори тонни зерна.",
+   "scene": "Sepia 1925 field: sparse short droopy plants, 1.5 sacks of grain pop in; readout 1,5 т/га.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 3.0,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s04",
+   "start": 9.7,
+   "end": 13.1,
+   "line": "Сьогодні на найкращих полях — понад десять.",
+   "scene": "Today: tall dense golden field, 10 sacks stack up; readout 10+ т/га.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 2.5,
+     "name": "ding",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s05",
+   "start": 13.1,
+   "end": 15.25,
+   "line": "Думаєте, збільшився качан?",
+   "scene": "Giant face FARMER thinking; a cob in a thought bubble inflates.",
+   "set": "face",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "blip",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 15.25,
+   "end": 17.85,
+   "line": "Чи, може, зерен на ньому стало більше?",
+   "scene": "Cob macro; '+' kernels popping, question mark.",
+   "set": "cob",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -14
+    },
+    {
+     "at": 1.2,
+     "name": "pop",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 17.85,
+   "end": 21.75,
+   "line": "Ви здивуєтесь, але качан особливо не змінився.",
+   "scene": "FLASH. Blueprint: 1925 cob and 2025 cob side by side, same size, '=' on 'змінився'.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "stinger",
+     "gain": -8
+    },
+    {
+     "at": 3.0,
+     "name": "ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 21.75,
+   "end": 25.0,
+   "line": "Ті самі ряди, ті самі кілька сотень зерен.",
+   "scene": "Cob macro, a highlight sweeps along the rows; labels ТІ САМІ РЯДИ / СОТНІ ЗЕРЕН.",
+   "set": "cob",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 25.0,
+   "end": 27.85,
+   "line": "Як же тоді вдалося збільшити врожай?",
+   "scene": "FARMER medium in the field, shrugs; ЯК? above.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.2,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s10",
+   "start": 27.85,
+   "end": 30.05,
+   "line": "Секрет не в одній рослині,",
+   "scene": "Dusk: one lone corn plant on a bare hill in a pool of light.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s11",
+   "start": 30.05,
+   "end": 33.15,
+   "line": "а в тому, скільки їх уміщається на полі.",
+   "scene": "Pull out from one plant to reveal a packed field.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "riser",
+     "gain": -14,
+     "dur": 2.5
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s12",
+   "start": 33.15,
+   "end": 37.8,
+   "line": "Сто років тому на гектарі росло близько тридцяти тисяч рослин.",
+   "scene": "Top-down hectare square, sparse plants appear, counter to 30 000.",
+   "set": "plot",
+   "bars": null,
+   "in": {
+    "type": "zoom",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.5,
+     "name": "counter",
+     "gain": -16,
+     "dur": 2.5
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 37.8,
+   "end": 41.9,
+   "line": "Сьогодні — вісімдесят, а то й дев'яносто тисяч.",
+   "scene": "Same hectare fills densely: 80 000, then 90 000.",
+   "set": "plot",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "counter",
+     "gain": -16,
+     "dur": 1.5
+    },
+    {
+     "at": 3.1,
+     "name": "ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 41.9,
+   "end": 46.85,
+   "line": "Але якщо посадити стару кукурудзу так густо, вона не впорається.",
+   "scene": "Old droopy, big-tassel corn crammed together; FARMER worried among it.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s15",
+   "start": 46.85,
+   "end": 49.2,
+   "line": "Рослини затіняють одна одну,",
+   "scene": "Side view: sun on top, droopy leaves shade each other, the lower half goes dark.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s16",
+   "start": 49.2,
+   "end": 50.15,
+   "line": "падають,",
+   "scene": "Plants lodge and topple, camera shake.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.2,
+     "name": "impact",
+     "gain": -8
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s17",
+   "start": 50.15,
+   "end": 53.75,
+   "line": "а багато з них зовсім залишаються без качана.",
+   "scene": "Three stalks close: dashed empty ear slots with red crosses — БЕЗ КАЧАНА.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.6,
+     "name": "buzz",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s18",
+   "start": 53.75,
+   "end": 57.85,
+   "line": "Тож селекціонери сто років вчили кукурудзу жити в тісноті.",
+   "scene": "BREEDER in a test plot with a clipboard; title ЖИТИ В ТІСНОТІ.",
+   "set": "plot2",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 3.0,
+     "name": "stinger",
+     "gain": -10
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s19",
+   "start": 57.85,
+   "end": 59.7,
+   "line": "По-перше, листя.",
+   "scene": "Chapter: 1 · ЛИСТЯ over blurred field.",
+   "set": "chapter",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 59.7,
+   "end": 63.2,
+   "line": "У старих сортів воно звисало в боки, як у пальми.",
+   "scene": "Blueprint: old plant with droopy leaves; a palm icon pops on 'пальми'.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.8,
+     "name": "pop",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 63.2,
+   "end": 66.35,
+   "line": "Сучасні гібриди тримають листки вгору,",
+   "scene": "Blueprint: leaves rotate up into a modern upright hybrid.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.8,
+     "name": "swish",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 66.35,
+   "end": 68.6,
+   "line": "і світло доходить до самого низу.",
+   "scene": "Golden side view: upright canopy, god rays reach the ground, lower leaves lit.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "shimmer",
+     "gain": -16
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s23",
+   "start": 68.6,
+   "end": 71.75,
+   "line": "По-друге, волоть — квітка на верхівці.",
+   "scene": "Chapter 2 · ВОЛОТЬ: tassel macro against the sky with callout.",
+   "set": "chapter",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s24",
+   "start": 71.75,
+   "end": 76.95,
+   "line": "Її зробили меншою: вона менше затіняє і забирає менше сил у качана.",
+   "scene": "Blueprint: tassel shrinks, its shadow shrinks, energy dots flow to the cob.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "swish",
+     "gain": -14
+    },
+    {
+     "at": 4.4,
+     "name": "powerup",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "start": 76.95,
+   "end": 79.2,
+   "line": "По-третє, точність.",
+   "scene": "Chapter 3 · ТОЧНІСТЬ with a ticking clock.",
+   "set": "chapter",
+   "bars": null,
+   "in": {
+    "type": "whip",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "whoosh",
+     "gain": -12
+    },
+    {
+     "at": 0.4,
+     "name": "clock",
+     "gain": -16,
+     "dur": 1.6
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "start": 79.2,
+   "end": 84.4,
+   "line": "У тісноті стара кукурудза запізнювалася з приймочками, і пилок летів даремно.",
+   "scene": "Timeline: ПИЛОК bar and later ПРИЙМОЧКИ bar with a gap; pollen falls wasted.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 2.0,
+     "name": "tick",
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "start": 84.4,
+   "end": 88.1,
+   "line": "Сучасна викидає їх вчасно, навіть у стресі.",
+   "scene": "Bars slide to overlap; pollen lands on silks, sparkle, ВЧАСНО.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.7,
+     "name": "ding",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "start": 88.1,
+   "end": 92.45,
+   "line": "Додайте міцніші стебла й коріння, щоб рослина не падала,",
+   "scene": "Storm: modern plants bend but stand; root cutaway glows; rain.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "thunder",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "rain",
+    "gain": -22
+   }
+  },
+  {
+   "id": "s29",
+   "start": 92.45,
+   "end": 95.75,
+   "line": "і листя, яке довше залишається зеленим,",
+   "scene": "Autumn: old plant browns, modern stays green.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.3
+   },
+   "sfx": [],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s30",
+   "start": 95.75,
+   "end": 98.6,
+   "line": "щоб зерно наливалося до останнього дня.",
+   "scene": "Cob macro: kernels fill gold from bottom to top.",
+   "set": "cob",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "riser",
+     "gain": -16,
+     "dur": 2
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "start": 98.6,
+   "end": 99.9,
+   "line": "А ще — гібриди.",
+   "scene": "FLASH: ГІБРИДИ.",
+   "set": "chapter",
+   "bars": null,
+   "in": {
+    "type": "flash",
+    "dur": 0.3
+   },
+   "sfx": [
+    {
+     "at": 0,
+     "name": "stinger",
+     "gain": -8
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "start": 99.9,
+   "end": 104.85,
+   "line": "Схрещування двох різних ліній дає потомство, сильніше за обох батьків.",
+   "scene": "Blueprint: line A × line B → bigger hybrid child glowing.",
+   "set": "blueprint",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.9,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.2,
+     "name": "powerup",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "start": 104.85,
+   "end": 107.2,
+   "line": "Отже, качан той самий.",
+   "scene": "Cob macro again: ТОЙ САМИЙ.",
+   "set": "cob",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "ding",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "start": 107.2,
+   "end": 111.5,
+   "line": "Просто тепер на кожному метрі поля їх стоїть майже втричі більше.",
+   "scene": "Top-down 1 m²: 3 plants vs 9 plants; badge ×3.",
+   "set": "plot",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 3.3,
+     "name": "impact",
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "start": 111.5,
+   "end": 115.7,
+   "line": "А решту додали добрива, техніка і кращий догляд.",
+   "scene": "Dusk field, tractor drives through; labels ДОБРИВА, ТЕХНІКА, ДОГЛЯД pop.",
+   "set": "field",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.4,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.0,
+     "name": "pop",
+     "gain": -12
+    },
+    {
+     "at": 2.9,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s36",
+   "start": 115.7,
+   "end": 120.4,
+   "line": "Тож наступного разу, коли проїжджатимете повз кукурудзяне поле,",
+   "scene": "Golden road: a car drives past the corn field; slows on 'придивіться'.",
+   "set": "road",
+   "bars": null,
+   "in": {
+    "type": "dip",
+    "dur": 0.4
+   },
+   "sfx": [
+    {
+     "at": 0.3,
+     "name": "carpass",
+     "gain": -12
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s37",
+   "start": 120.4,
+   "end": 122.9,
+   "line": "придивіться. Це не просто рослини.",
+   "scene": "Giant face FARMER in awe, field blurred behind.",
+   "set": "face",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 0.4,
+     "name": "shimmer",
+     "gain": -14
+    }
+   ],
+   "amb": {
+    "name": "wind",
+    "gain": -26
+   }
+  },
+  {
+   "id": "s38",
+   "start": 122.9,
+   "end": 127.9,
+   "line": "Це сто років селекції, яка навчила кукурудзу жити в тісноті.",
+   "scene": "3D orbit over a dense golden corn field; title СТО РОКІВ СЕЛЕКЦІЇ.",
+   "set": "3d",
+   "bars": null,
+   "in": {
+    "type": "cut"
+   },
+   "sfx": [
+    {
+     "at": 1.0,
+     "name": "riser",
+     "gain": -14,
+     "dur": 1.5
+    },
+    {
+     "at": 2.6,
+     "name": "impact",
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "s39",
+   "start": 127.9,
+   "end": 131.5,
+   "line": "",
+   "scene": "End screen: question, comment bubble, subscribe, cast.",
+   "set": "end",
+   "bars": null,
+   "in": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "sfx": [
+    {
+     "at": 0.6,
+     "name": "pop",
+     "gain": -12
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "music": [
+  {
+   "start": 0,
+   "end": 25.0,
+   "mood": "mystery",
+   "intensity": 0.35
+  },
+  {
+   "start": 25.0,
+   "end": 57.85,
+   "mood": "wonder",
+   "intensity": 0.4
+  },
+  {
+   "start": 57.85,
+   "end": 99.9,
+   "mood": "wonder",
+   "intensity": 0.55
+  },
+  {
+   "start": 99.9,
+   "end": 115.7,
+   "mood": "hopeful",
+   "intensity": 0.45
+  },
+  {
+   "start": 115.7,
+   "end": 131.5,
+   "mood": "triumph",
+   "intensity": 0.4
+  }
+ ],
+ "sfx": []
+}
