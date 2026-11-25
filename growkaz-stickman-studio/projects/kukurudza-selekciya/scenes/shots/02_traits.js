@@ -1,6 +1,6 @@
 // shots/02_traits.js — old corn fails in a crowd; traits 1–3: leaves, tassel, timing (s14–s27).
 import { E, V, S, registerShot, mood, layer, blurLayer, veil, backdrop, ease, prog, clamp, lerp, shake, seg, circle, ring, rr, poly, glow, alpha, shade, mix, linGrad, text, FONTS } from '/engine/core.js';
-import { drawFigure, POSES, posesAt, breathe } from '/engine/rig2d.js';
+import { drawFigure, POSES, posesAt, breathe } from '../fig.js';
 import * as FX from '/engine/fx2d.js';
 import * as UI from '/engine/ui2d.js';
 import { field, fieldGround, cornPlant, pollen, OLD, NEW } from '../sets/corn.js';
@@ -35,8 +35,8 @@ registerShot('s15', { draw(g, t, info) {
   layer(g, cam, 0.1, (g) => { backdrop(g, M.sky); FX.sun(g, E.W / 2, E.H * 0.1, V(70, 90), '#fff3dc', M.key, 5); FX.godRays(g, E.W / 2, E.H * 0.1, { count: 14, angle: Math.PI / 2, spread: 1.2, len: E.H * 0.45, a: 0.08, t }); });
   layer(g, cam, 0.9, (g) => { g.fillStyle = linGrad(g, 0, GY, 0, GY + 600, [shade(M.floor, -0.2), shade(M.dark, -0.4)]); g.fillRect(-E.W, GY, E.W * 3, E.H); });
   layer(g, cam, 1, (g) => { for (let i = 0; i < 9; i++) cornPlant(g, -E.W * 0.1 + i * V(160, 150), GY + 10, V(820, 900), { sway: Math.sin(t + i) * 6, seed: 300 + i, color: shade(plant, -0.05 * (i % 2)), rim: M.rim, ...OLD, leaves: 8, w: 14 }); });
-  g.save(); g.fillStyle = linGrad(g, 0, GY - V(560, 620), 0, GY, ['rgba(4,6,10,0)', `rgba(4,6,10,${0.75 * dk})`]); g.fillRect(-E.W, GY - V(560, 620), E.W * 3, V(600, 700)); g.restore();
-  label(g, 'ТІНЬ', E.W / 2, GY - V(160, 200), ease.out(prog(t, tZ + 0.4, tZ + 0.8)), V(64, 80), alpha('#9fb4e8', 1));
+  g.save(); g.fillStyle = linGrad(g, 0, GY - V(560, 620), 0, GY, ['rgba(4,6,10,0)', `rgba(43,38,34,${0.45 * dk})`]); g.fillRect(-E.W, GY - V(560, 620), E.W * 3, V(600, 700)); g.restore();
+  label(g, 'ТІНЬ', E.W / 2, GY - V(160, 200), ease.out(prog(t, tZ + 0.4, tZ + 0.8)), V(64, 80), '#2f6f9a');
   FX.dust(g, t, { count: 40, color: '#ffe2bd', a: 0.35 });
 } });
 
@@ -56,7 +56,7 @@ registerShot('s17', { draw(g, t, info) {
   const tB = wt('без', info, 2.3);
   layer(g, cam, 1, (g) => { [[0.2, 1], [0.5, 0], [0.8, 1]].forEach(([x, b], i) => { cornPlant(g, E.W * x, E.H * 0.95, E.H * 0.75, { sway: Math.sin(t + i) * 8, seed: 500 + i, color: shade(plant, -0.25), rim: M.rim, ...OLD, leaves: 6, w: 20, barren: !!b, tassel: false });
     if (b) { const k = ease.outBack(prog(t, tB - 0.2 + i * 0.1, tB + 0.2 + i * 0.1)); if (k > 0) cross(g, E.W * x + V(80, 70), E.H * 0.95 - E.H * 0.75 * 0.55 - 10, V(70, 80) * k, '#ff5a4a'); } }); });
-  label(g, 'БЕЗ КАЧАНА', E.W / 2, E.H * V(0.12, 0.12), ease.out(prog(t, tB, tB + 0.4)), V(64, 76), '#ff7a6a');
+  label(g, 'БЕЗ КАЧАНА', E.W / 2, E.H * V(0.12, 0.12), ease.out(prog(t, tB, tB + 0.4)), V(64, 76), '#d9553a');
   FX.dust(g, t, { count: 40, color: '#ffd9b0', a: 0.35 });
 } });
 
@@ -156,8 +156,8 @@ registerShot('s26', { draw(g, t, info) {
   UI.blueprint(g); g.save(); push(g, t, info, 1.0, 1.04);
   const tZ = wt('запізнювалася', info, 1.7), tD = wt('даремно', info, 4.7), off = lerp(0.2, 1.15, ease.inOut(prog(t, tZ - 0.3, tZ + 0.8)));
   const r = timing(g, t, off);
-  if (off > 1.0) { UI.dimension(g, t, { x1: r.px + r.len, y1: (r.y1 + r.y2) / 2, x2: r.sx, y2: (r.y1 + r.y2) / 2, str: '', color: '#ff7a6a', start: tZ + 0.6 }); }
-  text(g, 'ЗАПІЗНЕННЯ', E.W / 2, E.H * 0.2, { size: V(46, 54), color: '#ff7a6a', font: FONTS.ui, weight: 900, spacing: 3, alpha: ease.out(prog(t, tZ + 0.6, tZ + 1.0)) });
+  if (off > 1.0) { UI.dimension(g, t, { x1: r.px + r.len, y1: (r.y1 + r.y2) / 2, x2: r.sx, y2: (r.y1 + r.y2) / 2, str: '', color: '#d9553a', start: tZ + 0.6 }); }
+  text(g, 'ЗАПІЗНЕННЯ', E.W / 2, E.H * 0.2, { size: V(46, 54), color: '#d9553a', font: FONTS.ui, weight: 900, spacing: 3, alpha: ease.out(prog(t, tZ + 0.6, tZ + 1.0)) });
   pollen(g, t, { x: r.px + r.len / 2, y: E.H * 0.5, w: r.len, h: E.H * 0.22, count: 40, a: 0.9, speed: 110 });
   g.fillStyle = alpha('#c9a860', 0.4 * ease.out(prog(t, tD - 1, tD + 0.5))); g.fillRect(r.x0, E.H * 0.72 - 6, r.len + 40, 12);
   g.restore();
@@ -172,6 +172,6 @@ registerShot('s27', { draw(g, t, info) {
   if (ok) { glow(g, r.px + r.len / 2, (r.y1 + r.y2) / 2, r.len * 0.6, gold(), 0.35); for (let i = 0; i < 5; i++) FX.sparkle(g, r.px + r.len * (0.15 + i * 0.18), r.y2 + Math.sin(t * 4 + i) * 10, 22, '#ffffff', 0.5 + 0.4 * Math.sin(t * 6 + i)); }
   pollen(g, t, { x: r.px + r.len / 2, y: r.y1 + 30, w: r.len, h: r.y2 - r.y1 - 40, count: 24, a: 0.9, speed: 80 });
   g.restore();
-  const k = ease.outBack(prog(t, tV, tV + 0.4)); if (k > 0) { check(g, E.W / 2, E.H * 0.62, V(140, 160) * k, '#7ad06a'); label(g, 'ВЧАСНО', E.W / 2, E.H * 0.7, clamp(k), V(64, 76), '#7ad06a'); }
+  const k = ease.outBack(prog(t, tV, tV + 0.4)); if (k > 0) { check(g, E.W / 2, E.H * 0.62, V(140, 160) * k, '#7ad06a'); label(g, 'ВЧАСНО', E.W / 2, E.H * 0.7, clamp(k), V(64, 76), '#4f9a48'); }
   label(g, 'НАВІТЬ У СТРЕСІ', E.W / 2, E.H * 0.14, ease.out(prog(t, tV + 0.8, tV + 1.2)), V(46, 54), gold());
 } });

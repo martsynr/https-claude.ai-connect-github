@@ -3,10 +3,10 @@
  "aspect": "9:16",
  "resolution": "1080p",
  "fps": 24,
- "style": "emerald",
+ "style": "sheet",
  "voiceover": "input/voiceover.mp3",
  "script": "input/script.txt",
- "duration": 131.5,
+ "duration": 125.71,
  "captions": true,
  "bars": null,
  "fadeIn": 0.5,
@@ -19,5 +19,8 @@
   "enabled": true,
   "gainDb": -6
  },
- "loudness": -14
+ "loudness": -14,
+ "captionStyle": {
+  "max": 3
+ }
 }

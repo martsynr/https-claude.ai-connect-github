@@ -1,6 +1,6 @@
 // shots/01_intro.js — hook: yield ×7, the same cob, the density secret (s01–s13).
 import { E, V, S, registerShot, mood, layer, blurLayer, veil, backdrop, ease, prog, clamp, lerp, shake, wordTime, seg, circle, ring, rr, poly, glow, alpha, shade, mix, linGrad, text, FONTS } from '/engine/core.js';
-import { drawFigure, POSES, posesAt, breathe, bigFace } from '/engine/rig2d.js';
+import { drawFigure, POSES, posesAt, breathe, bigFace } from '../fig.js';
 import * as FX from '/engine/fx2d.js';
 import * as UI from '/engine/ui2d.js';
 import { field, fieldGround, cornPlant, cob, plot, sack, OLD, NEW } from '../sets/corn.js';
@@ -13,7 +13,7 @@ export const label = (g, str, x, y, a = 1, size = V(44, 52), color = S().ui.crea
 
 // dark macro backdrop for cob inserts
 export function macroBg(g, t, tint = '#3a2a10') {
-  const M = mood('golden'); backdrop(g, [shade(M.sky[0], -0.75), shade(tint, -0.4)]);
+  const M = mood('golden'); backdrop(g, M.sky);
   blurLayer(g, 16, (g) => { for (let i = 0; i < 5; i++) cornPlant(g, E.W * (i * 0.25), E.H * 1.05, E.H * 0.9, { sway: Math.sin(t + i) * 10, seed: 40 + i, color: shade(M.grass, -0.7), rim: alpha(M.rim, 0.4), leaves: 8, w: 22 }); });
   glow(g, E.W * 0.75, E.H * 0.2, E.W * 0.7, M.key, 0.18); FX.dust(g, t, { count: 40, color: '#ffe2bd', a: 0.35 });
 }
@@ -72,8 +72,9 @@ registerShot('s05', { draw(g, t, info) {
   const M = mood('golden'); blurLayer(g, 14, (g) => field(g, t, { z: 1.6, y: -200 }, { mood: 'golden' })); veil(g, '#0a0806', 0.35);
   bigFace(g, E.W / 2 - V(120, 60), E.H * V(0.62, 0.6), V(300, 330) * (1 + 0.03 * t), { outfit: FARMER, expr: 'thinking', look: [0.6, -0.6], blink: (t % 2.9) > 2.8, rimColor: M.rim, rimSide: -1 });
   const k = ease.outBack(prog(t, 0.6, 1.8)), bx = E.W / 2 + V(330, 200), by = E.H * V(0.25, 0.25);
-  for (let i = 0; i < 3; i++) circle(g, E.W / 2 + V(120, 60) + i * 50, E.H * V(0.45, 0.43) - i * 60, 10 + i * 6, alpha('#f4efe6', 0.85 * clamp(k)));
-  circle(g, bx, by, V(150, 200), alpha('#f4efe6', 0.9 * clamp(k)));
+  const tb = (x, y, r) => { g.save(); g.globalAlpha *= clamp(k); g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = '#ffffff'; g.fill(); g.lineWidth = 3.5; g.strokeStyle = S().ink; g.stroke(); g.restore(); };
+  for (let i = 0; i < 3; i++) tb(E.W / 2 + V(120, 60) + i * 50, E.H * V(0.45, 0.43) - i * 60, 10 + i * 6);
+  tb(bx, by, V(150, 200));
   if (k > 0) cob(g, bx, by, V(140, 180) * (0.6 + 0.6 * k), { husk: false, glowA: 0, tilt: 0.3 });
   if (t > 1.4) text(g, '?', bx + V(120, 170), by - V(110, 160), { size: V(90, 110), color: S().ui.gold, glow: 20, glowColor: 'rgba(255,140,40,.8)', alpha: ease.out(prog(t, 1.4, 1.7)) });
 } });
@@ -147,10 +148,10 @@ registerShot('s11', { draw(g, t, info) {
 
 // shared hectare scene (top-down)
 function hectare(g, t, info, n, lbl, count, tag) {
-  const M = mood('golden'); backdrop(g, [shade(M.floor, -0.55), shade(M.dark, -0.5)]);
+  const M = mood('golden'); backdrop(g, [S().paper, S().paper]);
   g.save(); push(g, t, info, 1.0, 1.05);
   const size = V(760, 900), cy = E.H * 0.52;
-  plot(g, E.W / 2, cy, size, n.count, { reveal: n.reveal, shuffle: !!n.shuffle, soil: shade(M.floor, -0.3), plant: mix(M.grass, '#7ad06a', 0.3), seed: 9, r: V(26, 30), label: lbl });
+  plot(g, E.W / 2, cy, size, n.count, { reveal: n.reveal, shuffle: !!n.shuffle, soil: M.floor, plant: mix(M.grass, '#7ad06a', 0.3), seed: 9, r: V(26, 30), label: lbl });
   g.restore();
   UI.readout(g, { label: tag, value: count, x: E.W / 2, y: E.H * V(0.12, 0.17), align: 'center', size: V(88, 110) });
   FX.dust(g, t, { count: 30, color: '#ffe2bd', a: 0.25 });

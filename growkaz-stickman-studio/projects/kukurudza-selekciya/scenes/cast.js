@@ -1,4 +1,4 @@
-// cast.js — one outfit per recurring character.
-export const FARMER = { top: 'tshirt', color: '#d64a33', head: 'cap', headColor: '#d64a33' };   // the viewer / "ви" (same as the previous corn video)
-export const BREEDER = { top: 'labcoat', face: 'glasses', head: 'none', color2: '#3fb950' };     // the plant breeder (lab coat + glasses)
+// cast.js — the two characters from the user's character sheets (drawn by fig.js).
+export const FARMER = { sheet: 'farmer' };    // bearded farmer: green cap, yellow tee, blue overalls, brown boots
+export const BREEDER = { sheet: 'breeder' };  // breeder: brown hair, round glasses, green lab coat
 export const CAST = [FARMER, BREEDER];

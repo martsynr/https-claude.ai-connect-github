@@ -78,5 +78,15 @@ export const STYLES = {
       golden: { sky: ['#4a7a70', '#e0a050', '#f6dca8'], rim: '#f6c87a' },
     },
   },
+  sheet: {
+    name: 'Character Sheet', desc: 'Light flat cartoon: warm cream paper, soft flat colours, thin dark ink outlines, no glow, no grain, no vignette.',
+    flat: true, paper: '#fbf5ea', ink: '#2b2622', inkFar: '#4a423c', feature: '#2b2622', rimWidth: 0, line: 3,
+    ui: { ...UI, card: 'rgba(255,251,242,.97)', cardLine: '#2b2622', text: '#2b2622', sub: '#7a6c5e', accent: '#d9553a', gold: '#d98c12', cream: '#2b2622', blueprint: '#2f6f9a', bpBg: '#fbf5ea', good: '#4f9a48' },
+    grade: { contrast: 1.0, sat: 1.0, lift: [0, 0, 0], gamma: [1, 1, 1], gain: [1, 1, 1], vignette: 0, grain: 0, bloom: 0 },
+    moods: Object.fromEntries(['day', 'golden', 'dusk', 'night', 'storm', 'interiorWarm', 'interiorCool', 'void'].map(k => [k, {
+      sky: k === 'storm' ? ['#cdd6de', '#e8ecef'] : k === 'dusk' ? ['#f6d9b8', '#fbeedd'] : k === 'night' ? ['#c9d3ea', '#e9edf6'] : ['#d6ecef', '#fbf5ea'],
+      ambient: '#e8dcc8', key: '#ffd34d', rim: '#2b2622', wall: '#efe3cf', floor: '#c99a66', dark: '#9a7350', practical: '#ffd34d',
+      grass: k === 'dusk' ? '#8fb45a' : '#78b45f', road: '#8a8a8a', fog: '#fbf5ea' }])),
+  },
 };
 export const STYLE_IDS = Object.keys(STYLES);

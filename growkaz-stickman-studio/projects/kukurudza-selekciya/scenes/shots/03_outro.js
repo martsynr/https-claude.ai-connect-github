@@ -1,6 +1,6 @@
 // shots/03_outro.js — stalks & roots, stay-green, grain fill, hybrids, ×3 density, the rest, outro (s28–s39).
 import { E, V, S, registerShot, mood, layer, blurLayer, veil, backdrop, ease, prog, clamp, lerp, shake, rng, seg, circle, ring, rr, poly, glow, alpha, shade, mix, linGrad, text, FONTS } from '/engine/core.js';
-import { drawFigure, POSES, posesAt, breathe, bigFace } from '/engine/rig2d.js';
+import { drawFigure, POSES, posesAt, breathe, bigFace } from '../fig.js';
 import * as FX from '/engine/fx2d.js';
 import * as UI from '/engine/ui2d.js';
 import { field, fieldGround, cornPlant, cob, plot, tractor, car, roots, OLD, NEW } from '../sets/corn.js';
@@ -15,7 +15,7 @@ registerShot('s28', { draw(g, t, info) {
   const { GY, M, plant } = field(g, t, cam, { mood: 'storm' });
   const tS = wt('стебла', info, 1.2), tK = wt('коріння', info, 1.9), rk = ease.out(prog(t, tK - 0.2, tK + 0.8));
   layer(g, cam, 1, (g) => {
-    g.fillStyle = shade(M.dark, -0.5); g.fillRect(-E.W, GY + 60, E.W * 3, E.H);
+    g.fillStyle = shade(M.floor, -0.25); g.fillRect(-E.W, GY + 60, E.W * 3, E.H);
     for (let i = 0; i < 4; i++) { const x = E.W * (0.12 + i * 0.25), wind = 40 + 30 * Math.sin(t * 2.2 + i);
       if (rk > 0) { glow(g, x, GY + 180, 160, gold(), 0.15 * rk); roots(g, x, GY + 60, V(260, 360), rk, gold(), 10 + i); }
       cornPlant(g, x, GY + 60, V(640, 720), { sway: wind, seed: 700 + i, color: shade(plant, -0.1), rim: M.rim, ...NEW, w: 16, leaves: 8 }); }
@@ -36,8 +36,8 @@ registerShot('s29', { draw(g, t, info) {
     cornPlant(g, E.W * 0.73, GY + 40, V(700, 800), { sway: Math.sin(t + 1) * 6, seed: 802, color: mix(plant, '#4f9a48', 0.5), rim: M.rim, ...NEW, w: 16, leaves: 8 });
   });
   label(g, 'СТАРИЙ', E.W * 0.27, GY + V(110, 120), 1, V(40, 46), alpha(S().ui.cream, 0.8));
-  label(g, 'ГІБРИД', E.W * 0.73, GY + V(110, 120), 1, V(40, 46), '#9fe08a');
-  label(g, 'ДОВШЕ ЗЕЛЕНЕ', E.W / 2, E.H * V(0.1, 0.12), ease.out(prog(t, tZ - 0.2, tZ + 0.3)), V(56, 64), '#9fe08a');
+  label(g, 'ГІБРИД', E.W * 0.73, GY + V(110, 120), 1, V(40, 46), '#4f9a48');
+  label(g, 'ДОВШЕ ЗЕЛЕНЕ', E.W / 2, E.H * V(0.1, 0.12), ease.out(prog(t, tZ - 0.2, tZ + 0.3)), V(56, 64), '#4f9a48');
   FX.dust(g, t, { count: 40, color: '#ffd9b0', a: 0.35 });
 } });
 
@@ -83,12 +83,12 @@ registerShot('s33', { draw(g, t, info) {
 
 // s34 — 1 m²: 3 plants then 9 plants; ×3
 registerShot('s34', { draw(g, t, info) {
-  const M = mood('golden'); backdrop(g, [shade(M.floor, -0.55), shade(M.dark, -0.5)]);
+  const M = mood('golden'); backdrop(g, [S().paper, S().paper]);
   g.save(); push(g, t, info, 1.0, 1.04);
   const tM = wt('метрі', info, 1.5), t3 = wt('втричі', info, 3.36), sz = V(420, 440), cy = E.H * 0.42;
   const a1 = ease.out(prog(t, 0.1, 0.5)), a2 = ease.out(prog(t, tM - 0.2, tM + 0.3));
-  g.globalAlpha = a1; plot(g, E.W * 0.27, cy, sz, 3, { soil: shade(M.floor, -0.3), plant: mix(M.grass, '#7ad06a', 0.3), r: V(46, 48), label: 'ТОДІ · 1 м²', seed: 3 });
-  g.globalAlpha = a2; plot(g, E.W * 0.73, cy, sz, 9, { reveal: ease.inOut(prog(t, tM, t3)), shuffle: true, soil: shade(M.floor, -0.3), plant: mix(M.grass, '#7ad06a', 0.3), r: V(46, 48), label: 'ЗАРАЗ · 1 м²', seed: 4 });
+  g.globalAlpha = a1; plot(g, E.W * 0.27, cy, sz, 3, { soil: M.floor, plant: mix(M.grass, '#7ad06a', 0.3), r: V(46, 48), label: 'ТОДІ · 1 м²', seed: 3 });
+  g.globalAlpha = a2; plot(g, E.W * 0.73, cy, sz, 9, { reveal: ease.inOut(prog(t, tM, t3)), shuffle: true, soil: M.floor, plant: mix(M.grass, '#7ad06a', 0.3), r: V(46, 48), label: 'ЗАРАЗ · 1 м²', seed: 4 });
   g.globalAlpha = 1; g.restore();
   const k = ease.outBack(prog(t, t3 - 0.1, t3 + 0.3)); if (k > 0) { g.save(); g.translate(E.W / 2, E.H * 0.65); g.scale(k, k); text(g, '≈ ×3', 0, 0, { size: V(150, 170), color: gold(), glow: 36, glowColor: 'rgba(255,140,40,.85)', spacing: 4 }); g.restore(); }
   FX.dust(g, t, { count: 30, color: '#ffe2bd', a: 0.25 });
@@ -156,14 +156,14 @@ registerShot('s38', { kind: '3d',
 // s39 — end screen
 registerShot('s39', { draw(g, t, info) {
   const ui = S().ui, M = mood('golden');
-  g.fillStyle = linGrad(g, 0, 0, 0, E.H, [shade(M.sky[0], -0.4), shade(M.wall, -0.3), shade(M.grass, -0.6)]); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3);
+  g.fillStyle = linGrad(g, 0, 0, 0, E.H, [M.sky[0], M.sky[1], M.sky[1]]); g.fillRect(-E.W, -E.H, E.W * 3, E.H * 3);
   glow(g, E.W / 2, E.H * 0.9, E.W * 0.5, M.key, 0.25); FX.dust(g, t, { count: 40, color: '#ffe2bd', a: 0.3 });
   const a1 = ease.out(prog(t, 0.2, 0.8)), qy = V(150, 360);
   text(g, 'Скільки рослин', E.W / 2, qy - V(0, 50), { size: V(64, 72), font: FONTS.serif, weight: 900, italic: true, color: ui.cream, alpha: a1, glow: 18, glowColor: 'rgba(255,170,90,.5)' });
   text(g, 'на гектар у вас?', E.W / 2, qy + V(70, 50), { size: V(64, 72), font: FONTS.serif, weight: 900, italic: true, color: ui.gold, alpha: a1, glow: 18, glowColor: 'rgba(255,170,90,.5)' });
   text(g, 'Напишіть у коментарях', E.W / 2, qy + V(150, 150), { size: V(30, 34), color: alpha(ui.cream, 0.75), font: FONTS.ui, weight: 800, alpha: ease.out(prog(t, 0.5, 1.0)) });
   const by = V(380, 680);
-  UI.bubble(g, E.W / 2 - V(260, 210), by, { w: V(110, 130), h: V(60, 70) });
+  UI.bubble(g, E.W / 2 - V(260, 210), by, { w: V(110, 130), h: V(60, 70), color: '#e2d6c2' });
   const sp = ease.outBack(prog(t, 0.6, 1.1)); g.save(); g.translate(E.W / 2 + V(70, 70), by); g.scale(sp, sp);
   rr(g, -190, -40, 380, 80, 40); g.fillStyle = '#e0302a'; g.fill(); g.fillStyle = '#fff'; g.beginPath(); g.moveTo(-150, -16); g.lineTo(-150, 16); g.lineTo(-122, 0); g.closePath(); g.fill();
   text(g, 'Підписатися', 22, 2, { size: 36, color: '#fff', font: FONTS.ui, weight: 900 }); g.restore();
